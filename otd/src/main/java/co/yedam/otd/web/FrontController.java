@@ -39,8 +39,12 @@ public class FrontController extends HttpServlet {
 		Command command = map.get(path);
 		String viewPage = command.execute(request, response);
 		
-		if(!viewPage.endsWith(".do")) {
-			viewPage = "WEB-INF/views/" + viewPage + ".jsp";
+		if (!viewPage.endsWith(".do")) {
+			if (!viewPage.endsWith(".jsp")) {
+				viewPage = viewPage + ".tiles"; // home/home 타일즈
+			} else {
+				viewPage = "/WEB-INF/views/" + viewPage; // home/home.jsp 타일즈 안탐
+			}
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
