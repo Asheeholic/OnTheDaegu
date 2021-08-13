@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
+import co.yedam.otd.rental.command.MapDaoTestCommand;
 import co.yedam.otd.rental.command.MapTestCommand;
 
 @WebServlet("*.do")
@@ -30,6 +31,7 @@ public class FrontController extends HttpServlet {
 		
 		// 대여 서비스 커맨드
 		map.put("/mapTest.do", new MapTestCommand());
+		map.put("/mapDaoTest.do", new MapDaoTestCommand());
 	}
 
 
