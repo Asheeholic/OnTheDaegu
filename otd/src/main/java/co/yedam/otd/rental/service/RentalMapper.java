@@ -4,8 +4,7 @@ import java.util.List;
 
 import co.yedam.otd.rental.vo.ZoneVO;
 
-public interface RentalService {
+public interface RentalMapper {
 	
 	List<ZoneVO> zoneList();
-	
 }
