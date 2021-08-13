@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- 여기가 홈이야
- <a href="mapTest.do">맵 링크</a>
+	여긴 맵 렌탈 서비스 하는 곳이야.
 </body>
 </html>
