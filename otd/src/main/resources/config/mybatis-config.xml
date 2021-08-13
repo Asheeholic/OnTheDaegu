@@ -19,6 +19,6 @@
   
   <!-- Mapper 추가 영역 -->
   <mappers>
-    <mapper resource=""/>
+    <mapper resource="co/yedam/otd/rental/serviceImpl/rental-map.xml"/>
   </mappers>
 </configuration>
