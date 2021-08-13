@@ -4,6 +4,10 @@
 
 <configuration>
   <properties resource="config/db.properties"></properties>
+  
+  <typeAliases>
+  	<typeAlias type="co.yedam.otd.notice.vo.NoticeVO" alias="NoticeVO"/> <!-- 공지사항 VO 경로 typeAliases /김주영-->
+  </typeAliases>
 
   <environments default="development">
     <environment id="development">
@@ -19,6 +23,6 @@
   
   <!-- Mapper 추가 영역 -->
   <mappers>
-    <mapper resource=""/>
+    <mapper resource="co/yedam/otd/notice/serviceImpl/notice-map.xml"/> <!-- 공지사항 매퍼 /김주영 -->
   </mappers>
 </configuration>
