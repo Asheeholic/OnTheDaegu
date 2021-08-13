@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
+import co.yedam.otd.notice.command.NoticeList;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -26,6 +27,9 @@ public class FrontController extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/home.do", new HomeCommand());  //메인페이지
+		
+		// Notice -김주영
+		map.put("/noticeList.do", new NoticeList()); // 공지목록
 		
 	}
 

@@ -14,9 +14,9 @@ public class NoticeServiceImpl implements NoticeService {
 	private NoticeMapper map = sqlSession.getMapper(NoticeMapper.class);
 
 	@Override
-	public List<NoticeVO> noticeSelectList() {
+	public List<NoticeVO> noticeList() {
 		// TODO 전체공지목록
-		return map.noticeSelectList();
+		return map.noticeList();
 	}
 
 	@Override
