@@ -11,16 +11,15 @@ import co.yedam.otd.notice.service.NoticeService;
 import co.yedam.otd.notice.serviceImpl.NoticeServiceImpl;
 import co.yedam.otd.notice.vo.NoticeVO;
 
-public class NoticeInsert implements Command {
+public class NoticeDelete implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO 공지작성
+		// TODO 공지삭제
 		NoticeService dao = new NoticeServiceImpl();
 		NoticeVO vo = new NoticeVO();
-		vo.setNoticeTitle(request.getParameter("noticeTitle"));
-		vo.setNoticeContent(request.getParameter("noticeContent"));
-		dao.noticeInsert(vo);
+		vo.setNoticeNo(Integer.valueOf(request.getParameter("noticeNo")));
+		dao.noticeDelete(vo);
 		request.setAttribute("list", dao.noticeList());
 		SqlSession sqlSession = DataSource.getInstance().openSession();
 		sqlSession.close();

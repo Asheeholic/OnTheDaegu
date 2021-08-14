@@ -51,7 +51,9 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public int noticeDelete(NoticeVO vo) {
 		// TODO 공지삭제
-		return map.noticeDelete(vo);
+		int n = map.noticeDelete(vo);
+		sqlSession.commit();
+		return n;
 	}
 
 }

@@ -36,6 +36,6 @@
 	
 	<!-- 공지번호를 이용해 공지 삭제 -->
 	<delete id="noticeDelete" parameterType="NoticeVO">
-		delete from notice where notice_no = #{noticeNo};
+		delete from notice where notice_no = #{noticeNo}
 	</delete>
 </mapper>
