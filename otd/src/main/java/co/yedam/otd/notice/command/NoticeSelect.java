@@ -14,6 +14,8 @@ public class NoticeSelect implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO 공지 조회
 		NoticeService dao = new NoticeServiceImpl();
+		int no = Integer.valueOf(request.getParameter("noticeNo"));
+		dao.noticeHitUpdate(no);
 		NoticeVO vo = new NoticeVO();
 		vo.setNoticeNo(Integer.valueOf(request.getParameter("noticeNo")));
 		request.setAttribute("notice", dao.noticeSelect(vo));

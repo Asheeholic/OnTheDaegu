@@ -3,26 +3,33 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-  <properties resource="config/db.properties"></properties>
-  
-  <typeAliases>
-  	<typeAlias type="co.yedam.otd.notice.vo.NoticeVO" alias="NoticeVO"/> <!-- 공지사항 VO 경로 typeAliases /김주영-->
-  </typeAliases>
+	<properties resource="config/db.properties"></properties>
 
-  <environments default="development">
-    <environment id="development">
-      <transactionManager type="JDBC"/>
-      <dataSource type="POOLED">
-        <property name="driver" value="${driver}"/>
-        <property name="url" value="${url}"/>
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
-      </dataSource>
-    </environment>
-  </environments>
-  
-  <!-- Mapper 추가 영역 -->
-  <mappers>
-    <mapper resource="co/yedam/otd/notice/serviceImpl/notice-map.xml"/> <!-- 공지사항 매퍼 /김주영 -->
-  </mappers>
+	<settings>
+		<!-- column명과 property명이 Camel Case, Snake Case로만 다를 경우 resultMap을 안 써도 이 코드 쓰면 알아서 바꿔줌 /김주영-->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="co.yedam.otd.notice.vo.NoticeVO"
+			alias="NoticeVO" /> <!-- 공지사항 VO 경로 typeAliases /김주영 -->
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- Mapper 추가 영역 -->
+	<mappers>
+		<mapper
+			resource="co/yedam/otd/notice/serviceImpl/notice-map.xml" /> <!-- 공지사항 매퍼 /김주영 -->
+	</mappers>
 </configuration>

@@ -26,6 +26,13 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
+	public void noticeHitUpdate(int no) {
+		// TODO 공지 조회수 증가
+		map.noticeHitUpdate(no);
+		sqlSession.commit(); // commit을 해줘야 db에 반영이 되는 것 확인
+	}
+	
+	@Override
 	public int noticeInsert(NoticeVO vo) {
 		// TODO 공지작성
 		return map.noticeInsert(vo);
