@@ -2,12 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.yedam.otd.notice.service.NoticeMapper">
 
-	<select id="noticeList" resultType="NoticeVO">
+	<resultMap id="noticeMap" type="NoticeVO">
+		<result property="noticeNo" column="notice_no"/>
+		<result property="noticeTitle" column="notice_title"/>
+		<result property="noticeContent" column="notice_content"/>
+		<result property="noticeDate" column="notice_date"/>
+		<result property="noticeHit" column="notice_hit"/>
+	</resultMap>
+
+	<select id="noticeList" resultMap="noticeMap">
 		select * from notice
 	</select>
 	
 	<!-- 공지번호를 이용해 공지 조회 -->
-	<select id="noticeSelect" resultType="NoticeVO">
+	<select id="noticeSelect" resultMap="noticeMap">
 		select * from notice where notice_no = #{noticeNo}
 	</select>
 	

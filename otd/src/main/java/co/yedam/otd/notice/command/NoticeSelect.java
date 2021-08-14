@@ -6,16 +6,19 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.otd.common.Command;
 import co.yedam.otd.notice.service.NoticeService;
 import co.yedam.otd.notice.serviceImpl.NoticeServiceImpl;
+import co.yedam.otd.notice.vo.NoticeVO;
 
-public class NoticeList implements Command {
+public class NoticeSelect implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO 공지리스트
+		// TODO 공지 조회
 		NoticeService dao = new NoticeServiceImpl();
-		request.setAttribute("list", dao.noticeList());
+		NoticeVO vo = new NoticeVO();
+		vo.setNoticeNo(Integer.valueOf(request.getParameter("noticeNo")));
+		request.setAttribute("notice", dao.noticeSelect(vo));
 		
-		return "notice/noticeList";
+		return "notice/noticeSelect";
 	}
 
 }
