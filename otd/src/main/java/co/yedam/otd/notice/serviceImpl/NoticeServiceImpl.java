@@ -35,7 +35,9 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public int noticeInsert(NoticeVO vo) {
 		// TODO 공지작성
-		return map.noticeInsert(vo);
+		int n = map.noticeInsert(vo);
+		sqlSession.commit();
+		return n;
 	}
 
 	@Override

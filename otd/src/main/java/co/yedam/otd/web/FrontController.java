@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
+import co.yedam.otd.notice.command.NoticeInsert;
+import co.yedam.otd.notice.command.NoticeInsertForm;
 import co.yedam.otd.notice.command.NoticeList;
 import co.yedam.otd.notice.command.NoticeSelect;
 
@@ -32,6 +34,8 @@ public class FrontController extends HttpServlet {
 		// Notice -김주영
 		map.put("/noticeList.do", new NoticeList()); // 공지목록
 		map.put("/noticeSelect.do", new NoticeSelect()); // 공지조회
+		map.put("/noticeInsertForm.do", new NoticeInsertForm()); // 공지작성폼
+		map.put("/noticeInsert.do", new NoticeInsert()); //공지작성
 	
 	}
 
