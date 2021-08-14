@@ -17,6 +17,8 @@ import co.yedam.otd.notice.command.NoticeInsert;
 import co.yedam.otd.notice.command.NoticeInsertForm;
 import co.yedam.otd.notice.command.NoticeList;
 import co.yedam.otd.notice.command.NoticeSelect;
+import co.yedam.otd.notice.command.NoticeUpdate;
+import co.yedam.otd.notice.command.NoticeUpdateForm;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -35,7 +37,9 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeList.do", new NoticeList()); // 공지목록
 		map.put("/noticeSelect.do", new NoticeSelect()); // 공지조회
 		map.put("/noticeInsertForm.do", new NoticeInsertForm()); // 공지작성폼
-		map.put("/noticeInsert.do", new NoticeInsert()); //공지작성
+		map.put("/noticeInsert.do", new NoticeInsert()); // 공지작성
+		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 공지수정폼
+		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지수정
 	
 	}
 
