@@ -11,7 +11,16 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wre5st6fx0"></script>
 </head>
 <body>
-<div id="map" align="center" style="width:70%; height:400px;"></div>
+<div id="map" align="center" style="width:70%; height:400px;">
+</div>
+<div id="buttons">
+	<button id="interaction">interaction</button>
+	<button id="kinetic">kinetic</button>
+	<button id="tile-transition">tile-transition</button>
+	<button id="min-max-zoom">min-max-zoom</button>
+	<button id="controls">controls</button>
+</div>
+
 
 <script>
 //지도 생성 시에 옵션을 지정할 수 있습니다.
