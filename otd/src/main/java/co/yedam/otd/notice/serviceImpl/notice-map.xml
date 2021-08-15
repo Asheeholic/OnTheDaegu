@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.otd.notice.service.NoticeMapper">
+
+	<resultMap id="noticeMap" type="NoticeVO">
+		<result property="noticeNo" column="notice_no"/>
+		<result property="noticeTitle" column="notice_title"/>
+		<result property="noticeContent" column="notice_content"/>
+		<result property="noticeDate" column="notice_date"/>
+		<result property="noticeHit" column="notice_hit"/>
+	</resultMap>
+
+	<select id="noticeList" resultMap="noticeMap">
+		select * from notice
+	</select>
+	
+	<!-- 공지번호를 이용해 공지 조회 -->
+	<select id="noticeSelect" resultType="NoticeVO">
+		select * from notice where notice_no = #{noticeNo}
+	</select>
+	
+	<!-- 공지조회수 증가 -->
+	<update id="noticeHitUpdate" parameterType="NoticeVO">
+		update notice set notice_hit = notice_hit + 1 where notice_no = #{noticeNo}
+	</update>
+	
+	<!-- 공지 작성 -->
+	<insert id="noticeInsert" parameterType="NoticeVO">
+		insert into notice values(n_seq.nextval, #{noticeTitle}, #{noticeContent}, sysdate, 0)
+	</insert>
+
+	<!-- 공지번호를 이용해 공지 제목과 내용 수정 -->
+	<update id="noticeUpdate" parameterType="NoticeVO">
+		update notice set notice_title = #{noticeTitle}, notice_content = #{noticeContent} where notice_no = #{noticeNo}
+	</update>
+	
+	<!-- 공지번호를 이용해 공지 삭제 -->
+	<delete id="noticeDelete" parameterType="NoticeVO">
+		delete from notice where notice_no = #{noticeNo}
+	</delete>
+</mapper>

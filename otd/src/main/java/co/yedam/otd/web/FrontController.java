@@ -16,6 +16,14 @@ import co.yedam.otd.common.HomeCommand;
 import co.yedam.otd.rental.command.MapDaoTestCommand;
 import co.yedam.otd.rental.command.MapTestCommand;
 
+import co.yedam.otd.notice.command.NoticeDelete;
+import co.yedam.otd.notice.command.NoticeInsert;
+import co.yedam.otd.notice.command.NoticeInsertForm;
+import co.yedam.otd.notice.command.NoticeList;
+import co.yedam.otd.notice.command.NoticeSelect;
+import co.yedam.otd.notice.command.NoticeUpdate;
+import co.yedam.otd.notice.command.NoticeUpdateForm;
+
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,9 +37,21 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/home.do", new HomeCommand());  //메인페이지
 		
+
 		// 대여 서비스 커맨드
 		map.put("/mapTest.do", new MapTestCommand());
 		map.put("/mapDaoTest.do", new MapDaoTestCommand());
+
+		// Notice -김주영
+		map.put("/noticeList.do", new NoticeList()); // 공지목록
+		map.put("/noticeSelect.do", new NoticeSelect()); // 공지조회
+		map.put("/noticeInsertForm.do", new NoticeInsertForm()); // 공지작성폼
+		map.put("/noticeInsert.do", new NoticeInsert()); // 공지작성
+		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 공지수정폼
+		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지수정
+		map.put("/noticeDelete.do", new NoticeDelete()); // 공지삭제
+	
+
 	}
 
 

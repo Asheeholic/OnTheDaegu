@@ -8,7 +8,14 @@
 </head>
 <body>
  여기가 홈이야
+
  <a href="mapTest.do">맵 링크</a>
  <a href="mapDaoTest.do">dao테스트</a>
+
+ <div id="notice" align="center">
+ 	공지 테스트 좀 하겠습니다 <br>
+ 	<a href="noticeList.do">공지목록</a>
+ </div>
+
 </body>
 </html>
