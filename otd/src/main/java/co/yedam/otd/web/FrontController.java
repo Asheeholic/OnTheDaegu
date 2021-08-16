@@ -20,6 +20,7 @@ import co.yedam.otd.notice.command.NoticeList;
 import co.yedam.otd.notice.command.NoticeSelect;
 import co.yedam.otd.notice.command.NoticeUpdate;
 import co.yedam.otd.notice.command.NoticeUpdateForm;
+import co.yedam.otd.review.command.ReviewList;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -42,7 +43,9 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 공지수정폼
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지삭제
-	
+		
+		// Review -김주영
+		map.put("/reviewList.do", new ReviewList()); // 리뷰글목록
 	}
 
 

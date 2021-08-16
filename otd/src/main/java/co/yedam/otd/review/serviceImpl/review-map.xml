@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.yedam.otd.review.service.ReviewMapper">
+
+	<select id="reviewList" resultType="ReviewVO">
+		select * from review
+	</select>
+	
+	<!-- 작성자가 작성한 리뷰 조회: 이메일 활용 -->
+	<select id="reviewSelect" resultType="ReviewVO">
+		select * from review where email = #{email}
+	</select>
+	
+	<!-- 리뷰 작성 -->
+	<insert id="reviewInsert" parameterType="ReviewVO">
+		insert into review values(r_seq.nextval, #{reviewContent}, #{reviewLike}, #{email}, sysdate)
+	</insert>
+	
+	<!-- 리뷰 수정: 내용과 별점 수정, 글번호 이용 -->
+	<update id="reviewUpdate" parameterType="ReviewVO">
+		update review set review_content = #{reviewContent}, review_like = #{reviewLike} where review_no = #{reviewNo}
+	</update>
+	
+	<!-- 리뷰 삭제: 글번호 이용 -->
+	<delete id="reviewDelete" parameterType="ReviewVO">
+		delete from review where review_no = #{reviewNo}
+	</delete>
+
 </mapper>
