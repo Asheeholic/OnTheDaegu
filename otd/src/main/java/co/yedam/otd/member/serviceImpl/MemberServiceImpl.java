@@ -32,10 +32,15 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int memberIdCheck(String email) {
-		// TODO OTD 회원 로그인 중복 체크
+		// TODO OTD 회원 아이디 중복 체크
 		return map.memberIdCheck(email);
 	}
-
+	@Override
+	public int memberCheckIdAndPassword(MemberVO vo) {
+		// TODO OTD 회원 로그인체크
+		return map.memberCheckIdAndPassword(vo);
+	}
+	
 	@Override
 	public int memberInsert(MemberVO vo) {
 		// TODO OTD 회원 가입 

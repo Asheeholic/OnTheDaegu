@@ -31,31 +31,31 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		System.out.println(email + password);
+		System.out.println("No.1:로그인서블릿영역1"+email + password);
 		
 		MemberService dao = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
-		HttpSession session = request.getSession();
 		
 		vo.setEmail(email);
 		vo.setPassword(password);
-		System.out.println(vo.toString());
 		
-		vo = dao.memberLogin(vo);
-		// int r = dao.memberCheckIdAndPassword();
+		int r = dao.memberCheckIdAndPassword(vo);
 		
-		String result = "false";
+		System.out.println(r);
 		
-		if(!vo.getName().isEmpty()) { //id가 일치하면
-			session.setAttribute("sessionName", vo.getName());
-			session.setAttribute("sessionAuthor", vo.getAuthor());
-			session.setAttribute("sessionEmail", vo.getEmail());
-			session.setAttribute("session", vo);
+		String result = "";
+		String page =""; 
+		
+		if(r == 1) { //id가 일치하면
 			result = "true";
+			System.out.println("if구문이야"+result);
+		} else if( r == 0) {
+			result ="false";
+			System.out.println("elseif 구문이야"+result);
 		}
 		
 		Gson gson = new GsonBuilder().create();
-		response.getWriter().print(gson.toJson(result));
+		response.getWriter().print(gson.toJson(r));
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

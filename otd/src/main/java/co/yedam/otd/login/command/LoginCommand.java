@@ -28,18 +28,15 @@ public class LoginCommand implements Command {
 		System.out.println("넌누구냐?"+vo);
 		System.out.println("Login....중");
 		String page= "";
-		String Y = "Y";
 		
-		
-			session.setAttribute("sessionName", vo.getName());
-			session.setAttribute("sessionAuthor", vo.getAuthor());
-			session.setAttribute("sessionEmail", vo.getEmail());
-			session.setAttribute("session", vo);
-			System.out.println(vo+"들어있어");
-			page = "home.do";
-			System.out.println(page);
-			System.out.println("로그인이 성공적으로 되었습니다.");	
-		
+		session.setAttribute("sessionName", vo.getName());
+		session.setAttribute("sessionAuthor", vo.getAuthor());
+		session.setAttribute("sessionEmail", vo.getEmail());
+		session.setAttribute("session", vo);
+		System.out.println(vo+"들어있어");
+		page = "home.do";
+		System.out.println(page);
+		System.out.println("로그인이 성공적으로 되었습니다.");	
 		
 		return page;
 	}

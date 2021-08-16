@@ -51,13 +51,13 @@ $(document).ready(function(){
 				dataType : 'json',
 				success:function(data) {
 					console.log(data);
-					/* if(data.result = "true") {
+					 if(data.result = "true") {
 						alert(data.email+"님 환영합니다!");
 						console.log(data);
 						loginFrm.submit();
 					} else{
 						alert("회원정보 불일치")
-					} */
+					}
 				},
 				error: function(e){
 					alert("로그인 시도 중 오류 발생");
@@ -96,7 +96,7 @@ $(document).ready(function(){
 		<p><img src="img/OTD.png" alt="OTD사진"/>
 		<div>
 			<h1>OTD 로그인</h1>
-			<form id="loginFrm" method="post" action="login.do">
+			<form id="loginFrm" method="post" action="memberCheckIdAndPassword.do">
 				<table border="1">
 					<tr>
 						<th  width="140">로그인</th>

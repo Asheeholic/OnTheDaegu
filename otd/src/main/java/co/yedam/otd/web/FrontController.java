@@ -18,6 +18,7 @@ import co.yedam.otd.login.command.LoginCommand;
 import co.yedam.otd.login.command.MemberInsertCommand;
 import co.yedam.otd.login.command.SignUpformCommand;
 import co.yedam.otd.login.command.LoginFormCommand;
+import co.yedam.otd.login.command.MemberCheckIdAndPassword;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -38,6 +39,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memberInsert.do", new MemberInsertCommand()); //OTD 회원가입 커멘드
 		map.put("/loginForm.do", new LoginFormCommand()); //로그인폼 
 		map.put("/login.do", new LoginCommand()); //OTD 로그인 진행 과정
+		map.put("/memberCheckIdAndPassword.do", new MemberCheckIdAndPassword()); //로그인 체크과정
 	}
 
 

@@ -19,6 +19,9 @@
 	<select id="memberIdCheck" resultType="Integer">
 		select count(*) from member where email = #{email}
 	</select>
+	<select id="memberCheckIdAndPassword" resultType="Integer">
+		select count(*) from member where email = #{email} and password = #{password} and state='Y'
+	</select>
 	<!-- 회원가입 -->
 	<insert id="memberInsert" parameterType="MemberVO" >
 		insert into member(email, password, name, phone) values(#{email}, #{password}, #{name}, #{phone})
