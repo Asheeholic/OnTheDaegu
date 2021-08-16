@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.otd.member.service.MemberMapper">
+	<!-- 전체조회 -->
+	<select id="memberSelectList" resultType="MemberVO">
+		select * from member
+	</select>
+	
+	<!-- 회원 한건조회 -->
+	<select id="memberSelect" resultType="MemberVO">
+		select * from member where email = #{email}
+	</select>
+	
+	<!-- 회원 로그인 -->
+	<select id="memberLogin" resultType="MemberVO">
+		select name, author, state from member where email = #{email} and password= #{password} and state='Y'
+	</select>
+	<!-- 아이디 중복체크  -->
+	<select id="memberIdCheck" resultType="Integer">
+		select count(*) from member where email = #{email}
+	</select>
+	<!-- 회원가입 -->
+	<insert id="memberInsert" parameterType="MemberVO" >
+		insert into member(email, password, name, phone) values(#{email}, #{password}, #{name}, #{phone})
+	</insert>
+</mapper>

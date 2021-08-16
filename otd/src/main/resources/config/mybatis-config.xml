@@ -4,7 +4,18 @@
 
 <configuration>
   <properties resource="config/db.properties"></properties>
+    
+    <settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
 
+
+
+ <typeAliases>
+ 	<!-- MemberVO  -->
+  	<typeAlias type="co.yedam.otd.member.vo.MemberVO" alias="MemberVO"/>
+  </typeAliases>
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
@@ -19,6 +30,6 @@
   
   <!-- Mapper 추가 영역 -->
   <mappers>
-    <mapper resource=""/>
+    <mapper resource="co/yedam/otd/member/serviceImpl/member-map.xml"/>
   </mappers>
 </configuration>
