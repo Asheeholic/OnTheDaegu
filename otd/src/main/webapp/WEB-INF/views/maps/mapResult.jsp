@@ -11,17 +11,10 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wre5st6fx0"></script>
 </head>
 <body>
-	<div id="map" align="center" style="width:70%; height:400px;">
-	</div>
-	<div>
-		<button id="findWay">findWay</button>
-	</div>
+<div id="map" align="center" style="width:70%; height:400px;">
+</div>
 
 <script>
-
-// 변수 초기화
-let now;
-let goal;
 
 //지도 생성 시에 옵션을 지정할 수 있습니다.
 var map = new naver.maps.Map('map', {
@@ -56,12 +49,11 @@ function onSuccessGeolocation(position) {
     });
 	
     now = marker.getPosition();
-   	console.log(now._lat, now._lng);
+   	console.log(now);
     
     //다른곳에 클릭시 새로운 마커 등장.
     var marker2 = new naver.maps.Marker({
-        position: new naver.maps.LatLng(position.coords.latitude,
-										position.coords.longitude),
+        position: position,
         map: map
     });
     
@@ -80,17 +72,6 @@ function onErrorGeolocation() {
 
 }
 
-// 기본 폴리라인 초기화
-let polyline = new naver.maps.Polyline({
-	    map: map,
-	    path: [],
-	    clickable: true,
-	    strokeColor: '#E51D1A',
-	    strokeStyle: 'solid',
-	    strokeOpacity: 1,
-	    strokeWeight: 5
-	});
-
 $(window).on("load", function() {
     if (navigator.geolocation) {
         /**
@@ -103,53 +84,7 @@ $(window).on("load", function() {
         var center = map.getCenter();
     }
     
-    $("#findWay").on("click", function() {
-    	
-    	// 폴리라인 초기화
-        polyline.setMap(null);
-
-    	$.ajax({
-        	url: "FindWayServlet",
-        	data: {
-        		nowLat : now._lat,
-        		nowLng : now._lng,
-        		goalLat : goal._lat,
-        		goalLug : goal._lng
-        	},
-    		type:'get',
-    		dataType:'json',
-    		success: function(result) {
-    			drawRoad(result);
-    		},
-    		error: function(e) {
-    			console.error(e);
-    		}
-        })
-    })
-    
 });
-
-function drawRoad(result) {
-	let obj = JSON.parse(result); // 한번 더 파싱 해야하는 이유를 모르겠음..
-	console.log(obj);
-	let paths = obj.route.trafast[0].path;
-	
-	let resultPath = [];
-	for(let path of paths) {
-		resultPath.push(new naver.maps.LatLng(path[1], path[0]));
-	}
-	
-	polyline = new naver.maps.Polyline({
-	    map: map,
-	    path: resultPath,
-	    clickable: true,
-	    strokeColor: '#E51D1A',
-	    strokeStyle: 'solid',
-	    strokeOpacity: 1,
-	    strokeWeight: 5
-	});
-	
-}
 
 
 </script>
