@@ -52,7 +52,6 @@ $(document).ready(function(){
 				success:function(data) {
 					console.log(data);
 					 if(data.result = "true") {
-						alert(data.email+"님 환영합니다!");
 						console.log(data);
 						loginFrm.submit();
 					} else{

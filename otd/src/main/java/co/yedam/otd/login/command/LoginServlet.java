@@ -44,14 +44,13 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(r);
 		
 		String result = "";
-		String page =""; 
 		
 		if(r == 1) { //id가 일치하면
 			result = "true";
 			System.out.println("if구문이야"+result);
 		} else if( r == 0) {
 			result ="false";
-			System.out.println("elseif 구문이야"+result);
+			System.out.println("else if 구문이야"+result);
 		}
 		
 		Gson gson = new GsonBuilder().create();

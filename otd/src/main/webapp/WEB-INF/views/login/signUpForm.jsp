@@ -58,7 +58,7 @@
 						<th width="140">아이디</th>
 						<td>
 							<input type="text" id="email" name="email"
-								placeholder="아이디 입력" required="required" size="25">
+								placeholder="이메일 형식으로 입력해주세요" required="required" size="25">
 							<input type="button" value="중복확인" id="loginCheck" name="loginCheck">	
 						</td>
 					</tr>

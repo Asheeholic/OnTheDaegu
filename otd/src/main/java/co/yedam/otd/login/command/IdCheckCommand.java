@@ -14,13 +14,13 @@ public class IdCheckCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO 아이디 중복 체크
 		String emailId = request.getParameter("email");
-		System.out.println(emailId);
+		
 		MemberService dao = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
+		
 		vo.setEmail(emailId);
 		
 		int n = dao.memberIdCheck(vo.getEmail());
-		System.out.println("너는 무엇이냐!"+n);
 		if(n == 1) {
 			request.setAttribute("message", "사용할 수 없는 아이디 입니다.");	
 		} else {

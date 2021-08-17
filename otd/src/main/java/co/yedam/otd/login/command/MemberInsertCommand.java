@@ -20,7 +20,9 @@ public class MemberInsertCommand implements Command {
 		vo.setPassword(request.getParameter("password"));
 		vo.setName(request.getParameter("name"));
 		vo.setPhone(request.getParameter("phone"));
+		
 		int result = dao.memberInsert(vo);
+		
 		System.out.println(result);
 		
 		String view;
