@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
 import co.yedam.otd.rental.command.MapDaoTestCommand;
+import co.yedam.otd.rental.command.MapDeliverBikeCommand;
 import co.yedam.otd.rental.command.MapTestCommand;
 
 import co.yedam.otd.login.command.IdCheckCommand;
@@ -47,7 +48,9 @@ public class FrontController extends HttpServlet {
 		// 대여 서비스 커맨드
 		map.put("/mapTest.do", new MapTestCommand());
 		map.put("/mapDaoTest.do", new MapDaoTestCommand());
-
+		map.put("/mapDeliverBike.do", new MapDeliverBikeCommand());
+				
+				
 		//로그인 & 회원가입
 		map.put("/signUpForm.do", new SignUpformCommand()); //회원가입 폼
 		map.put("/idCheck.do", new IdCheckCommand()); // 아이디중복체크

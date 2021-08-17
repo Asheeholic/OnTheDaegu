@@ -11,18 +11,25 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wre5st6fx0"></script>
 </head>
 <body>
-	<div id="map" align="center" style="width:70%; height:400px;">
+	<div id="map" align="center" style="width:60%; height:800px;">
 	</div>
 	<div>
 		<button id="findWay">findWay</button>
 	</div>
+	<div><span id="goalTimeTitle">도착 예정 시간 : </span><span id="goalTime"></span></div>
+	<div>
+		<form id="frm" action="mapDeliverBike.do" method="post">
+			<input type="hidden" id="nowLat" name="nowLat">
+			<input type="hidden" id="nowLng" name="nowLng">
+		</form>
+		<button id="deliveryStart" type="button">배달시작</button>
+	</div>
 
 <script>
-
 // 변수 초기화
 let now;
 let goal;
-
+let goalTime; // 도착시간
 //지도 생성 시에 옵션을 지정할 수 있습니다.
 var map = new naver.maps.Map('map', {
         center: new naver.maps.LatLng(37.3595704, 127.105399), //지도의 초기 중심 좌표
@@ -52,17 +59,27 @@ function onSuccessGeolocation(position) {
     var marker = new naver.maps.Marker({
         position: new naver.maps.LatLng(position.coords.latitude,
         								position.coords.longitude),
-        map: map
+        map: map,
+        title: "내 위치",
+        icon: {
+            url: "https://img.icons8.com/ultraviolet/40/000000/marker.png", //50, 68 크기의 원본 이미지
+            origin: new naver.maps.Point(0, 0)
+        }
     });
 	
+    // 현재위치를 마커에서의 위치로 초기화
     now = marker.getPosition();
    	console.log(now._lat, now._lng);
     
     //다른곳에 클릭시 새로운 마커 등장.
     var marker2 = new naver.maps.Marker({
-        position: new naver.maps.LatLng(position.coords.latitude,
-										position.coords.longitude),
-        map: map
+        position: [],
+        map: map,
+        title: "도착지",
+        icon: {
+        	url: "https://img.icons8.com/offices/30/000000/marker.png",
+        	origin: new naver.maps.Point(0, 0)
+        }
     });
     
     naver.maps.Event.addListener(map, 'click', function(e) {
@@ -127,12 +144,32 @@ $(window).on("load", function() {
         })
     })
     
+    // 배달 시작 페이지 호출
+    // 처음 좌표만 보내면 될듯 함.
+    $('#deliveryStart').on("click", function() {
+    
+		$('#nowLat').val(now._lat);
+		$('#nowLng').val(now._lng);
+		frm.submit();
+    })
+    
 });
 
 function drawRoad(result) {
 	let obj = JSON.parse(result); // 한번 더 파싱 해야하는 이유를 모르겠음..
 	console.log(obj);
 	let paths = obj.route.trafast[0].path;
+	
+	// 도착시간 화면에 출력
+	goalTime = obj.route.trafast[0].summary.duration * 2;
+	console.log(goalTime);
+	if(Math.floor((goalTime / 1000) / 60) < 60) {
+		goalTime = Math.floor((goalTime / 1000) / 60) + "분"
+	} else {
+		goalTime = Math.floor((goalTime / 1000) / 60 / 60) + "시간 " +
+					Math.floor((goalTime / 1000) / 60 % 60) + "분"
+	}; // 밀리세컨드이니깐
+	$('#goalTime').text(goalTime);
 	
 	let resultPath = [];
 	for(let path of paths) {
@@ -150,8 +187,6 @@ function drawRoad(result) {
 	});
 	
 }
-
-
 </script>
 </body>
 </html>
