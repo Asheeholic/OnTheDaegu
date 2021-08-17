@@ -1,4 +1,4 @@
-package co.yedam.otd.command;
+package co.yedam.otd.payment.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,7 +9,7 @@ public class BuyTicketForm implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		// 구매 선택창
 		return "yujeong/buyTicketForm";
 	}
 

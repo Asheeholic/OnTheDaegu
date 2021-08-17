@@ -1,10 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>buy ticket</title>
+<!-- <script>
+	function payment(n) {
+		frm.pays.value = n;
+		frm.submit();
+	}
+</script> -->
+
 </head>
 <body>
 	<div align="center">
@@ -13,8 +21,21 @@
 		</div>
 		<div>
 			<form id="frm" name="frm" action="payment.do" method="post">
+				<input type="hidden" id="pays" name="pays">
 				<div>
 					<table border="1">
+						<tr>
+							<th width="200">성 명</th>
+							<td>${sessionName}</td>
+						</tr>
+						<tr>
+							<th width="200">휴대폰 번호</th>
+							<td>${sessionPhone}</td>
+						</tr>
+						<tr>
+							<th width="200">이메일</th>
+							<td>${sessionEmail}</td>
+						</tr>
 						<tr>
 							<th width="200">이용권</th>
 							<td><select name="ticket">
@@ -30,9 +51,12 @@
 						</tr>
 						<tr>
 							<th width="200">결제수단</th>
-							<td><label><input type="radio" name="pay"
-									value="card">신용/체크카드</label> <label><input type="radio"
-									name="pay" value="cash">자동이체</label> <label><input
+							<td>
+								<label>
+								<input type="radio" name="pay" value="card">신용/체크카드
+								</label> 
+								<label><input type="radio"
+									name="pay" value="trans">자동이체</label> <label><input
 									type="radio" name="pay" value="kakao">카카오페이</label> <label><input
 									type="radio" name="pay" value="naver">네이버페이</label></td>
 						</tr>
@@ -46,14 +70,6 @@
 									이용권 미이용에 의한 환불처리 시 결제하신 수단으로 환불됨을 알려드립니다.
 								</p>
 							</td>
-						</tr>
-						<tr>
-							<th width="200">휴대폰 번호</th>
-							<td><input type="text" name="phone"></td>
-						</tr>
-						<tr>
-							<th width="200">이름</th>
-							<td><input type="text" name="name"></td>
 						</tr>
 					</table>
 				</div>
