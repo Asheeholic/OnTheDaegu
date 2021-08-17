@@ -23,12 +23,6 @@
 	}, function(rsp) {
 		if (rsp.success) {
 			var msg = '결제가 완료되었습니다.';
-			$.ajax({
-				url:"../FrontController",
-				dataType:'',
-				success: itemListFnc,
-				error: function() {}
-			})
 		} else {
 			var msg = '결제에 실패하였습니다.';
 			msg += '에러내용 : ' + rsp.error_msg;
@@ -40,6 +34,6 @@
 <title>payment page</title>
 </head>
 <body>
-	<%-- <jsp:forward page="history.do" /> --%>
+
 </body>
 </html>

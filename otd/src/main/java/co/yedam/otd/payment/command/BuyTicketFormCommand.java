@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 
-public class BuyTicketForm implements Command {
+public class BuyTicketFormCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {

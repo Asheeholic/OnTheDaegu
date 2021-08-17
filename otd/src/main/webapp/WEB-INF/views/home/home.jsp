@@ -11,6 +11,11 @@ function buyTicket(n) {
 	frm.ticket.value=n;
 	frm.submit();
 }
+
+function returnTicket(n) {
+	rtf.refund.value=n;
+	rtf.submit();
+}
 </script>
 </head>
 <body>
@@ -18,7 +23,8 @@ function buyTicket(n) {
 	<!-- 로그인 했을때만 이용권 구매 가능 -->
 	<c:if test="${not empty sessionName}">
 		<input type="button" value="이용권 구매" onclick="buyTicket('${session}')">
-		<!-- <a class="buyTicket" href="buyTicketForm.do">이용권 구매</a> -->
+		<input type="button" value="이용권 환불" onclick="returnTicket('${session}')">
+
 	</c:if>
 
 	<div>${sessionName }님환영합니다.</div>
@@ -34,6 +40,11 @@ function buyTicket(n) {
 	<!-- 이용권 구매 세션 넘기기 -->
 	<form id="frm" action="buyTicketForm.do" method="post">
 		<input type="hidden" id="ticket" name="ticket">
+	</form>
+	
+	<!-- 이용권 환불 세션 넘기기 -->
+	<form id="rtf" action="returnTicketForm.do" method="post">
+		<input type="hidden" id="refund" name="refund">
 	</form>
 
 </body>

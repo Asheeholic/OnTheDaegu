@@ -11,7 +11,7 @@ import co.yedam.otd.payment.serviceImpl.TicketServiceImpl;
 import co.yedam.otd.payment.vo.PaymentVO;
 import co.yedam.otd.payment.vo.TicketVO;
 
-public class Payment implements Command {
+public class PaymentCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
