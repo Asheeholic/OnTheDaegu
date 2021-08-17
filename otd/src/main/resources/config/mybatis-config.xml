@@ -3,16 +3,22 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<properties resource="config/db.properties"></properties>
+  <properties resource="config/db.properties"></properties>
 
 	<settings>
 		<!-- column명과 property명이 Camel Case, Snake Case로만 다를 경우 resultMap을 안 써도 이 코드 쓰면 알아서 바꿔줌 /김주영-->
 		<setting name="mapUnderscoreToCamelCase" value="true" />
+		
+		<setting name="cacheEnabled" value="false" />
+        <!-- jdbcTypeForNull 사용하면 jdbcType=VARCHAR 컬럼명마다 사용해야되는것을 생략  -->
+        <setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 
 	<typeAliases>
 		<typeAlias type="co.yedam.otd.notice.vo.NoticeVO" alias="NoticeVO" /> <!-- 공지사항 VO 경로 typeAliases /김주영 -->
 		<typeAlias type="co.yedam.otd.review.vo.ReviewVO" alias="ReviewVO" /> <!-- 리뷰게시판 VO 경로 typeAliases /김주영 -->
+		<!-- MemberVO  -->
+  		<typeAlias type="co.yedam.otd.member.vo.MemberVO" alias="MemberVO"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -31,5 +37,6 @@
 	<mappers>
 		<mapper resource="co/yedam/otd/notice/serviceImpl/notice-map.xml" /> <!-- 공지사항 매퍼 /김주영 -->
 		<mapper resource="co/yedam/otd/review/serviceImpl/review-map.xml" /> <!-- 리뷰게시판 매퍼 /김주영 -->
+		<mapper resource="co/yedam/otd/member/serviceImpl/member-map.xml"/>
 	</mappers>
 </configuration>
