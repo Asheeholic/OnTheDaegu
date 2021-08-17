@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
+import co.yedam.otd.event.command.EventList;
 import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
 import co.yedam.otd.login.command.MemberInsertCommand;
@@ -58,6 +59,9 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 공지수정폼
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지삭제
+		
+		// Event -김주영
+		map.put("/eventList.do", new EventList()); // 이벤트목록
 		
 		// Review -김주영
 		map.put("/reviewList.do", new ReviewList()); // 리뷰글목록
