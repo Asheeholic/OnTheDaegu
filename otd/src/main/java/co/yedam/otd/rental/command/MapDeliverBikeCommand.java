@@ -14,6 +14,7 @@ public class MapDeliverBikeCommand implements Command {
 		String nowLat = request.getParameter("nowLat");
 		String nowLng = request.getParameter("nowLng");
 		
+		// 보내도 현재 크게 의미가 없음
 		request.setAttribute("nowLat", nowLat);
 		request.setAttribute("nowLng", nowLng);
 		
