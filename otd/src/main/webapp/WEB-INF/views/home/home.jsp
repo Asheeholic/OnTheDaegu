@@ -14,8 +14,9 @@
  </div>
  	<div>
  		<a href="signUpForm.do">Test 회원가입영역폼</a><br/>
- 		<a href="loginForm.do">Test 로그인</a>
+ 		<a href="loginForm.do">Test 로그인</a><br/>
  		
+ 		<a href="memberList.do">Test 회원전체</a>
  	</div>
 
  <div id="notice" align="center">

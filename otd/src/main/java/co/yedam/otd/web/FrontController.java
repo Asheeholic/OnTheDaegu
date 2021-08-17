@@ -17,6 +17,8 @@ import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
 import co.yedam.otd.login.command.MemberInsertCommand;
 import co.yedam.otd.login.command.SignUpformCommand;
+import co.yedam.otd.member.command.MemberListCommand;
+import co.yedam.otd.member.command.MemberSelectCommand;
 import co.yedam.otd.login.command.LoginFormCommand;
 import co.yedam.otd.login.command.MemberCheckIdAndPassword;
 import co.yedam.otd.notice.command.NoticeDelete;
@@ -47,6 +49,10 @@ public class FrontController extends HttpServlet {
 		map.put("/loginForm.do", new LoginFormCommand()); //로그인폼 
 		map.put("/login.do", new LoginCommand()); //OTD 로그인 진행 과정
 		map.put("/memberCheckIdAndPassword.do", new MemberCheckIdAndPassword()); //로그인 체크과정
+		
+		//OTD 마이페이지
+		map.put("/memberList.do", new MemberListCommand()); //맴버전체리스트(관리자용)
+		map.put("/memberSelect.do", new MemberSelectCommand()); //OTD 한건 회원 조회 
 		
 		// Notice -김주영
 		map.put("/noticeList.do", new NoticeList()); // 공지목록
