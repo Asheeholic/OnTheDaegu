@@ -16,6 +16,7 @@ public class DataSource {
 			String resource = "config/mybatis-config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+			System.out.println("연결 성공");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
