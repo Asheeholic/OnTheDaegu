@@ -31,6 +31,8 @@ import co.yedam.otd.notice.command.NoticeUpdate;
 import co.yedam.otd.notice.command.NoticeUpdateForm;
 import co.yedam.otd.review.command.ReviewInsert;
 import co.yedam.otd.review.command.ReviewList;
+import co.yedam.otd.review.command.ReviewUpdate;
+import co.yedam.otd.review.command.ReviewUpdateForm;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -72,6 +74,8 @@ public class FrontController extends HttpServlet {
 		// Review -김주영
 		map.put("/reviewList.do", new ReviewList()); // 리뷰글목록
 		map.put("/reviewInsert.do", new ReviewInsert()); // 리뷰작성
+		map.put("/reviewUpdateForm.do", new ReviewUpdateForm()); // 리뷰수정폼
+		map.put("/reviewUpdate.do", new ReviewUpdate()); // 리뷰수정
 	}
 
 

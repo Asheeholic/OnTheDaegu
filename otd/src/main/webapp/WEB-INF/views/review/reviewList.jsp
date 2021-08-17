@@ -34,7 +34,21 @@
        				
        				let tr2 = $('<tr />');
        				let td_content = $('<td />').attr('colspan', '3').attr('height', '150').text(data[i].reviewContent);
-       				let td_button = $('<td />').text('수정삭제버튼');
+       				let td_button = $('<td />');
+       				let updateBtn = $('<button />').attr('id', 'updateBtn').text('수정');
+       				$(updateBtn).on('click', function(){
+       					// 수정 함수
+       					$.ajax({
+       						url: 'reviewUpdateForm.do',
+       						method: 'post',
+       						data: {reviewNo: reviewNo},
+       						success: function(){
+       							//
+       						},
+       						error: function(){}
+       					});
+       				});
+       				$(td_button).append(updateBtn)
 					$(tr2).append(td_content, td_button);
 					
        				$(table).append(tr1, tr2, br);
