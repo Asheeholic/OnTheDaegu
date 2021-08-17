@@ -32,15 +32,12 @@
        				let td_like = $('<td />').attr('width', '130').text(data[i].reviewLike);
        				$(tr1).append(th_writer, td_writer, th_like, td_like);
        				
-       				let tr2 = $('<tr />').attr('rowspan', '3');
+       				let tr2 = $('<tr />');
        				let td_content = $('<td />').attr('colspan', '3').attr('height', '150').text(data[i].reviewContent);
        				let td_button = $('<td />').text('수정삭제버튼');
 					$(tr2).append(td_content, td_button);
 					
-					let tr3 = $('<tr />');
-					let tr4 = $('<tr />');
-					
-       				$(table).append(tr1, tr2, tr3, tr4, br);
+       				$(table).append(tr1, tr2, br);
         		}
         		$('#list').append(table);
         	}
@@ -50,12 +47,22 @@
 <body>
 	<h3>입력</h3>
 	<div id="insert">
-		<form id="frm" action="../../AddItemServlet.do" method="post">
-		   작성자 : <input type="text" id ="email" name ="email" value="세션활용이메일"> <br>
-		   별점 : <input type="text" id ="reviewLike" name ="reviewLike" required="required"> <br>
-		   후기 : <input type="text" id = "reviewContent" name ="reviewContent" required="required"> <br>
+		<form id="frm" action="ReviewInsertServlet" method="post">
+			<table border="1">
+				<tr>
+					<th width="90">작성자</th>
+					<td width="200"><input type="text" id ="email" name ="email" value="세션활용이메일"></td>
+					<th width="90">별점</th>
+					<td width="130"><input type="text" id ="reviewLike" name ="reviewLike" required="required"></td>
+				</tr>
+				<tr>
+					<td colspan="4" height="150">
+						<textarea rows="9" cols="70" id = "reviewContent" name ="reviewContent" required="required"></textarea>
+					</td>
+				</tr>
+			</table>
 		   <br>
-		   <input type="submit" value="저장">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소">
+		   <input type="submit" value="글쓰기">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소">
 		</form>	
 	</div>
 	
