@@ -8,5 +8,6 @@
 </head>
 <body>
  여기가 홈이야
+ <a class="buyTicket" href="buyTicketForm.do">이용권 구매</a>
 </body>
 </html>
