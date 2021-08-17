@@ -7,10 +7,7 @@
 <meta charset="UTF-8">
 <title>관리자 전용 회원 리스트</title>
 <script>
-function idSend(n){
-	idFrm.id.value = n;
-	idFrm.submit();
-}
+
 </script>
 </head>
 <body>
@@ -22,21 +19,33 @@ function idSend(n){
 		<table border="1">
 			<tr>
 				<th>아이디</th>
-				<th>이름</th>			
+				<th>이름</th>
+				<th>회원정보</th>			
 			</tr>
-			<c:forEach var="otdList" items="${otdMemberList}">
-			<tr onclick="idSend('${otdList.email}')">	
-				<td>${otdList.email}</td>
-				<td>${otdList.name}</td>
+			<c:forEach var="otd" items="${otdMemberList}">
+			<tr onclick="memberInfoSend('${otd.email}')">	
+				<td>${otd.email}</td>
+				<td>${otd.name}</td>
+				<td>${otd.author}</td>
 			</tr>	
 			</c:forEach>
 		</table>
 	</div>
 	<br/>
 	<div>
-		<form id="idFrm" name="idFrm" action="memberSelect.do" method="post">
-			<input type="hidden" id="id" name="id">
+		<!-- 수정폼으로 -->
+		<form id="selectFrm" name="selectFrm" action="memberSelectForm.do" method="post">
+			<input type="hidden" id ="email" name ="email" value='${otd.email }'>
+			<input type="hidden" id ="password" name="password" value='${otd.password }'>
+			<input type="hidden" id = "name"  name="name" value='${otd.name }' >
+			<input type="hidden" id ="phone" name ="phone" value='${otd.phone }'>
 		</form>
 	</div>
+<script type="text/javascript">
+function memberInfoSend(n){
+	selectFrm.email.value = n;
+	selectFrm.submit();
+}
+</script>
 </body>
 </html>
