@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
 import co.yedam.otd.event.command.EventList;
+import co.yedam.otd.faq.command.FaqSelectList;
+import co.yedam.otd.faq.command.FaqSelectListHome;
 import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
 import co.yedam.otd.login.command.MemberInsertCommand;
@@ -62,6 +64,10 @@ public class FrontController extends HttpServlet {
 		
 		// Event -김주영
 		map.put("/eventList.do", new EventList()); // 이벤트목록
+		
+		// FAQ -김주영
+		map.put("/faqSelectListHome.do", new FaqSelectListHome()); // FAQ 목록 홈
+		map.put("/faqSelectList.do", new FaqSelectList()); // FAQ 목록
 		
 		// Review -김주영
 		map.put("/reviewList.do", new ReviewList()); // 리뷰글목록

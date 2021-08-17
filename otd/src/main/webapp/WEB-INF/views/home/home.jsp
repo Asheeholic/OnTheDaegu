@@ -20,6 +20,10 @@
 	 	이벤트 테스트 좀 하겠습니다 <br>
 	 	<a href="eventList.do">이벤트목록</a>
 	 </div>	 
+	 <div id="faq" align="center">
+	 	FAQ 테스트 좀 하겠습니다 <br>
+	 	<a href="faqSelectListHome.do">FAQ목록</a>
+	 </div>	 
 
  <div>
  	${sessionName }님 환영합니다.
