@@ -49,5 +49,6 @@
 			resource="co/yedam/otd/member/serviceImpl/member-map.xml" />
 		<mapper
 			resource="co/yedam/otd/payment/serviceImpl/ticket-map.xml" /><!-- 유정 -->
+
 	</mappers>
 </configuration>

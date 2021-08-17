@@ -35,5 +35,6 @@ function buyTicket(n) {
 	<form id="frm" action="buyTicketForm.do" method="post">
 		<input type="hidden" id="ticket" name="ticket">
 	</form>
+
 </body>
 </html>

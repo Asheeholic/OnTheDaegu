@@ -34,9 +34,10 @@ public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private HashMap<String, Command> map = new HashMap<String, Command>();
 
-	public FrontController() {
-		super();
-	}
+    public FrontController() {
+        super();
+    }
+
 
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/home.do", new HomeCommand()); // 메인페이지
@@ -57,13 +58,14 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 공지수정폼
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지삭제
-
+		
 		// 유정
 		map.put("/buyTicketForm.do", new BuyTicketForm()); // 티켓구매 폼
 		map.put("/payment.do", new Payment()); // 결제창
 		//map.put("/paymentform.do", new PaymentForm()); // 결제창 폼
 		// map.put("/history.do", new History());
 	}
+
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
