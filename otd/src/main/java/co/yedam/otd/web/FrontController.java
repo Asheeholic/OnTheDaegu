@@ -20,6 +20,7 @@ import co.yedam.otd.notice.command.NoticeList;
 import co.yedam.otd.notice.command.NoticeSelect;
 import co.yedam.otd.notice.command.NoticeUpdate;
 import co.yedam.otd.notice.command.NoticeUpdateForm;
+import co.yedam.otd.review.command.ReviewInsert;
 import co.yedam.otd.review.command.ReviewList;
 
 @WebServlet("*.do")
@@ -46,6 +47,7 @@ public class FrontController extends HttpServlet {
 		
 		// Review -김주영
 		map.put("/reviewList.do", new ReviewList()); // 리뷰글목록
+		map.put("/reviewInsert.do", new ReviewInsert()); // 리뷰작성
 	}
 
 

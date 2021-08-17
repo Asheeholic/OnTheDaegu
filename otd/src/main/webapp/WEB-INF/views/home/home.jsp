@@ -14,7 +14,7 @@
 	 </div>
 	 <div id="review" align="center">
 	 	리뷰 테스트 좀 하겠습니다 <br>
-	 	<a href="reviewList.do">리뷰목록</a> 
+	 	<a href="reviewList.do">리뷰목록</a>
 	 </div>
 </body>
 </html>

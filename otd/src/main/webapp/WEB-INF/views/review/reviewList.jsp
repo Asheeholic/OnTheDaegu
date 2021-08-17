@@ -42,13 +42,25 @@
 					
        				$(table).append(tr1, tr2, tr3, tr4, br);
         		}
-        		$('#show').append(table);
+        		$('#list').append(table);
         	}
    
         </script>	
 </head>
 <body>
-	<div id="show">
+	<h3>입력</h3>
+	<div id="insert">
+		<form id="frm" action="../../AddItemServlet.do" method="post">
+		   작성자 : <input type="text" id ="email" name ="email" value="세션활용이메일"> <br>
+		   별점 : <input type="text" id ="reviewLike" name ="reviewLike" required="required"> <br>
+		   후기 : <input type="text" id = "reviewContent" name ="reviewContent" required="required"> <br>
+		   <br>
+		   <input type="submit" value="저장">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소">
+		</form>	
+	</div>
+	
+	<h3>목록</h3>
+	<div id="list">
 	</div>
 <!--  
 	<div align="center">
