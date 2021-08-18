@@ -26,11 +26,15 @@ import co.yedam.otd.notice.command.NoticeList;
 import co.yedam.otd.notice.command.NoticeSelect;
 import co.yedam.otd.notice.command.NoticeUpdate;
 import co.yedam.otd.notice.command.NoticeUpdateForm;
+import co.yedam.otd.payment.command.BuyTicketFormCommand;
+import co.yedam.otd.payment.command.InsertDBCommand;
+import co.yedam.otd.payment.command.PaymentCommand;
+import co.yedam.otd.payment.command.ReturnTicketFormCommand;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private HashMap<String, Command> map = new HashMap<String, Command>();   
+	private HashMap<String, Command> map = new HashMap<String, Command>();
 
     public FrontController() {
         super();
@@ -38,8 +42,8 @@ public class FrontController extends HttpServlet {
 
 
 	public void init(ServletConfig config) throws ServletException {
-		map.put("/home.do", new HomeCommand());  //메인페이지
-		
+		map.put("/home.do", new HomeCommand()); // 메인페이지
+
 		//로그인 & 회원가입
 		map.put("/signUpForm.do", new SignUpformCommand()); //회원가입 폼
 		map.put("/idCheck.do", new IdCheckCommand()); // 아이디중복체크
@@ -57,18 +61,25 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지삭제
 	
+		// 유정
+		map.put("/buyTicketForm.do", new BuyTicketFormCommand()); // 티켓구매 폼
+		map.put("/payment.do", new PaymentCommand()); // 결제창
+		map.put("/returnTicketForm.do", new ReturnTicketFormCommand()); //환불 폼
+		map.put("/insertDB.do", new InsertDBCommand()); //결제내역
+		//map.put("/paymentform.do", new PaymentForm()); // 결제창 폼
 	}
 
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String uri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String path = uri.substring(contextPath.length());
-		
+
 		Command command = map.get(path);
 		String viewPage = command.execute(request, response);
-		
+
 		if (!viewPage.endsWith(".do")) {
 			if (!viewPage.endsWith(".jsp")) {
 				viewPage = viewPage + ".tiles"; // home/home 타일즈
@@ -76,7 +87,7 @@ public class FrontController extends HttpServlet {
 				viewPage = "/WEB-INF/views/" + viewPage; // home/home.jsp 타일즈 안탐
 			}
 		}
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}

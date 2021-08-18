@@ -13,4 +13,5 @@ public class MemberVO {
 	private String state;
 	private String author;
 	private String ticketNo;
+
 }
