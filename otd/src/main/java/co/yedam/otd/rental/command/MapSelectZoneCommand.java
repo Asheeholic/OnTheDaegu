@@ -8,19 +8,23 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.otd.common.Command;
 import co.yedam.otd.rental.service.RentalService;
 import co.yedam.otd.rental.serviceImpl.RentalServiceImpl;
+import co.yedam.otd.rental.vo.BicycleVO;
 import co.yedam.otd.rental.vo.ZoneVO;
 
-public class MapPickupSystemCommand implements Command {
+public class MapSelectZoneCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		RentalService dao = new RentalServiceImpl();
+		// TODO Auto-generated method stub
 		
-		List<ZoneVO> list = dao.zoneList();
+		int parkNum = Integer.valueOf(request.getParameter("parkNumber"));
+		
+		RentalService dao = new RentalServiceImpl();
+		List<BicycleVO> list = dao.zoneSelectAndBicycleList(parkNum);
 		
 		request.setAttribute("list", list);
 		
-		return "maps/mapZoneList";
+		return "maps/mapSelectZone";
 	}
 
 }

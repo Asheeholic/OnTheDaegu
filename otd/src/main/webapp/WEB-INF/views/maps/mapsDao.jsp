@@ -9,9 +9,13 @@
 </head>
 <body>
 	<h1>test</h1>
-	<h3>${list[0].parkLocation }</h3>
+	<h3></h3>
 	<c:forEach var="zone" items="${list }">
-		${zone.parkLocation }<br>
+		${zone.parkNumber }<br>
+		${zone.parkLat }<br>
+		${zone.parkLng }<br>
 	</c:forEach>
+	
+	
 </body>
 </html>

@@ -11,7 +11,7 @@
 
  <a href="mapDeliverySystem.do">맵 링크</a>
  <a href="mapChoiceForm.do">대여 선택 창</a>
- 
+ <a href="mapDaoTest.do">대여 dao test창</a>
  <div>
  	${sessionName }님 환영합니다.
  </div>

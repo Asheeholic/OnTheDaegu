@@ -12,43 +12,43 @@ import co.yedam.otd.rental.vo.ZoneVO;
 
 public class RentalServiceImpl implements RentalService {
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private RentalMapper map = sqlSession.getMapper(RentalMapper.class);
 	
 	@Override
 	public List<ZoneVO> zoneList() {
 		// TODO Auto-generated method stub
-		return null;
+		return map.zoneList();
 	}
 	@Override
 	public ZoneVO zoneSelectOne(int parkNum) {
 		// TODO Auto-generated method stub
-		return null;
+		return map.zoneSelectOne(parkNum);
 	}
 	@Override
 	public int zoneUpdate(int parkNum) {
 		// TODO Auto-generated method stub
-		return 0;
+		return map.zoneUpdate(parkNum);
 	}
 	@Override
 	public List<BicycleVO> bicycleListAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return map.bicycleListAll();
 	}
 	@Override
 	public List<BicycleVO> zoneSelectAndBicycleList(int parkNum) {
 		// TODO Auto-generated method stub
-		return null;
+		return map.zoneSelectAndBicycleList(parkNum);
 	}
 	@Override
 	public BicycleVO bicycleSelectOne(int bicycleNum) {
 		// TODO Auto-generated method stub
-		return null;
+		return map.bicycleSelectOne(bicycleNum);
 	}
 	@Override
 	public int bicycleUpdate(int bicycleNum) {
 		// TODO Auto-generated method stub
-		return 0;
+		return map.bicycleUpdate(bicycleNum);
 	}
 	
 	

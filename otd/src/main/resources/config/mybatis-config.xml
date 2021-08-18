@@ -17,6 +17,11 @@
 		<typeAlias type="co.yedam.otd.notice.vo.NoticeVO" alias="NoticeVO" /> <!-- 공지사항 VO 경로 typeAliases /김주영 -->
 		<!-- MemberVO  -->
   		<typeAlias type="co.yedam.otd.member.vo.MemberVO" alias="MemberVO"/>
+  		
+  		<!-- rental service VOs -->
+  		<typeAlias type="co.yedam.otd.rental.vo.BicycleVO" alias="BicycleVO"/>
+  		<typeAlias type="co.yedam.otd.rental.vo.ZoneVO" alias="ZoneVO"/>
+  		
 	</typeAliases>
 
 	<environments default="development">

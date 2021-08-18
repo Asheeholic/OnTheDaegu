@@ -18,6 +18,8 @@ import co.yedam.otd.rental.command.MapDaoTestCommand;
 import co.yedam.otd.rental.command.MapDeliverBikeCommand;
 import co.yedam.otd.rental.command.MapDeliverySystemCommand;
 import co.yedam.otd.rental.command.MapPickupSystemCommand;
+import co.yedam.otd.rental.command.MapSelectBicycleCommand;
+import co.yedam.otd.rental.command.MapSelectZoneCommand;
 import co.yedam.otd.rental.command.MapTimeShowCommand;
 import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
@@ -60,7 +62,8 @@ public class FrontController extends HttpServlet {
 		
 		// pickup system
 		map.put("/mapPickupSystem.do", new MapPickupSystemCommand());
-		
+		map.put("/mapSelectZone.do", new MapSelectZoneCommand());
+		map.put("/mapSelectBicycle.do", new MapSelectBicycleCommand());
 		
 		//로그인 & 회원가입
 		map.put("/signUpForm.do", new SignUpformCommand()); //회원가입 폼
