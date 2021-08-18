@@ -174,6 +174,7 @@ $(window).on("load", function() {
     
     // 배달 시작 페이지 호출
     // 처음 좌표만 보내면 될듯 함.
+    // 안보내도 되고..?
     $('#deliveryStart').on("click", function() {
     
 		$('#nowLat').val(now._lat);

@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 
-public class MapChoiceFormCommand implements Command {
+public class MapPickupSystemCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return "maps/mapChoice";
+		return "maps/mapZoneList";
 	}
 
 }

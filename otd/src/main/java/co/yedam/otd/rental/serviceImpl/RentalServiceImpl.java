@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import co.yedam.otd.common.DataSource;
 import co.yedam.otd.rental.service.RentalMapper;
 import co.yedam.otd.rental.service.RentalService;
+import co.yedam.otd.rental.vo.BicycleVO;
 import co.yedam.otd.rental.vo.ZoneVO;
 
 public class RentalServiceImpl implements RentalService {
@@ -17,7 +18,38 @@ public class RentalServiceImpl implements RentalService {
 	@Override
 	public List<ZoneVO> zoneList() {
 		// TODO Auto-generated method stub
-		return map.zoneList();
+		return null;
 	}
-
+	@Override
+	public ZoneVO zoneSelectOne(int parkNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public int zoneUpdate(int parkNum) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public List<BicycleVO> bicycleListAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<BicycleVO> zoneSelectAndBicycleList(int parkNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public BicycleVO bicycleSelectOne(int bicycleNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public int bicycleUpdate(int bicycleNum) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
 }
