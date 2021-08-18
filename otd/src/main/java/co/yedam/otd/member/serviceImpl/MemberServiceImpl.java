@@ -53,7 +53,12 @@ public class MemberServiceImpl implements MemberService {
 		// TODO OTD 회원 수정
 		return map.memberUpdate(vo);
 	}
-
+	public int memberPassUpdate(MemberVO vo){
+		// OTD 회원 비밀번호변경
+		
+		return map.memberPassUpdate(vo);
+	}
+	
 	@Override
 	public int memberDelete(MemberVO vo) {
 		// TODO OTD 회원 삭제(State 'Y' -> 'D')

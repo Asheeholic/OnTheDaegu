@@ -18,6 +18,8 @@
  		
  		<a href="memberList.do">Test 회원전체</a>
  		<a href="getPayHistory.do">Test 히스토리영역</a>
+ 		<a href="memberSelect.do">Test 마이페이지 개인정보</a>
+ 		
  	</div>
 
  <div id="notice" align="center">
