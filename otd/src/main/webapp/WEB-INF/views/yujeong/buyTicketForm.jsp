@@ -52,13 +52,9 @@
 						<tr>
 							<th width="200">결제수단</th>
 							<td>
-								<label>
-								<input type="radio" name="pay" value="card">신용/체크카드
-								</label> 
-								<label><input type="radio"
-									name="pay" value="trans">자동이체</label> <label><input
-									type="radio" name="pay" value="kakao">카카오페이</label> <label><input
-									type="radio" name="pay" value="naver">네이버페이</label></td>
+								<label><input type="radio" name="pay" value="card">신용/체크카드</label> 
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="radio" name="pay" value="trans">자동이체</label>
+								</td>
 						</tr>
 						<tr>
 							<th width="200">결제안내</th>

@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import co.yedam.otd.common.DataSource;
 import co.yedam.otd.payment.service.TicketMapper;
 import co.yedam.otd.payment.service.TicketService;
+import co.yedam.otd.payment.vo.HistoryVO;
 import co.yedam.otd.payment.vo.PaymentVO;
 import co.yedam.otd.payment.vo.TicketVO;
 
@@ -36,6 +37,22 @@ public class TicketServiceImpl implements TicketService {
 	public PaymentVO paymentSelect(PaymentVO vo) {
 		// 결제방법 조회(카드, 계좌이체, 00페이 등)
 		return map.paymentSelect(vo);
+	}
+
+	@Override
+	public int paymentInsert(PaymentVO vo) {
+		// 결제정보 추가
+		int n = map.paymentInsert(vo);
+		sqlSession.commit();
+		return n;
+	}
+
+	@Override
+	public int historyInsert(HistoryVO vo) {
+		// 결제내역 추가
+		int n = map.historyInsert(vo);
+		sqlSession.commit();
+		return n;
 	}
 
 }

@@ -27,6 +27,7 @@ import co.yedam.otd.notice.command.NoticeSelect;
 import co.yedam.otd.notice.command.NoticeUpdate;
 import co.yedam.otd.notice.command.NoticeUpdateForm;
 import co.yedam.otd.payment.command.BuyTicketFormCommand;
+import co.yedam.otd.payment.command.History;
 import co.yedam.otd.payment.command.PaymentCommand;
 import co.yedam.otd.payment.command.ReturnTicketFormCommand;
 
@@ -64,8 +65,8 @@ public class FrontController extends HttpServlet {
 		map.put("/buyTicketForm.do", new BuyTicketFormCommand()); // 티켓구매 폼
 		map.put("/payment.do", new PaymentCommand()); // 결제창
 		map.put("/returnTicketForm.do", new ReturnTicketFormCommand()); //환불 폼
+		map.put("/history.do", new History()); //결제내역
 		//map.put("/paymentform.do", new PaymentForm()); // 결제창 폼
-		// map.put("/history.do", new History());
 	}
 
 

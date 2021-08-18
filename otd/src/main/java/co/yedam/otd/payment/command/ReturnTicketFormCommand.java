@@ -10,7 +10,7 @@ public class ReturnTicketFormCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// 환불 선택 창
-		return "yujeong/returnTicketForm";
+		return null;
 	}
 
 }

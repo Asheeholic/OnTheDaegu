@@ -4,7 +4,7 @@ public class PaymentVO {
 	private int payment_no;
 	private String email;
 	private String payment_price;
-	private String method;
+	private String payment_method;
 
 	public int getPayment_no() {
 		return payment_no;
@@ -30,12 +30,12 @@ public class PaymentVO {
 		this.payment_price = payment_price;
 	}
 
-	public String getMethod() {
-		return method;
+	public String getPayment_method() {
+		return payment_method;
 	}
 
-	public void setMethod(String method) {
-		this.method = method;
+	public void setPayment_method(String payment_method) {
+		this.payment_method = payment_method;
 	}
 
 }
