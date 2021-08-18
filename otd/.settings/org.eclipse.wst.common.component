@@ -1,53 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
                         
+=======
+                                
+    
+    
+>>>>>>> refs/heads/main
     
     
     
     
     <wb-module deploy-name="otd-0.0.1-SNAPSHOT">
+<<<<<<< HEAD
                                                 
+=======
+                                                                
+        
+        
+>>>>>>> refs/heads/main
         
         
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+<<<<<<< HEAD
                                                 
+=======
+                                                                
+        
+        
+>>>>>>> refs/heads/main
         
         
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+<<<<<<< HEAD
                                                 
+=======
+                                                                
+        
+        
+>>>>>>> refs/heads/main
         
         
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<<<<<<< HEAD
                                                 
+=======
+                                                                
+        
+        
+>>>>>>> refs/heads/main
         
         
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+<<<<<<< HEAD
                                                 
+=======
+                                                                
+        
+        
+>>>>>>> refs/heads/main
         
         
         
         
         <property name="context-root" value="otd"/>
+<<<<<<< HEAD
                                                 
+=======
+                                                                
+        
+        
+>>>>>>> refs/heads/main
         
         
         
         
         <property name="java-output-path" value="/otd/target/classes"/>
+<<<<<<< HEAD
                                             
+=======
+                                                            
+    
+    
+>>>>>>> refs/heads/main
     
     
     
     
     </wb-module>
+<<<<<<< HEAD
                     
+=======
+                            
+
+
+>>>>>>> refs/heads/main
 
 
 

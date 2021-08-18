@@ -12,5 +12,11 @@ public class MemberVO {
 	private String phone;
 	private String state;
 	private String author;
-	private String ticketNo;
+
+	@Override
+	public String toString() {
+		return "MemberVO [email=" + email + ", password=" + password + ", name=" + name + ", phone=" + phone
+				+ ", state=" + state + ", author=" + author + " ]";
+	}
+	
 }
