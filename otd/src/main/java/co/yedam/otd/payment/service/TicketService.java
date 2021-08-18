@@ -19,10 +19,8 @@ public interface TicketService {
 
 	int paymentInsert(PaymentVO vo);
 
-	int paymentDelete(PaymentVO vo);
-
 	// 결제후 히스토리 기록
 	int historyInsert(HistoryVO vo);
 
-	int historyDelete(HistoryVO vo);
+	int historyUpdate(HistoryVO vo);
 }

@@ -56,15 +56,11 @@ public class TicketServiceImpl implements TicketService {
 	}
 
 	@Override
-	public int paymentDelete(PaymentVO vo) {
-		// 결제정보 삭제
-		return 0;
-	}
-
-	@Override
-	public int historyDelete(HistoryVO vo) {
+	public int historyUpdate(HistoryVO vo) {
 		// 결제내역 삭제
-		return 0;
+		int n = map.historyUpdate(vo);
+		sqlSession.commit();
+		return n;
 	}
 
 }

@@ -29,8 +29,14 @@
 		INSERT INTO history(num, email, history_date, ticket_code, ticket_no) VALUES(h_seq.nextval, #{email}, #{history_date}, #{ticket_code}, #{ticket_no})
 	</insert>
 
+	<!-- 결제내역 수정 -->
+	<update id="historyUpdate" parameterType="HistoryVO">
+		UPDATE history SET ticket_no = #{ticket_no} WHERE email = #{email}
+	</update>
+
 	<!-- 결제정보 추가 -->
 	<insert id="paymentInsert">
 		INSERT INTO payment VALUES (p_seq.nextval, #{email}, #{payment_price}, #{payment_method})
 	</insert>
+	
 </mapper>
