@@ -6,21 +6,32 @@ import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.otd.common.DataSource;
 import co.yedam.otd.faq.service.FaqMapper;
+import co.yedam.otd.faq.service.FaqService;
 import co.yedam.otd.faq.vo.FaqVO;
 
-public class FaqServiceImpl implements FaqMapper {
+public class FaqServiceImpl implements FaqService {
 	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private FaqMapper map = sqlSession.getMapper(FaqMapper.class);
-
 	@Override
-	public List<FaqVO> faqSelectList(String category) {
-		// TODO FAQ목록
-		return map.faqSelectList(category);
+	public List<FaqVO> faqRentalOffice() {
+		return map.faqRentalOffice();
+	}
+	@Override
+	public List<FaqVO> faqPaymentRefundMileage() {
+		return map.faqPaymentRefundMileage();
+	}
+	@Override
+	public List<FaqVO> faqUseInformation() {
+		return map.faqUseInformation();
+	}
+	@Override
+	public List<FaqVO> faqBicycleFacilityManagement() {
+		return map.faqBicycleFacilityManagement();
+	}
+	@Override
+	public List<FaqVO> faqRentalReturn() {
+		return map.faqRentalReturn();
 	}
 
-	@Override
-	public List<FaqVO> faqList() {
-		return map.faqList();
-	}
 
 }

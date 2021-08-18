@@ -30,7 +30,7 @@
 </head>
 <body>
 	<div id="show">
-		대여소
+		자전거 및 시설관리
 	</div>
 	<div align="center">
 		<c:forEach var="faq" items="${list}">

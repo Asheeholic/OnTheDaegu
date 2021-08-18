@@ -30,7 +30,7 @@
 </head>
 <body>
 	<div id="show">
-		대여소
+		대여/반납
 	</div>
 	<div align="center">
 		<c:forEach var="faq" items="${list}">

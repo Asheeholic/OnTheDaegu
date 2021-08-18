@@ -4,7 +4,7 @@ import java.util.List;
 
 import co.yedam.otd.faq.vo.FaqVO;
 
-public interface FaqMapper {
+public interface FaqService {
 	List<FaqVO> faqRentalOffice(); // 자주 묻는 질문: 대여소
 	List<FaqVO> faqPaymentRefundMileage(); // 자주 묻는 질문: 결제/환불/마일리지
 	List<FaqVO> faqUseInformation(); // 자주 묻는 질문: 이용안내

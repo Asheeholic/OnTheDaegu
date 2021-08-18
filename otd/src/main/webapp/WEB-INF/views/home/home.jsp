@@ -22,7 +22,7 @@
 	 </div>	 
 	 <div id="faq" align="center">
 	 	FAQ 테스트 좀 하겠습니다 <br>
-	 	<a href="faqSelectListHome.do">FAQ목록</a>
+	 	<a href="faqHome.do">FAQ목록</a>
 	 </div>	 
 
  <div>

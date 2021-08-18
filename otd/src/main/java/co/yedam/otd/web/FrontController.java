@@ -2,6 +2,7 @@ package co.yedam.otd.web;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -14,6 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
 import co.yedam.otd.event.command.EventList;
+import co.yedam.otd.faq.command.FaqBicycleFacilityManagement;
+import co.yedam.otd.faq.command.FaqHome;
+import co.yedam.otd.faq.command.FaqPaymentRefundMileage;
+import co.yedam.otd.faq.command.FaqRentalOffice;
+import co.yedam.otd.faq.command.FaqRentalReturn;
+import co.yedam.otd.faq.command.FaqUseInformation;
+import co.yedam.otd.faq.vo.FaqVO;
 import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
 import co.yedam.otd.login.command.MemberInsertCommand;
@@ -74,8 +82,12 @@ public class FrontController extends HttpServlet {
 		map.put("/reviewDelete.do", new ReviewDelete()); // 리뷰삭제
 
 		// FAQ -김주영
-//		map.put("/faqSelectListHome.do", new FaqSelectListHome()); // FAQ 목록 홈
-//		map.put("/faqSelectList.do", new FaqSelectList()); // FAQ 목록
+		map.put("/faqHome.do", new FaqHome()); // FAQ 목록 홈
+		map.put("/faqRentalOffice.do", new FaqRentalOffice()); // 자주 묻는 질문: 대여소
+		map.put("/faqPaymentRefundMileage.do", new FaqPaymentRefundMileage()); // 자주 묻는 질문: 결제/환불/마일리지
+		map.put("/faqUseInformation.do", new FaqUseInformation()); // 자주 묻는 질문: 이용안내
+		map.put("/faqBicycleFacilityManagement.do", new FaqBicycleFacilityManagement()); // 자주 묻는 질문: 자전거 및 시설관리
+		map.put("/faqRentalReturn.do", new FaqRentalReturn()); // 자주 묻는 질문: 대여/반납
 	}
 
 

@@ -30,7 +30,7 @@
 </head>
 <body>
 	<div id="show">
-		대여소
+		결제/환불/마일리지
 	</div>
 	<div align="center">
 		<c:forEach var="faq" items="${list}">
