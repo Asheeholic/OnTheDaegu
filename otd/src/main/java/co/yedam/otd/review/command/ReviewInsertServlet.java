@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -39,12 +40,15 @@ public class ReviewInsertServlet extends HttpServlet {
 		vo.setReviewLike(Integer.valueOf(request.getParameter("reviewLike")));
 		vo.setReviewContent(request.getParameter("reviewContent"));
 		dao.reviewInsert(vo);
+		HttpSession session = request.getSession();
+		String sessionValue = (String)session.getAttribute("sessionEmail");
+		System.out.println(sessionValue);
 		
 		Gson gson = new GsonBuilder().create();
 		response.getWriter().print(gson.toJson(vo));
 		
 		SqlSession sqlSession = DataSource.getInstance().openSession();
-		sqlSession.close();		
+		sqlSession.close();	
 	}
 
-}
+}	

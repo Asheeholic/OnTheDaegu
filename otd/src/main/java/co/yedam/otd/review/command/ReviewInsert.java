@@ -9,8 +9,8 @@ public class ReviewInsert implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO 리뷰작성
-		return "review/reviewList";
+		// TODO 리뷰 작성
+		return null;
 	}
 
 }

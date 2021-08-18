@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
 import co.yedam.otd.event.command.EventList;
-import co.yedam.otd.faq.command.FaqSelectList;
-import co.yedam.otd.faq.command.FaqSelectListHome;
 import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
 import co.yedam.otd.login.command.MemberInsertCommand;
@@ -29,8 +27,9 @@ import co.yedam.otd.notice.command.NoticeList;
 import co.yedam.otd.notice.command.NoticeSelect;
 import co.yedam.otd.notice.command.NoticeUpdate;
 import co.yedam.otd.notice.command.NoticeUpdateForm;
-import co.yedam.otd.review.command.ReviewInsert;
+import co.yedam.otd.review.command.ReviewDelete;
 import co.yedam.otd.review.command.ReviewList;
+import co.yedam.otd.review.command.ReviewSelect;
 import co.yedam.otd.review.command.ReviewUpdate;
 import co.yedam.otd.review.command.ReviewUpdateForm;
 
@@ -67,15 +66,16 @@ public class FrontController extends HttpServlet {
 		// Event -김주영
 		map.put("/eventList.do", new EventList()); // 이벤트목록
 		
-		// FAQ -김주영
-		map.put("/faqSelectListHome.do", new FaqSelectListHome()); // FAQ 목록 홈
-		map.put("/faqSelectList.do", new FaqSelectList()); // FAQ 목록
-		
 		// Review -김주영
 		map.put("/reviewList.do", new ReviewList()); // 리뷰글목록
-		map.put("/reviewInsert.do", new ReviewInsert()); // 리뷰작성
+		map.put("/reviewSelect.do", new ReviewSelect()); // 리뷰한건조회
 		map.put("/reviewUpdateForm.do", new ReviewUpdateForm()); // 리뷰수정폼
 		map.put("/reviewUpdate.do", new ReviewUpdate()); // 리뷰수정
+		map.put("/reviewDelete.do", new ReviewDelete()); // 리뷰삭제
+
+		// FAQ -김주영
+//		map.put("/faqSelectListHome.do", new FaqSelectListHome()); // FAQ 목록 홈
+//		map.put("/faqSelectList.do", new FaqSelectList()); // FAQ 목록
 	}
 
 
