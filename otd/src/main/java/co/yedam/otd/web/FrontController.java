@@ -13,9 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
+import co.yedam.otd.rental.command.MapChoiceFormCommand;
 import co.yedam.otd.rental.command.MapDaoTestCommand;
 import co.yedam.otd.rental.command.MapDeliverBikeCommand;
-import co.yedam.otd.rental.command.MapTestCommand;
+import co.yedam.otd.rental.command.MapDeliverySystemCommand;
 import co.yedam.otd.rental.command.MapTimeShowCommand;
 import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
@@ -46,11 +47,18 @@ public class FrontController extends HttpServlet {
 		
 
 		// 대여 서비스 커맨드
-		map.put("/mapTest.do", new MapTestCommand());
+		
+		//dao test
 		map.put("/mapDaoTest.do", new MapDaoTestCommand());
+		
+		// delivery system
+		map.put("/mapDeliverySystem.do", new MapDeliverySystemCommand());
 		map.put("/mapDeliverBike.do", new MapDeliverBikeCommand());
 		map.put("/mapTimeShow.do", new MapTimeShowCommand());
-				
+		map.put("/mapChoiceForm.do", new MapChoiceFormCommand());
+		
+		
+		
 		//로그인 & 회원가입
 		map.put("/signUpForm.do", new SignUpformCommand()); //회원가입 폼
 		map.put("/idCheck.do", new IdCheckCommand()); // 아이디중복체크

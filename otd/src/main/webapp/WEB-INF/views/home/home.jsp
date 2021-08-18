@@ -9,8 +9,9 @@
 <body>
  여기가 홈이야
 
- <a href="mapTest.do">맵 링크</a>
- <a href="mapDaoTest.do">dao테스트</a>
+ <a href="mapDeliverySystem.do">맵 링크</a>
+ <a href="mapChoiceForm.do">대여 선택 창</a>
+ 
  <div>
  	${sessionName }님 환영합니다.
  </div>
