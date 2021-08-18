@@ -55,4 +55,16 @@ public class TicketServiceImpl implements TicketService {
 		return n;
 	}
 
+	@Override
+	public int paymentDelete(PaymentVO vo) {
+		// 결제정보 삭제
+		return 0;
+	}
+
+	@Override
+	public int historyDelete(HistoryVO vo) {
+		// 결제내역 삭제
+		return 0;
+	}
+
 }

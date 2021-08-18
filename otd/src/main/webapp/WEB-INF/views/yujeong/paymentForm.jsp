@@ -39,13 +39,13 @@
 <title>payment page</title>
 </head>
 <body>
-	<form name="frm" action="history.do" method="post">
+	<form name="frm" action="insertDB.do" method="post">
 		<!-- payment table -->
 		<input type="hidden" id="email" name="email" value="${sessionEmail}">
 		<input type="hidden" id="payment_price" name="payment_price" value="${ticket}">
 		<input type="hidden" id="payment_method" name="payment_method" value="${payment}">
 		<!-- history table -->
-		<input type="hidden" id="ticket_no" name="Ticket_no" value="">
+		<input type="hidden" id="ticket_no" name="ticket_no" value="">
 		<input type="hidden" id="history_date" name="history_date" value="">
 	</form>
 	<script>

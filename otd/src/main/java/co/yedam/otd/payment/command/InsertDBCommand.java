@@ -13,7 +13,7 @@ import co.yedam.otd.payment.serviceImpl.TicketServiceImpl;
 import co.yedam.otd.payment.vo.HistoryVO;
 import co.yedam.otd.payment.vo.PaymentVO;
 
-public class History implements Command {
+public class InsertDBCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -55,9 +55,7 @@ public class History implements Command {
 
 		dao.paymentInsert(pvo);
 		dao.historyInsert(hvo);
-		System.out.println(dao);
-		System.out.println(dao.paymentInsert(pvo));
-		System.out.println(dao.historyInsert(hvo));
+		
 		return "yujeong/history";
 	}
 
