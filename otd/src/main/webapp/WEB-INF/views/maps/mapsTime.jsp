@@ -12,6 +12,7 @@
 		<span id="title">남은 시간은</span>
 		<span id="time"></span>
 	</div>
+	<button id="homeBtn">메인으로</button>
 	<!-- 여기 time에 자바에서 넘어온 시간을 가지고 써야함. -->
 	<script>
 		$(window).on('load', function() {
@@ -27,6 +28,11 @@
 				$("#time").text(time);
 				i += 1;
 			}, 1000)
+			
+			$('#homeBtn').on('click', function() {
+				window.location.href = "home.do";
+			});
+			
 		});
 	</script>
 </body>

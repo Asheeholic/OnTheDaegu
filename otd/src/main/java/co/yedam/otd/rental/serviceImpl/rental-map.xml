@@ -10,4 +10,8 @@
 		select * from bicycle where park_number = #{parkNumber}
 	</select>
 	
+	<select id="bicycleSelectOne" resultType="BicycleVO">
+		select * from bicycle where bicycle_no = #{bicycleNo}
+	</select>
+	
 </mapper>

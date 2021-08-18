@@ -46,9 +46,9 @@ public class RentalServiceImpl implements RentalService {
 		return map.bicycleSelectOne(bicycleNum);
 	}
 	@Override
-	public int bicycleUpdate(int bicycleNum) {
+	public int bicycleUpdate(BicycleVO vo) {
 		// TODO Auto-generated method stub
-		return map.bicycleUpdate(bicycleNum);
+		return map.bicycleUpdate(vo);
 	}
 	
 	

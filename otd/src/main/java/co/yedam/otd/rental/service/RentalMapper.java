@@ -17,5 +17,5 @@ public interface RentalMapper {
 	List<BicycleVO> zoneSelectAndBicycleList(int parkNum); // 존 선택시
 	
 	BicycleVO bicycleSelectOne(int bicycleNum); // 자전거의 현재 정보
-	int bicycleUpdate(int bicycleNum); // 자전거의 현재 정보 바꾸기
+	int bicycleUpdate(BicycleVO vo); // 자전거의 현재 정보 바꾸기
 }
