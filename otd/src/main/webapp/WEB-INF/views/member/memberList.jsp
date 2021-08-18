@@ -34,11 +34,8 @@
 	<br/>
 	<div>
 		<!-- 수정폼으로 -->
-		<form id="selectFrm" name="selectFrm" action="memberSelectForm.do" method="post">
-			<input type="hidden" id ="email" name ="email" value='${otd.email }'>
-			<input type="hidden" id ="password" name="password" value='${otd.password }'>
-			<input type="hidden" id = "name"  name="name" value='${otd.name }' >
-			<input type="hidden" id ="phone" name ="phone" value='${otd.phone }'>
+		<form id="selectFrm" name="selectFrm" action="memberSelect.do" method="post">
+			<input type="hidden" id ="email" name ="email" >
 		</form>
 	</div>
 <script type="text/javascript">

@@ -18,6 +18,9 @@
 		<typeAlias type="co.yedam.otd.notice.vo.NoticeVO" alias="NoticeVO" /> <!-- 공지사항 VO 경로 typeAliases /김주영 -->
 		<!-- MemberVO  -->
   		<typeAlias type="co.yedam.otd.member.vo.MemberVO" alias="MemberVO"/>
+  		<typeAlias type="co.yedam.otd.history.vo.HistoryVO" alias="HistoryVO"/>
+  		<typeAlias type="co.yedam.otd.ticket.vo.TicketVO" alias="TicketVO"/>
+  		
 	</typeAliases>
 
 	<environments default="development">
@@ -35,6 +38,8 @@
 	<!-- Mapper 추가 영역 -->
 	<mappers>
 		<mapper resource="co/yedam/otd/notice/serviceImpl/notice-map.xml" /> <!-- 공지사항 매퍼 /김주영 -->
-		<mapper resource="co/yedam/otd/member/serviceImpl/member-map.xml"/>
+		<mapper resource="co/yedam/otd/member/serviceImpl/member-map.xml"/> <!-- OTD회원/로그인 /GH-->
+		<mapper resource="co/yedam/otd/history/serviceImpl/history-map.xml"/> <!--히스토리내역 /GH-->
+		
 	</mappers>
 </configuration>

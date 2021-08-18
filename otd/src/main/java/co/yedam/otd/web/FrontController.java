@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
+import co.yedam.otd.history.command.GetPayHistoryCommand;
 import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
 import co.yedam.otd.login.command.MemberInsertCommand;
@@ -53,8 +54,9 @@ public class FrontController extends HttpServlet {
 		
 		//OTD 마이페이지
 		map.put("/memberList.do", new MemberListCommand()); //맴버전체리스트(관리자용)
-		//map.put("/memberSelect.do", new MemberSelectCommand()); //OTD 한건 회원 조회 
-		map.put("/memberSelectForm.do", new MemberSelectFormCommand());//회원조회+수정
+		map.put("/memberSelect.do", new MemberSelectCommand()); //OTD 한건 회원 조회 
+		//map.put("/memberSelectForm.do", new MemberSelectFormCommand());//회원조회+수정
+		map.put("/getPayHistory.do", new GetPayHistoryCommand());
 		// Notice -김주영
 		map.put("/noticeList.do", new NoticeList()); // 공지목록
 		map.put("/noticeSelect.do", new NoticeSelect()); // 공지조회

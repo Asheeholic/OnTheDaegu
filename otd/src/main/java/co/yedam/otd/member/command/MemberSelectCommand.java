@@ -14,14 +14,15 @@ public class MemberSelectCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO OTD 회원 한건 조회 
 		String emailId = request.getParameter("email");
-		
+		System.out.println(emailId);
 		MemberService dao = new MemberServiceImpl();
 		MemberVO vo =  new MemberVO();
 		vo.setEmail(emailId);
 		
 		vo = dao.memberSelect(vo);
+		request.setAttribute("otd", vo);
 		
-		return null;
+		return "member/memberSelectForm";
 	}
 
 }
