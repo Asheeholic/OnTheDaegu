@@ -6,11 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>예담예술대학교 LMS</title>
+<!-- bootstrap css -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<tiles:insertAttribute name="header" />
-	<tiles:insertAttribute name="menu" />
 	<tiles:insertAttribute name="body" />
 	<tiles:insertAttribute name="footer" />
+	
+	<!-- bootstrap javascript -->
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<%-- <tiles:insertAttribute name="menu" /> --%>
 </body>
 </html>
