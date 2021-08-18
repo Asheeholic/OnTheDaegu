@@ -133,7 +133,7 @@ function drawRoad(result) {
 	let paths = obj.route.trafast[0].path;
 	
 	// 도착시간 화면에 출력
-	goalTime = obj.route.trafast[0].summary.duration * 2;
+	goalTime = obj.route.trafast[0].summary.duration * 2.5;
 	console.log(goalTime);
 	if(Math.floor((goalTime / 1000) / 60) < 60) {
 		goalTime = Math.floor((goalTime / 1000) / 60) + "분"

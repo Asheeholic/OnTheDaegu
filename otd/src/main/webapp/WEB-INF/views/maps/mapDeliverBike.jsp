@@ -116,18 +116,17 @@ function onSuccessGeolocation(position) {
 	let deliveryStart = setInterval(function() {
 		console.log(resultPath.length);
 		// 로케이션이 안감. 수정해야함
-		location.href = "mapTimeShow.do";
 		marker2.setPosition(resultPath[resultPath.length - i]);
 		i += 1;
 		if(resultPath.length == i) {
-			mapRequestTime();
+			window.location.href = "mapTimeShow.do";
 			clearInterval(deliveryStart);
 		}
 		
 	}, 1000);
 	
     function mapRequestTime() {
-    	location.href = "mapTimeShow.do";
+    	
     }
     
 }
