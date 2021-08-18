@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.otd.event.service.EventMapper">
+
+	<select id="eventList" resultType="co.yedam.otd.event.vo.EventVO">
+		select * from event order by event_period
+	</select>
+	
+</mapper>
