@@ -14,9 +14,9 @@ public class HistoryServiceImpl implements HistoryService {
 	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private HistoryMapper map = sqlSession.getMapper(HistoryMapper.class);
 	@Override
-	public List<HistoryVO> histroyList() {
+	public List<Map<String, String>> histroyList(HistoryVO vo) {
 		// TODO 히스토리 전체조회 
-		return map.histroyList();
+		return map.histroyList(vo);
 	}
 
 	@Override

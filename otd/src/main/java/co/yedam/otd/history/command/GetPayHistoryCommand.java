@@ -1,5 +1,6 @@
 package co.yedam.otd.history.command;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,13 +23,11 @@ public class GetPayHistoryCommand implements Command {
 
 		HttpSession session = request.getSession();
 		MemberVO memberVo = (MemberVO) session.getAttribute("session");
-		System.out.println(memberVo);
-		System.out.println(memberVo.getEmail());
 		vo.setEmail(memberVo.getEmail());
-
-		Map<String, String> map = dao.historySelect(vo);
-		System.out.println("vo야 넌 무엇을 담고 있니?" + map);
-		request.setAttribute("history", map);
+		
+		List<Map<String,String>> list = dao.histroyList(vo);
+		System.out.println("vo야 넌 무엇을 담고 있니?" + list);
+		request.setAttribute("history", list);
 
 		return "history/getPayHistory";
 	}

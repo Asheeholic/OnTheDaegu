@@ -9,4 +9,11 @@
 	on h.ticket_code = t.ticket_code
 	where email = #{email}
 </select>
+
+<select id="histroyList" parameterType="HistoryVO" resultType="HashMap">
+	select h.ticket_no, h.history_date, h.ticket_code, t.ticket_price
+	from history h inner join ticket t 
+	on h.ticket_code = t.ticket_code
+	where email = #{email}
+</select>
 </mapper>
