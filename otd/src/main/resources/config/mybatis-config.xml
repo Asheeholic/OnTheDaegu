@@ -3,24 +3,27 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-  <properties resource="config/db.properties"></properties>
+	<properties resource="config/db.properties"></properties>
 
 	<settings>
-		<!-- column명과 property명이 Camel Case, Snake Case로만 다를 경우 resultMap을 안 써도 이 코드 쓰면 알아서 바꿔줌 /김주영-->
+
+		<!-- column명과 property명이 Camel Case, Snake Case로만 다를 경우 resultMap을 안 써도 
+			이 코드 쓰면 알아서 바꿔줌 /김주영 -->
 		<setting name="mapUnderscoreToCamelCase" value="true" />
-		
+
 		<setting name="cacheEnabled" value="false" />
-        <!-- jdbcTypeForNull 사용하면 jdbcType=VARCHAR 컬럼명마다 사용해야되는것을 생략  -->
-        <setting name="jdbcTypeForNull" value="NULL" />
+		<!-- jdbcTypeForNull 사용하면 jdbcType=VARCHAR 컬럼명마다 사용해야되는것을 생략 -->
+		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 
 	<typeAliases>
 		<typeAlias type="co.yedam.otd.notice.vo.NoticeVO" alias="NoticeVO" /> <!-- 공지사항 VO 경로 typeAliases /김주영 -->
 		<!-- MemberVO  -->
   		<typeAlias type="co.yedam.otd.member.vo.MemberVO" alias="MemberVO"/>
-  		<typeAlias type="co.yedam.otd.history.vo.HistoryVO" alias="HistoryVO"/>
-  		<typeAlias type="co.yedam.otd.ticket.vo.TicketVO" alias="TicketVO"/>
-  		
+  		<typeAlias type="co.yedam.otd.history.vo.HistoryVO" alias="HistoryVO"/>  		
+		<typeAlias type="co.yedam.otd.payment.vo.TicketVO" alias="TicketVO" />
+		<!-- PaymentVO -->
+		<typeAlias type="co.yedam.otd.payment.vo.PaymentVO" alias="PaymentVO" />
 	</typeAliases>
 
 	<environments default="development">
@@ -40,6 +43,7 @@
 		<mapper resource="co/yedam/otd/notice/serviceImpl/notice-map.xml" /> <!-- 공지사항 매퍼 /김주영 -->
 		<mapper resource="co/yedam/otd/member/serviceImpl/member-map.xml"/> <!-- OTD회원/로그인 /GH-->
 		<mapper resource="co/yedam/otd/history/serviceImpl/history-map.xml"/> <!--히스토리내역 /GH-->
-		
+		<mapper resource="co/yedam/otd/payment/serviceImpl/ticket-map.xml" /><!-- 유정 -->
+
 	</mappers>
 </configuration>
