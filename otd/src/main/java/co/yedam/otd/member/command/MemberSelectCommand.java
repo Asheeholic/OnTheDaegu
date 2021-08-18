@@ -16,8 +16,10 @@ public class MemberSelectCommand implements Command {
 		// TODO OTD 회원 한건 조회 
 		MemberService dao = new MemberServiceImpl();
 		MemberVO vo =  new MemberVO();
+		
 		HttpSession session = request.getSession();
 		MemberVO memberVo = (MemberVO) session.getAttribute("session");
+		
 		vo.setEmail(memberVo.getEmail());
 		
 		vo = dao.memberSelect(vo);

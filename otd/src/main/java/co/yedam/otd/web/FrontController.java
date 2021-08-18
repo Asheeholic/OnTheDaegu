@@ -57,10 +57,10 @@ public class FrontController extends HttpServlet {
 		//OTD 마이페이지
 		map.put("/memberList.do", new MemberListCommand()); //맴버전체리스트(관리자용)
 		map.put("/memberSelect.do", new MemberSelectCommand()); //OTD 한건 회원 조회 
-		map.put("/memberUpdate.do", new MemberUpdateCommand());//회원 수정
+		map.put("/memberUpdate.do", new MemberUpdateCommand());//회원 수정(번호만)
 		map.put("/getPayHistory.do", new GetPayHistoryCommand()); // 이용권 사용내역조회
 		map.put("/memberPswdUpdateForm.do", new MemberPswdUpdateFormCommand()); //비밀번호변경 영역폼
-		map.put("/memberPswdUpdate.do", new MemberPswdUpdateCommand());
+		map.put("/memberPswdUpdate.do", new MemberPswdUpdateCommand()); //회원 패스워드 수정
 		// Notice -김주영
 		map.put("/noticeList.do", new NoticeList()); // 공지목록
 		map.put("/noticeSelect.do", new NoticeSelect()); // 공지조회

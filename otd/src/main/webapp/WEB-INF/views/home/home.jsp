@@ -16,7 +16,6 @@
  		<a href="signUpForm.do">Test 회원가입영역폼</a><br/>
  		<a href="loginForm.do">Test 로그인</a><br/>
  		
- 		<a href="memberList.do">Test 회원전체</a>
  		<a href="getPayHistory.do">Test 히스토리영역</a>
  		<a href="memberSelect.do">Test 마이페이지 개인정보</a>
  		
