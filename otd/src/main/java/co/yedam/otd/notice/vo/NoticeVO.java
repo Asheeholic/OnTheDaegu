@@ -13,4 +13,5 @@ public class NoticeVO {
 	private String noticeContent;
 	private Date noticeDate;
 	private int noticeHit;
+
 }

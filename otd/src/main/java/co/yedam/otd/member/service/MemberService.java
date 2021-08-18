@@ -13,9 +13,13 @@ public interface MemberService {
 	MemberVO memberLogin(MemberVO vo); //OTD회원 로그인
 	
 	int memberIdCheck(String email); //중복아이디 체크 
+	
 	int memberCheckIdAndPassword(MemberVO vo); // 로그인 체크
+	
 	int memberInsert(MemberVO vo); //OTD 회원가입
+	
 	int memberUpdate(MemberVO vo); //OTD 회원수정
+	int memberPassUpdate(MemberVO vo);// OTD 회원 비밀번호변경
 	int memberDelete(MemberVO vo); //OTD 회원탈퇴(탈퇴시Update State='D')
 	
 }
