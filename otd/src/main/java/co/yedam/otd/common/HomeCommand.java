@@ -11,8 +11,8 @@ public class HomeCommand implements Command {
 		
 		HttpSession session = request.getSession();
 		
-		if(session.getAttribute("member") == null) {
-			session.setAttribute("member", null);
+		if(session.getAttribute("session") == null) {
+			session.setAttribute("session", null);
 		}
 		
 		return "home/home";

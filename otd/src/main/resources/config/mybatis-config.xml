@@ -45,8 +45,7 @@
 	<!-- Mapper 추가 영역 -->
 	<mappers>
 		<mapper resource="co/yedam/otd/notice/serviceImpl/notice-map.xml" /> <!-- 공지사항 매퍼 /김주영 -->
-		<mapper resource="co/yedam/otd/rental/serviceImpl/rental-map.xml"/>
-		<mapper resource="co/yedam/otd/member/serviceImpl/member-map.xml"/>
+		<mapper resource="co/yedam/otd/rental/serviceImpl/rental-map.xml"/> <!-- 재호 맵 -->
 		<mapper resource="co/yedam/otd/review/serviceImpl/review-map.xml" /> <!-- 리뷰게시판 매퍼 /김주영 -->
 		<mapper resource="co/yedam/otd/event/serviceImpl/event-map.xml" /> <!-- 이벤트 매퍼 /김주영 -->
 		<mapper resource="co/yedam/otd/faq/serviceImpl/faq-map.xml" /> <!-- FAQ 매퍼 /김주영 -->
