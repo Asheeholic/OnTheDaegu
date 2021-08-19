@@ -15,7 +15,10 @@
 			<table border="1">
 				<tr>
 					<th>현재비밀번호</th>
-					<td align="center">${password}</td>	
+					<td align="center">${password}
+						<input type="hidden" name="password" id="password" value="${password }">
+					</td>	
+					
 				</tr>
 				<tr>
 					<th>새 비밀번호 </th>
