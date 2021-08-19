@@ -20,6 +20,7 @@ import co.yedam.otd.rental.command.MapDeliverySystemCommand;
 import co.yedam.otd.rental.command.MapPickupSystemCommand;
 import co.yedam.otd.rental.command.MapSelectBicycleCommand;
 import co.yedam.otd.rental.command.MapSelectZoneCommand;
+import co.yedam.otd.rental.command.MapShowBikeListCommand;
 import co.yedam.otd.rental.command.MapTimeShowCommand;
 import co.yedam.otd.event.command.EventList;
 import co.yedam.otd.faq.command.FaqBicycleFacilityManagement;
@@ -78,6 +79,7 @@ public class FrontController extends HttpServlet {
 		map.put("/mapDeliverBike.do", new MapDeliverBikeCommand());
 		map.put("/mapTimeShow.do", new MapTimeShowCommand());
 		map.put("/mapChoiceForm.do", new MapChoiceFormCommand());
+		map.put("/mapShowBikeList.do", new MapShowBikeListCommand());
 		
 		// pickup system
 		map.put("/mapPickupSystem.do", new MapPickupSystemCommand());
