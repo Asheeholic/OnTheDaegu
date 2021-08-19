@@ -23,6 +23,7 @@ public class MapSelectBicycleCommand implements Command {
 		BicycleVO vo = dao.bicycleSelectOne(bicycleNumber);
 		System.out.println(vo.getBicycleNo());
 		
+		// 선택한 자전거를 세션에 등록함.
 		session.setAttribute("bicycle", vo);
 		
 		return "maps/mapsPickupMap";

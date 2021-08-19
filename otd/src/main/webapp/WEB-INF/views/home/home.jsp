@@ -52,9 +52,7 @@ function returnTicket(n) {
 
 	<!-- 맵기능 구현중 -->
 	<div>
-		<a href="mapDeliverySystem.do">맵 링크</a>
 		<a href="mapChoiceForm.do">대여 선택 창</a>
-		<a href="mapDaoTest.do">대여 dao test창</a>
 		<a href="mapShowBikeList.do">자전거 현황과 맵 보여주기</a>
 	</div>
  

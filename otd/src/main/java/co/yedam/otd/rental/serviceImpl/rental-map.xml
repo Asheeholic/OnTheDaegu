@@ -18,4 +18,11 @@
 		select * from bicycle order by bicycle_no
 	</select>
 	
+	<update id="bicycleUpdate" parameterType="BicycleVO">
+		update bicycle 
+		set bicycle_possible = #{bicyclePossible},
+		park_number = #{parkNumber}
+		where bicycle_no = #{bicycleNo}
+	</update>
+	
 </mapper>
