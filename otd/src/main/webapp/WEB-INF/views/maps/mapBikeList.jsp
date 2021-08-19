@@ -122,14 +122,26 @@ function drawTable(bike, result) {
 	
 	
 	let tbody = $('<tr>');
-	/* let th1 = $('<th />').text('일련번호');
-	let th2 = $('<th />').text('사용가능 여부');
-	let th3 = $('<th />').text('위치');
-	let th4 = $('<th />').text('주차된 곳'); */
+	
 	let td1 = $('<td />').text(bike.bicycleNo);
-	let td2 = $('<td />').text(bike.bicyclePossible);
+	
+	let td2;
+	if (bike.bicyclePossible == 'Y') {
+		td2 = $('<td />').text("사용 가능");
+	} else {
+		td2 = $('<td />').text("사용 불가능");
+	}
+	
 	let td3 = $('<td />').text(data.results[0].region.area2.name + " " + data.results[0].region.area3.name);
-	let td4 = $('<td />').text(bike.parkNumber);
+	
+	let td4;
+	if (bike.parkNumber == '1') {
+		td4 = $('<td />').text("중앙로역");
+	} else if (bike.parkNumber == '2'){
+		td4 = $('<td />').text("반월당역");
+	} else {
+		td4 = $('<td />').text("");
+	}
 	
 	$(tbody).append(td1, td2, td3, td4);
 	$('table').append(tbody);

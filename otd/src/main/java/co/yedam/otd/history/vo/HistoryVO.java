@@ -24,6 +24,4 @@ public class HistoryVO {
 				+ ", ticketCode=" + ticketCode + "]";
 	}
 	
-	
-	
 }
