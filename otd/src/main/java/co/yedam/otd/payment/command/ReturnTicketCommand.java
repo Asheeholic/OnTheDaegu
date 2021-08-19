@@ -13,7 +13,7 @@ public class ReturnTicketCommand implements Command {
 		// 환불 선택 창
 		ShowToken showToken = new ShowToken();
 		String token = showToken.showToken();
-		System.out.println(token);
+
 		return "yujeong/returnTicketForm";
 	}
 }

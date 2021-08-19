@@ -1,52 +1,116 @@
 package co.yedam.otd.payment.API;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 public class ShowToken {
-	HttpURLConnection con = null;
-	StringBuilder sb;
-	String access_token = null;
-
 	public String showToken() {
-
+		HttpURLConnection conn = null;
+		String access_token ="";
+		
 		try {
-			String apiURL = "https://api.iamport.kr/users/getToken";
-			URL url = new URL(apiURL);
-			con = (HttpURLConnection) url.openConnection();
+			URL url = new URL("https://api.iamport.kr/users/getToken");
+			conn = (HttpURLConnection) url.openConnection();
 
-			con.setRequestMethod("post");
-			con.setRequestProperty("Content-Type", "application/json");
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/json");
+			conn.setRequestProperty("Accept", "application/json");
+			conn.setDoOutput(true);
 
-			String postParams = "imp_key=3651333049760723&imp_secret=deb5311b6f193c16f2e04e3f61037d0b12084b0ed326c1f160d41ee8f56e37dd5f09501441fdf076";
-			con.setDoOutput(true);
-			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-			wr.writeBytes(postParams);
-			wr.flush();
-			wr.close();
+			JsonObject obj = new JsonObject();
 
-			int responseCode = con.getResponseCode();
-			BufferedReader br;
+			String imp_key = "3651333049760723";
+			String imp_secret = "deb5311b6f193c16f2e04e3f61037d0b12084b0ed326c1f160d41ee8f56e37dd5f09501441fdf076";
+
+			obj.add("imp_key", new Gson().toJsonTree(imp_key));
+			obj.add("imp_secret", new Gson().toJsonTree(imp_secret));
+
+			BufferedWriter bw;
+			bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
+			bw.write(obj.toString());
+			bw.flush();
+			bw.close();
+
+			int result = 0;
+			int responseCode = conn.getResponseCode();
+			System.out.println("응답코드 : " + responseCode);
+
 			if (responseCode == 200) { // 정상 호출
-				System.out.println(responseCode);
-				br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				StringBuilder sb = new StringBuilder();
+				String line = null;
+				while ((line = br.readLine()) != null) {
+					sb.append(line + "\n");
+				}
+				br.close();
+				System.out.println("" + sb.toString());
+				result = 1;
 			} else { // 에러 발생
-				System.out.println(responseCode);
-				br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+				System.out.println(conn.getResponseMessage());
 			}
-			sb = new StringBuilder();
-			String line = "";
-			while ((line = br.readLine()) != null) {
-				sb.append(line);
-			}
-			br.close();
-		} catch (Exception e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		return sb.toString();
+		return access_token.toString();
 	}
+	
+	public String useToken(String token) {
+		HttpURLConnection conn = null;
+		String access_token ="";
+		
+		try {
+			URL url = new URL("https://api.iamport.kr/users/getToken");
+			conn = (HttpURLConnection) url.openConnection();
+
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/json");
+			conn.setRequestProperty("Accept", "application/json");
+			conn.setRequestProperty("Authorization", token);
+			conn.setDoOutput(true);
+
+			JsonObject obj = new JsonObject();
+
+			String imp_key = "3651333049760723";
+			String imp_secret = "deb5311b6f193c16f2e04e3f61037d0b12084b0ed326c1f160d41ee8f56e37dd5f09501441fdf076";
+
+			obj.add("imp_key", new Gson().toJsonTree(imp_key));
+			obj.add("imp_secret", new Gson().toJsonTree(imp_secret));
+
+			BufferedWriter bw;
+			bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
+			bw.write(obj.toString());
+			bw.flush();
+			bw.close();
+
+			int result = 0;
+			int responseCode = conn.getResponseCode();
+			System.out.println("응답코드 : " + responseCode);
+
+			if (responseCode == 200) { // 정상 호출
+				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				StringBuilder sb = new StringBuilder();
+				String line = null;
+				while ((line = br.readLine()) != null) {
+					sb.append(line + "\n");
+				}
+				br.close();
+				System.out.println("" + sb.toString());
+				result = 1;
+			} else { // 에러 발생
+				System.out.println(conn.getResponseMessage());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return access_token.toString();
+	}
+	
 }
