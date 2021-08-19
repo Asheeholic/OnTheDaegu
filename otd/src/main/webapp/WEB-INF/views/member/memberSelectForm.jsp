@@ -5,12 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>개인정보수정</title>
+<style>
+	dl, dt { margin:0; }
+	dd { margin:0; display:inline; }
+</style>
 </head>
 <body>
 ${otd} 
 <!-- 회원 한건 조회 and 수정폼 -->
 	<div>
 		<h1>개인정보수정</h1>
+	</div>
+	<div align="center">
+		<dl>
+			<dd style="width:25%">
+				<a href="javascript:memberDelete();">회원탈퇴</a>
+			</dd>
+		</dl>
+		
+		
 	</div>
 	<div align="center">
 		<form name="updatefrm" action="memberUpdate.do" method="post" onsubmit="memberUpdate();">
@@ -39,7 +52,7 @@ ${otd}
 			</table>
 			<br/>
 			<div>
-				<input  type="submit" value="회원 수정" >
+				<input type="submit" value="회원 수정" >
 				<input type="hidden" id ="email" name ="email" value='${otd.email}'>
 				<input type="hidden" id ="password" name ="password" value='${otd.password}'>
 			</div>
@@ -49,6 +62,14 @@ ${otd}
  		<form name="pswdfrm" action="memberPswdUpdateForm.do" method="post">
  			<input type="hidden" id ="email" name ="email" value='${otd.email}'>
  			<input type="hidden" id ="password" name ="password" value='${otd.password}'>
+ 		</form>
+ 	</div>
+ 	<!-- 삭제폼으로 가기 -->
+ 	<div>
+ 		<form name="deletefrm" action="deleteForm.do" method="post">
+			<input type="hidden" id="email" name="email" value="${otd.email}">
+			<input type="hidden" id="state" name="state" value="${otd.state}">
+			 		
  		</form>
  	</div>
   	<script type="text/javascript">
@@ -62,6 +83,9 @@ ${otd}
 		}
 		function memberPswdUpdateForm(){
 			pswdfrm.submit();
+		}
+		function memberDelete(){
+			deletefrm.submit();
 		}
 	</script>	
 </body>

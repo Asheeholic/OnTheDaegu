@@ -13,14 +13,14 @@ public class MemberPswdUpdateCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO 비밀번호 변경
-			String password = request.getParameter("password");
+			String newPassCkeck = request.getParameter("newPassCkeck");
 			String newPass = request.getParameter("newPass");
 			String email = request.getParameter("email");
 			
 			System.out.println(newPass);
 			
-			System.out.println("여기는?"+password + newPass);
-			System.out.println("비교문"+ newPass.equals(password));
+			System.out.println("여기는?"+newPassCkeck + newPass);
+			System.out.println("비교문"+ newPass.equals(newPassCkeck));
 			
 			MemberService dao = new MemberServiceImpl();
 			MemberVO vo = new MemberVO();
@@ -33,7 +33,7 @@ public class MemberPswdUpdateCommand implements Command {
 			
 			int result = dao.memberPassUpdate(vo);
 			String page = "";
-			if(result == 1 && newPass.equals(password)) {
+			if(result == 1 && newPass.equals(newPassCkeck)) {
 				System.out.println("수정완료");
 				page = "memberSelect.do";
 			}else {

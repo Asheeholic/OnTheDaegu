@@ -33,12 +33,15 @@ import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
 import co.yedam.otd.login.command.MemberInsertCommand;
 import co.yedam.otd.login.command.SignUpformCommand;
+import co.yedam.otd.member.command.DeleteFormCommand;
+import co.yedam.otd.member.command.MemberDeleteCommand;
 import co.yedam.otd.member.command.MemberListCommand;
 import co.yedam.otd.member.command.MemberPswdUpdateCommand;
 import co.yedam.otd.member.command.MemberPswdUpdateFormCommand;
 import co.yedam.otd.member.command.MemberUpdateCommand;
 import co.yedam.otd.member.command.MemberSelectCommand;
 import co.yedam.otd.login.command.LoginFormCommand;
+import co.yedam.otd.login.command.LogoutCommand;
 import co.yedam.otd.login.command.MemberCheckIdAndPassword;
 import co.yedam.otd.notice.command.NoticeDelete;
 import co.yedam.otd.notice.command.NoticeInsert;
@@ -91,8 +94,8 @@ public class FrontController extends HttpServlet {
 		map.put("/memberInsert.do", new MemberInsertCommand()); //OTD 회원가입 커멘드
 		map.put("/loginForm.do", new LoginFormCommand()); //로그인폼 
 		map.put("/login.do", new LoginCommand()); //OTD 로그인 진행 과정
+		map.put("/logout.do", new LogoutCommand()); //로그아웃
 		map.put("/memberCheckIdAndPassword.do", new MemberCheckIdAndPassword()); //로그인 체크과정
-		
 		//OTD 마이페이지
 		map.put("/memberList.do", new MemberListCommand()); //맴버전체리스트(관리자용)
 		map.put("/memberSelect.do", new MemberSelectCommand()); //OTD 한건 회원 조회 
@@ -100,6 +103,8 @@ public class FrontController extends HttpServlet {
 		map.put("/getPayHistory.do", new GetPayHistoryCommand()); // 이용권 사용내역조회
 		map.put("/memberPswdUpdateForm.do", new MemberPswdUpdateFormCommand()); //비밀번호변경 영역폼
 		map.put("/memberPswdUpdate.do", new MemberPswdUpdateCommand()); //회원 패스워드 수정
+		map.put("/deleteForm.do", new DeleteFormCommand()); // 회원 탈퇴 폼
+		map.put("/memberDelete.do", new MemberDeleteCommand()); //회원 탈퇴
 		
 		// Notice -김주영
 		map.put("/noticeList.do", new NoticeList()); // 공지목록

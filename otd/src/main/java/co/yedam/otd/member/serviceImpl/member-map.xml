@@ -42,4 +42,9 @@
 		update member set password = #{password}
 		where email = #{email}
 	</update> 
+	
+	<update id="memberDelete" parameterType="MemberVO">
+		update member set state = 'D'
+		where email = #{email}
+	</update>
 </mapper>

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.security.SecureRandom" %>
+<%@ page import="java.math.BigInteger" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,34 +11,6 @@
 <title>OTD 로그인</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-/* 	function idCheck(){
-		let EmailObj = $("input[name=email]");
-		let PasswordObj = $("input[name=password]");
-		
-		if(EmailObj.val().length < 4){	
-			alert("이메일 형식으로 입력해주세요");
-			EmailObj.focus();
-			return false;
-		}	
-		return ture;
-	}
-	
-	function init(){
-		//dom트리에서 id속성값이 EmailObj인 객체찾기
-		var btLoginObj = $("#btnLogin");
-		var formObj = $("form");	
-		formObj.submit(function(){
-			if(idCheck()){
-				let requestURL = "login.do";
-				this.action= requestURL;
-				this.method='post';
-				this.submit();
-			
-			}
-		});
-	}
-$(init);
-console.log(init); */
 $(document).ready(function(){
 	$('#btnLogin').click(function(){
 		//let Info = new Object();
@@ -66,28 +42,7 @@ $(document).ready(function(){
 		}	
 	});
 });
-/* $(document).ready(function(){
-	$('#btnLogin').click(function() {
-		let email = "email=" + $('input[name=email]').val()
-		let password = "password="+$('input[name=password]').val()
-		$.ajax({
-			type : "post",
-			url : "login.do",
-			data : "email" + email + "password=" +password,
-			dataType : "text",
-			success : function(data) { 
-				if (data == 'loginFail') 
-				{ alert('로그인에 실패하였습니다.') 
-				} else { 
-				window.location.href = 'home.do'; 
-				} 
-			},
-			error : function(request, status, error) { 
-				alert("code:" + request.status + "\n" + "error:" + error);
-			}
-		});
-	});
-}); */
+
 </script>
 </head>
 <body>
@@ -125,7 +80,21 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-	
+	<!-- 네이버 로그인 -->
+<%
+    String clientId = "XjyzBLVySugG2fqLKRlQ";//애플리케이션 클라이언트 아이디값";
+    String redirectURI = URLEncoder.encode("http://localhost/otd/naverLoginCallback.do", "UTF-8");
+    SecureRandom random = new SecureRandom();
+    String state = new BigInteger(130, random).toString();
+    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code"; //네이버 아이디로 로그인 인증을 요청합니다.
+    apiURL += "&client_id=" + clientId;
+    apiURL += "&redirect_uri=" + redirectURI;
+    apiURL += "&state=" + state;
+    session.setAttribute("state", state);
+ %>
+ <div align="center">
+  <a href="<%=apiURL%>"><img height="50" src="img/btnGNaver.png"/></a>
+ </div>
 </body>
 
 </html>
