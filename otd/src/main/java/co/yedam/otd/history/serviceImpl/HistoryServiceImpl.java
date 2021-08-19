@@ -25,4 +25,19 @@ public class HistoryServiceImpl implements HistoryService {
 		return map.historySelect(vo);
 	}
 
+	@Override
+	public int historyInsert(HistoryVO vo) {
+		// 결제내역 추가
+		int n = map.historyInsert(vo);
+		sqlSession.commit();
+		return n;
+	}
+
+	@Override
+	public int historyUpdate(HistoryVO vo) {
+		// 결제내역 삭제
+		int n = map.historyUpdate(vo);
+		sqlSession.commit();
+		return n;
+	}
 }

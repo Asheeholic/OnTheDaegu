@@ -67,7 +67,7 @@ function returnTicket(n) {
 	</form>
 	
 	<!-- 이용권 환불 세션 넘기기 -->
-	<form id="rtf" action="returnTicketForm.do" method="post">
+	<form id="rtf" action="returnTicket.do" method="post">
 		<input type="hidden" id="refund" name="refund">
 	</form>
 

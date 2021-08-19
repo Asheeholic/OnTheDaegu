@@ -12,7 +12,7 @@ public class HistoryVO {
 	
 	private String email;
 	
-	private int ticketNo;
+	private String ticketNo;
 	
 	private Date historyDate;
 	
