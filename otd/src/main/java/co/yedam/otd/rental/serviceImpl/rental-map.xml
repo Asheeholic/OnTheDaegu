@@ -14,4 +14,8 @@
 		select * from bicycle where bicycle_no = #{bicycleNo}
 	</select>
 	
+	<select id="bicycleListAll" resultType="BicycleVO">
+		select * from bicycle order by bicycle_no
+	</select>
+	
 </mapper>
