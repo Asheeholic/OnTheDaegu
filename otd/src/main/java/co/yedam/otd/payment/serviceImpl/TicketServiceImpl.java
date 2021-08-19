@@ -5,9 +5,9 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.otd.common.DataSource;
+import co.yedam.otd.history.vo.HistoryVO;
 import co.yedam.otd.payment.service.TicketMapper;
 import co.yedam.otd.payment.service.TicketService;
-import co.yedam.otd.payment.vo.HistoryVO;
 import co.yedam.otd.payment.vo.PaymentVO;
 import co.yedam.otd.payment.vo.TicketVO;
 
@@ -46,25 +46,4 @@ public class TicketServiceImpl implements TicketService {
 		sqlSession.commit();
 		return n;
 	}
-
-	@Override
-	public int historyInsert(HistoryVO vo) {
-		// 결제내역 추가
-		int n = map.historyInsert(vo);
-		sqlSession.commit();
-		return n;
-	}
-
-	@Override
-	public int paymentDelete(PaymentVO vo) {
-		// 결제정보 삭제
-		return 0;
-	}
-
-	@Override
-	public int historyDelete(HistoryVO vo) {
-		// 결제내역 삭제
-		return 0;
-	}
-
 }

@@ -56,7 +56,8 @@ import co.yedam.otd.review.command.ReviewUpdateForm;
 import co.yedam.otd.payment.command.BuyTicketFormCommand;
 import co.yedam.otd.payment.command.InsertDBCommand;
 import co.yedam.otd.payment.command.PaymentCommand;
-import co.yedam.otd.payment.command.ReturnTicketFormCommand;
+import co.yedam.otd.payment.command.ReturnTicketCommand;
+import co.yedam.otd.payment.command.updateDBCommand;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -134,9 +135,9 @@ public class FrontController extends HttpServlet {
 		// 유정
 		map.put("/buyTicketForm.do", new BuyTicketFormCommand()); // 티켓구매 폼
 		map.put("/payment.do", new PaymentCommand()); // 결제창
-		map.put("/returnTicketForm.do", new ReturnTicketFormCommand()); //환불 폼
 		map.put("/insertDB.do", new InsertDBCommand()); //결제내역
-		//map.put("/paymentform.do", new PaymentForm()); // 결제창 폼
+		map.put("/returnTicket.do", new ReturnTicketCommand()); //환불 폼
+		map.put("/updateDB.do", new updateDBCommand()); // 환불창
 	}
 
 

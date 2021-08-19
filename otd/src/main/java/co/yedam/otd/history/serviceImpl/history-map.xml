@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.yedam.otd.history.service.HistoryMapper">
-<!-- 히스토리 테이블 소환  -->
-<!--쿼리의 결과는 HistoryVO 에 매핑되고, HistoryVO 안의 TicketVO에 Ticket 테이블의 조회 결과가 매핑된다.  -->
-<select id="historySelect" parameterType="HistoryVO" resultType="HashMap">
-	select h.ticket_no, h.history_date, h.ticket_code, t.ticket_price
-	from history h inner join ticket t 
-	on h.ticket_code = t.ticket_code
-	where email = #{email}
-</select>
+	<!-- 히스토리 테이블 소환 -->
+	<!--쿼리의 결과는 HistoryVO 에 매핑되고, HistoryVO 안의 TicketVO에 Ticket 테이블의 조회 결과가 
+		매핑된다. -->
+	<select id="historySelect" parameterType="HistoryVO"
+		resultType="HashMap">
+		select h.ticket_no, h.history_date, h.ticket_code, t.ticket_price
+		from history h inner join ticket t
+		on h.ticket_code = t.ticket_code
+		where email = #{email}
+	</select>
 
-<select id="histroyList" parameterType="HistoryVO" resultType="HashMap">
-	select h.ticket_no, h.history_date, h.ticket_code, t.ticket_price
-	from history h inner join ticket t 
-	on h.ticket_code = t.ticket_code
-	where email = #{email}
-</select>
+	<select id="histroyList" parameterType="HistoryVO"
+		resultType="HashMap">
+		select h.ticket_no, h.history_date, h.ticket_code, t.ticket_price
+		from history h inner join ticket t
+		on h.ticket_code = t.ticket_code
+		where email = #{email}
+	</select>
+
+	<!-- 결제내역 수정 -->
+	<update id="historyUpdate" parameterType="HistoryVO">
+		UPDATE history SET
+		ticket_no = #{ticketNo} WHERE email = #{email}
+	</update>
+
+	<!-- 결제내역 추가 -->
+	<insert id="historyInsert">
+		INSERT INTO history(num, email, history_date, ticket_code, ticket_no) VALUES(h_seq.nextval, #{email}, #{historyDate}, #{ticketCode}, #{ticketNo})
+	</insert>
 </mapper>

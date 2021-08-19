@@ -4,13 +4,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
+import co.yedam.otd.payment.API.ShowToken;
 
-public class ReturnTicketFormCommand implements Command {
+public class ReturnTicketCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// 환불 선택 창
-		return null;
+		ShowToken showToken = new ShowToken();
+		String token = showToken.showToken();
+		System.out.println(token);
+		return "yujeong/returnTicketForm";
 	}
-
 }
