@@ -2,7 +2,6 @@ package co.yedam.otd.payment.service;
 
 import java.util.List;
 
-import co.yedam.otd.payment.vo.HistoryVO;
 import co.yedam.otd.payment.vo.PaymentVO;
 import co.yedam.otd.payment.vo.TicketVO;
 
@@ -19,8 +18,4 @@ public interface TicketService {
 
 	int paymentInsert(PaymentVO vo);
 
-	// 결제후 히스토리 기록
-	int historyInsert(HistoryVO vo);
-
-	int historyUpdate(HistoryVO vo);
 }

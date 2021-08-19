@@ -28,8 +28,6 @@
 		<typeAlias type="co.yedam.otd.payment.vo.TicketVO" alias="TicketVO" />
 		<!-- PaymentVO -->
 		<typeAlias type="co.yedam.otd.payment.vo.PaymentVO" alias="PaymentVO" />
-		<!-- HistoryVO -->
-		<typeAlias type="co.yedam.otd.payment.vo.HistoryVO" alias="HistoryVO" />
 	</typeAliases>
 
 	<environments default="development">
