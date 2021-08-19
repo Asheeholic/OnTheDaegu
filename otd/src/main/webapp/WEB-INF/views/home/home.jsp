@@ -70,6 +70,5 @@ function returnTicket(n) {
 	<form id="rtf" action="returnTicket.do" method="post">
 		<input type="hidden" id="refund" name="refund">
 	</form>
-
 </body>
 </html>
