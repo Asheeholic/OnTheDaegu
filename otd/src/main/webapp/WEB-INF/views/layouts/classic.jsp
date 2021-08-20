@@ -8,23 +8,15 @@
 <title>예담예술대학교 LMS</title>
 <!-- bootstrap css -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- Main Stylesheet -->
-<link rel="stylesheet" href="css/style.css">
-
+ <!-- Main Stylesheet -->
+ <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="d-flex flex-stratch row">
-			<div class="col-12 sticky-top shadow">
-				<tiles:insertAttribute name="header" />
-			</div>
-		</div>
-		<tiles:insertAttribute name="body" />
-		<tiles:insertAttribute name="footer" />
-	</div>
+	<tiles:insertAttribute name="header" />
+	<tiles:insertAttribute name="body" />
+	<tiles:insertAttribute name="footer" />
 	<!-- bootstrap javascript -->
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<%-- <tiles:insertAttribute name="menu" /> --%>
-	
 </body>
 </html>
