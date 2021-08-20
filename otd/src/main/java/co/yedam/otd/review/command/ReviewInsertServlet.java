@@ -1,6 +1,7 @@
 package co.yedam.otd.review.command;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,6 +45,7 @@ public class ReviewInsertServlet extends HttpServlet {
 		vo.setReviewLike(Integer.valueOf(request.getParameter("reviewLike")));
 		vo.setReviewContent(request.getParameter("reviewContent"));
 		dao.reviewInsert(vo);
+		
 		
 		Gson gson = new GsonBuilder().create();
 		response.getWriter().print(gson.toJson(vo));

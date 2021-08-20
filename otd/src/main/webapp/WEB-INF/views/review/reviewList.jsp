@@ -38,12 +38,13 @@
 		let th_like = $('<th />').attr('width', '90').text('별점');
 		let td_like = $('<td />').attr('width', '130').text(data.reviewLike);
 		let td_btn = $('<td />').attr('rowspan', '2');
-		$(td_btn).append($('#btn').clone()); // (XXX) 버튼을 clone 해서 가져와서 그런지 버튼을 누르면 새로 작성된 리뷰가 아닌 직전 마지막 리뷰 조회창이 뜸. (해결못함)
+ 		let searchBtn = $('<button />').text('조회');
+		$(td_btn).append(searchBtn);
     	$(tr1).append(th_writer, td_writer, th_like, td_like, td_btn);
 				
 		let tr2 = $('<tr />');
 		let td_content = $('<td />').attr('colspan', '4').attr('height', '150').text(data.reviewContent);
-		let hInput = $('<input />').attr('type', 'hidden').attr('id', 'reviewNo').attr('value', data.reviewNo);
+		let hInput = $('<input />').attr('type', 'hidden').attr('id', 'reviewNo').attr('value', ${review.reviewNo} + 1);
 		console.log(data.reviewNo);
 		$(td_content).append(hInput);
 		$(tr2).append(td_content);

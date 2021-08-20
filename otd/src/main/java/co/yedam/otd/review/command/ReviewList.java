@@ -18,7 +18,6 @@ public class ReviewList implements Command {
 		HttpSession session = request.getSession();
 		String sessionValue = (String)session.getAttribute("sessionEmail");
 		System.out.println(sessionValue);
-		
 		return "review/reviewList";
 	}
 
