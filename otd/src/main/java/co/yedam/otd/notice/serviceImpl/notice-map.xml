@@ -11,7 +11,7 @@
 	</resultMap>
 
 	<select id="noticeList" resultMap="noticeMap">
-		select * from notice
+		select * from notice order by notice_no desc
 	</select>
 	
 	<!-- 공지번호를 이용해 공지 조회 -->
