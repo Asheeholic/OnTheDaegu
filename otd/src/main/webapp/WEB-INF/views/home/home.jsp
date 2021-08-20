@@ -43,7 +43,7 @@
 	</style>
 </head>
 <body>
-	<%-- 여기가 홈이야
+	여기가 홈이야
 	<div id="notice" align="center">
 		공지 테스트 좀 하겠습니다 <br> <a href="noticeList.do">공지목록</a>
 	</div>
@@ -92,7 +92,7 @@
 	<!-- 이용권 환불 세션 넘기기 -->
 	<form id="rtf" action="returnTicket.do" method="post">
 		<input type="hidden" id="refund" name="refund">
-	</form> --%>
+	</form>
 	
 	<section class="banner">
 		<div class="container">
@@ -116,9 +116,6 @@
 				<div class="col-lg-12">
 					<div class="feature-block d-lg-flex">
 						<div class="feature-item mb-5 mb-lg-0">
-							<div class="feature-icon mb-4">
-								<i class="icofont-surgeon-alt"></i>
-							</div>
 							<span>24시간 서비스</span>
 							<h4 class="mb-3">자전거 서비스</h4>
 							<p class="mb-4">아직도 자전거를 대여하는 방법을 모르겠다구요? 배달과 직접 픽업 모두 쉽고 빠릅니다!</p>
@@ -126,9 +123,6 @@
 						</div>
 					
 						<div class="feature-item mb-5 mb-lg-0">
-							<div class="feature-icon mb-4">
-								<i class="icofont-ui-clock"></i>
-							</div>
 							<span>자전거 관련</span>
 							<h4 class="mb-3">자전거 수거 시간</h4>
 							<ul class="w-hours list-unstyled">
@@ -139,9 +133,6 @@
 						</div>
 					
 						<div class="feature-item mb-5 mb-lg-0">
-							<div class="feature-icon mb-4">
-								<i class="icofont-support"></i>
-							</div>
 							<span>모든 준비가 끝났습니다</span>
 							<h4 class="mb-3">자전거 대여</h4>
 							<p>이미 대여하는 방법을 알고 있다면 밖으로 나가 자전거를 타고 시원하게 달려보세요!</p>
@@ -156,29 +147,29 @@
 	<!-- 사진들 -->
 	
 	<section class="section about">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-4 col-sm-6">
-				<div class="about-img">
-					<img src="img/bikeMainLow1.jpg" alt="" class="img-fluid">
-					<img src="img/bikeMainLow2.jpg" alt="" class="img-fluid mt-4">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-4 col-sm-6">
+					<div class="about-img">
+						<img src="img/bikeMainLow1.jpg" alt="" class="img-fluid">
+						<img src="img/bikeMainLow2.jpg" alt="" class="img-fluid mt-4">
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6">
-				<div class="about-img mt-4 mt-lg-0">
-					<img src="img/bikeMainLow3.jpg" alt="" class="img-fluid">
+				<div class="col-lg-4 col-sm-6">
+					<div class="about-img mt-4 mt-lg-0">
+						<img src="img/bikeMainLow3.jpg" alt="" class="img-fluid">
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="about-content pl-4 mt-4 mt-lg-0">
-					<h2 class="title-color">Personal care <br>& healthy living</h2>
-					<p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
-
-					<a href="mapChoiceForm.do" class="btn btn-main btn-round-full btn-icon">자전거 대여하기<i class="icofont-simple-right ml-3"></i></a>
+				<div class="col-lg-4">
+					<div class="about-content pl-4 mt-4 mt-lg-0">
+						<h2 class="title-color">Personal care <br>& healthy living</h2>
+						<p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
+	
+						<a href="mapChoiceForm.do" class="btn btn-main btn-round-full">자전거 대여하기</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 </body>
 </html>

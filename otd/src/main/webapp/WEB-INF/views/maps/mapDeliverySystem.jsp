@@ -176,12 +176,6 @@ $(window).on("load", function() {
     // 배달 시작 페이지 호출
     // 처음 좌표만 보내면 될듯 함.
     // 안보내도 되고..?
-    $('#deliveryStart').on("click", function() {
-    
-		$('#nowLat').val(now._lat);
-		$('#nowLng').val(now._lng);
-		frm.submit();
-    })
     
     $.ajax({
 		url:"LeftTimeShowServlet",
@@ -201,6 +195,17 @@ $(window).on("load", function() {
 	
 	function calculrateTime(result) {
 		let now = new Date();
+		
+		// 디비에 아예 내용이 없을시
+		if(result == null) {
+			$("#ticketTimeLeft").text("처음이시군요! 정기권을 사셔서 이용해 주세요!");
+			$('#deliveryStart').text('이용권구매');
+			$('#deliveryStart').on("click", function() {
+				buyTicket('${session}');
+		    })
+			return;
+		}
+		
 		let boughtTime = new Date(result.dateBought);
 		
 		console.log(boughtTime);
@@ -233,16 +238,29 @@ $(window).on("load", function() {
 				$("#ticketTimeLeft").text(time);
 				i += 1;
 			}, 1000)
+			
+			$('#deliveryStart').on("click", function() {
+		    
+				$('#nowLat').val(now._lat);
+				$('#nowLng').val(now._lng);
+				frm.submit();
+	    	})
+			
 		} else {
-			window.location.href = "home.do";
+			// db에 내용은 있으나 정기권이 현재시간을 비교해 0이거나 마이너스일때
+			$("#ticketTimeLeft").text("정기권이 모두 소모 되셨습니다. 다시 정기권을 사셔서 이용해 주세요!");
+			$('#deliveryStart').text('이용권구매');
+			$('#deliveryStart').on("click", function() {
+				buyTicket('${session}');
+		    })
+			return;
 		}
+		
+		
+		
 	}
 	// 시간 보여주는 메소드 끝 (제발 재사용 많이 해주세요)
 	
-	// 홈으로
-	$('#homeBtn').on('click', function() {
-		window.location.href = "home.do";
-	});
     
 });
 

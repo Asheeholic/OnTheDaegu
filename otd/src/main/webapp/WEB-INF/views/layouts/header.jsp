@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	</div>
-	<nav class="navbar navbar-expand-lg navigation" id="navbar">
+	<nav class="navbar navbar-expand-lg navigation d-flex" id="navbar">
 		<div class="container">
 		 	<!-- 로고 사진  -->
 		 	 <div class="col-lg-3">
@@ -41,7 +41,7 @@
 			<span class="icofont-navigation-menu"></span>
 		  </button>
 	  
-		  <div class="collapse navbar-collapse" id="navbarmain">
+		  <div class="collapse navbar-collapse justify-content-end" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
 				<a class="nav-link" href="home.do">홈</a>
