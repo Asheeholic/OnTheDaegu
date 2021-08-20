@@ -55,7 +55,7 @@
 	</div>
 	<div id="faq" align="center">
 		FAQ 테스트 좀 하겠습니다 <br> <a href="faqHome.do">FAQ목록</a>
-	</div>
+	</div> --%>
 
 	<c:if test="${empty sessionName}">
 		<!-- 로그인 했을때만 이용권 구매 가능 -->
@@ -73,7 +73,7 @@
 		</div>
 	</c:if>
 
-	<!-- 맵기능 구현중 -->
+	<!-- <!-- 맵기능 구현중 -->
 	<div>
 		<a href="mapChoiceForm.do">대여 선택 창</a>
 		<a href="mapShowBikeList.do">자전거 현황과 맵 보여주기</a>
@@ -82,9 +82,9 @@
 	<div>
 		<a href="signUpForm.do">Test 회원가입영역폼</a><br /> <a href="loginForm.do">Test
 			로그인</a>
-	</div>
+	</div> -->
 
-	<!-- 이용권 구매 세션 넘기기 -->
+	 이용권 구매 세션 넘기기 -->
 	<form id="frm" action="buyTicketForm.do" method="post">
 		<input type="hidden" id="ticket" name="ticket">
 	</form>
@@ -92,7 +92,7 @@
 	<!-- 이용권 환불 세션 넘기기 -->
 	<form id="rtf" action="returnTicket.do" method="post">
 		<input type="hidden" id="refund" name="refund">
-	</form> --%>
+	</form> 
 	
 	<section class="banner">
 		<div class="container">
