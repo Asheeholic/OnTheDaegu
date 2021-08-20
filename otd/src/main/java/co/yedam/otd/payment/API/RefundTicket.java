@@ -15,7 +15,7 @@ public class RefundTicket {
 	public String refundTicket() {
 		HttpURLConnection conn = null;
 		String refund = "";
-		String token ="02b99867d86c09d818481806fe01b54ad7db8fa8";
+		String token ="5be8825d48fcef04bee2a3c77e5625816ff24ac4";
 		//추가
 //		ShowToken showToken = new ShowToken();
 //		String token = showToken.showToken();
@@ -30,8 +30,8 @@ public class RefundTicket {
 
 			JsonObject obj = new JsonObject();
 
-			String merchant_uid = "merchant_1629392533468";
-			double amount = 3500;
+			String merchant_uid = "merchant_1629426644740";
+			double amount = 2000;
 			
 			obj.add("merchant_uid", new Gson().toJsonTree(merchant_uid));
 			obj.add("amount", new Gson().toJsonTree(amount));
