@@ -37,7 +37,7 @@
 			<div>
 				<button type="submit">수정</button>
 				&nbsp;&nbsp;&nbsp;
-				<button type="button" onclick="location.href='noticeList.do'">목록</button>
+				<button type="button" onclick="location.href='noticeSelect.do?noticeNo=${notice.noticeNo}'">취소</button>
 			</div>
 		</form>
 	</div>

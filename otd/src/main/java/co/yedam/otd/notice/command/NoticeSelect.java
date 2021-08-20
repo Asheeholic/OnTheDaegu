@@ -10,6 +10,7 @@ import co.yedam.otd.common.DataSource;
 import co.yedam.otd.notice.service.NoticeService;
 import co.yedam.otd.notice.serviceImpl.NoticeServiceImpl;
 import co.yedam.otd.notice.vo.NoticeVO;
+import co.yedam.otd.page.model.Criteria;
 
 public class NoticeSelect implements Command {
 

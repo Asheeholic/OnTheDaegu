@@ -38,4 +38,16 @@
 	<delete id="noticeDelete" parameterType="NoticeVO">
 		delete from notice where notice_no = #{noticeNo}
 	</delete>
+	
+	
+	<!-- 페이징처리 -->
+	<select id="getListPaging" resultMap="noticeMap">
+		select * from (select /*+INDEX_DESC(notice NOTICE_PK) */ rownum as rn, notice.* from notice where <![CDATA[rownum <= #{pageNum} * #{amount}]]>) where rn > (#{pageNum} -1) * #{amount}
+	</select>
+	
+    <!-- 게시물 총 갯수 -->
+    <select id="getTotal" resultType="int">
+        select count(*) from notice
+    </select>	
+
 </mapper>

@@ -47,7 +47,7 @@
 				<a class="nav-link" href="home.do">홈</a>
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="about.html">이용권구매</a></li>
-			    <li class="nav-item"><a class="nav-link" href="noticeList.do">공지사항</a></li>
+			    <li class="nav-item"><a class="nav-link" href="noticeList.do?pageNum=1&amount=10">공지사항</a></li>
 
 			    <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i class="icofont-thin-down"></i></a>
