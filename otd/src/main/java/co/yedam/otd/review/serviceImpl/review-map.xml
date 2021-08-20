@@ -11,11 +11,23 @@
 	<select id="reviewSelect" resultType="ReviewVO">
 		select * from review where review_no = #{reviewNo}
 	</select>
-	
-	<!-- 리뷰 작성 -->
+
 	<insert id="reviewInsert" parameterType="ReviewVO">
-		insert into review(review_no, review_content, review_like, email, review_date) values(r_seq.nextval, #{reviewContent}, #{reviewLike}, #{email}, sysdate)
+		<selectKey keyProperty="email" resultType="ReviewVO" order="BEFORE">
+	      <if test="email != ''">
+	         select distinct email from history where email = #{email}
+	      </if>
+		</selectKey>
+		insert into review(review_no, review_content, review_like, email, review_date) 
+	   		values(r_seq.nextval, #{reviewContent}, #{reviewLike}, #{email}, sysdate)
 	</insert>
+	
+	<!-- 
+	위 insert문으로 구현한 SQL 원문
+		IF (SELECT email FROM history WHERE email ='dmennithorp3@naver.com') THEN
+			insert into review(review_no, review_content, review_like, email, review_date)
+				values(r_seq.nextval, '내용', 3, 'dmennithorp3@naver.com', sysdate); END IF;
+	-->
 	
 	<!-- 리뷰 수정: 내용과 별점 수정, 글번호 이용 -->
 	<update id="reviewUpdate" parameterType="ReviewVO">
