@@ -15,14 +15,13 @@
 <script>
 		$(document).ready(function(){
 
-			let tr1 = $('#tr1');
-			let tr2 = $('#tr2');
+			let tr1 = $('.tr1');
+			let tr2 = $('.tr2');
 			
-			tr1.click(function(){
-			   tr2.toggle(
-			     function(){tr2.addClass('show')}, //클릭하면 show클래스 적용되서 보이기
-			     function(){tr2.addClass('hide')} //한 번 더 클릭하면 hide클래스가 숨기기
-			   );
+			tr1.click(function(e){
+				console.log(this);
+				$(tr2).hide();
+				$(this).next().show();
 			 });
 			
 		});
@@ -35,10 +34,10 @@
 	<div align="center">
 		<c:forEach var="faq" items="${list}">
 		<table border="1">
-			<tr id="tr1">
+			<tr class="tr1"> <!-- id값으로 주면 단 하나만 사용 가능하기 때문에 tr1, tr2를 calss로 줬다. -->
 				<td width="600">${faq.faqTitle}</td>
 			</tr>
-			<tr id="tr2" class="hide" height="100">
+			<tr class="tr2 hide" height="100"> <!-- tr2는 default hide 상태(클릭하면 show) -->
 				<td>${faq.faqContent}</td>
 			</tr>
 		</table>
