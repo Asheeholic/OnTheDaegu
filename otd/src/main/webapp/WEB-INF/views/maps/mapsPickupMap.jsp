@@ -14,6 +14,7 @@
 	<div id="map" align="center" style="width:60%; height:800px;">
 	</div>
 	<div><span id="goalTimeTitle">사용 예정 시간 : </span><span id="goalTime"></span></div>
+	<div><span id="ticketTimeLeftTitle">남은 정기권 시간 : </span><span id="ticketTimeLeft"></span></div>
 	<div>
 		<button id="pickupStart" type="button">사용시작</button>
 	</div>
@@ -174,7 +175,60 @@ $(window).on("load", function() {
     $('#pickupStart').on("click", function() {
     	window.location.href = "mapTimeShow.do";
     })
-    
+    $.ajax({
+		url:"LeftTimeShowServlet",
+		type:'get',
+		data:{
+			email: "${session.email}"
+		},
+		dataType: 'json',
+		success: function(result) {
+			console.log(result);
+			calculrateTime(result);
+		},
+		error: function(e) {
+			console.error(e);
+		}
+	})
+	
+	function calculrateTime(result) {
+		let now = new Date();
+		let boughtTime = new Date(result.dateBought);
+		
+		console.log(boughtTime);
+		if(result.ticketTime == "30분") {
+			boughtTime.setMinutes(boughtTime.getMinutes() + 30);
+		} else if (result.ticketTime == "1시간"){
+			boughtTime.setHours(boughtTime.getHours() + 1);
+		} else if (result.ticketTime == "2시간"){
+			boughtTime.setHours(boughtTime.getHours() + 2);
+		} else if (result.ticketTime == "4시간"){
+			boughtTime.setHours(boughtTime.getHours() + 4);
+		} else if (result.ticketTime == "8시간"){
+			boughtTime.setHours(boughtTime.getHours() + 8);
+		} else if (result.ticketTime == "12시간"){
+			boughtTime.setHours(boughtTime.getHours() + 12);
+		} else if (result.ticketTime == "24시간"){
+			boughtTime.setHours(boughtTime.getHours() + 24);
+		}
+		
+		console.log(boughtTime);
+		if(boughtTime - now > 0) {
+			let i = 0;
+			let start = setInterval(function() {
+				// 시간 대충 2시간이라 하면
+				let time = Math.floor((boughtTime.getTime()-now.getTime())/1000) - i;
+				// 1초 마다 까지고 초기화 하면됨.
+				time = Math.floor((time/60)/60) + "시간" 
+						+ Math.floor((time/60)%60) + "분"
+						+ Math.floor(time%60) + "초";
+				$("#ticketTimeLeft").text(time);
+				i += 1;
+			}, 1000)
+		} else {
+			window.location.href = "home.do";
+		}
+	}
 });
 
 </script>

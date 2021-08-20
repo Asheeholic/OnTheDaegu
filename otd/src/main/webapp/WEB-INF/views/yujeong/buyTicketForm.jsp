@@ -6,13 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>buy ticket</title>
-<!-- <script>
-	function payment(n) {
-		frm.pays.value = n;
-		frm.submit();
+<script>
+function checkAll(){
+	   if(document.getElementById("chAll").checked==true){  //id 를 사용하여 하나의 객체만을 호출
+	         for(var i=0;i<3;i++) document.getElementsByName("checkBox")[i].checked=true;   //name 을 사용하여 배열 형태로 담아 호출
+	      }
+	      if(document.getElementById("chAll").checked==false){
+	         for(var i=0;i<3;i++) document.getElementsByName("checkBox")[i].checked=false;  
+	      }
 	}
-</script> -->
-
+</script>
 </head>
 <body>
 	<div align="center">
@@ -53,8 +56,9 @@
 							<th width="200">결제수단</th>
 							<td>
 								<label><input type="radio" name="pay" value="card">신용/체크카드</label> 
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="radio" name="pay" value="trans">자동이체</label>
-								</td>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<label><input type="radio" name="pay" value="trans">자동이체</label>
+							</td>
 						</tr>
 						<tr>
 							<th width="200">결제안내</th>
@@ -70,16 +74,13 @@
 					</table>
 				</div>
 				<div align="left">
-					<input type="checkbox" name="agreement" value="total">전체동의<br>
-					<input type="checkbox" name="agreement" value="total">추가요금
-					자동 결제 동의<br> <input type="checkbox" name="agreement"
-						value="total">환불 규정 동의<br> <input type="checkbox"
-						name="agreement" value="total">서비스 이용약관 동의<br> <input
-						type="checkbox" name="agreement" value="total">개인정보 수집 및
-					이용 동의<br> <input type="checkbox" name="agreement"
-						value="total">수집한 개인정보의 제 3자 정보제공 동의<br> <input
-						type="checkbox" name="agreement" value="total">위치기반 서비스 이용
-					약관 동의<br>
+					<label><input type="checkbox" id="chAll" name="chAll" value="selectAll">전체동의</label><br>
+					<label><input type="checkbox" name="agreement" value="addPay" required>추가요금 자동 결제 동의</label><br>
+					<label><input type="checkbox" name="agreement" value="refund" required>환불 규정 동의</label><br>
+					<label><input type="checkbox" name="agreement" value="service" required>서비스 이용약관 동의</label><br>
+					<label><input type="checkbox" name="agreement" value="personal" required>개인정보 수집 및 이용 동의</label><br>
+					<label><input type="checkbox" name="agreement" value="personal2" required>수집한 개인정보의 제 3자 정보제공 동의</label><br>
+					<label><input type="checkbox" name="agreement" value="location" required>위치기반 서비스 이용 약관 동의</label><br>
 				</div>
 				<div>
 					<input type="submit" value="결제하기">
