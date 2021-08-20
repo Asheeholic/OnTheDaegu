@@ -14,7 +14,11 @@
 <body>
 	<div class="container-fluid">
 		<div class="d-flex flex-stratch row" >
-				<div class="col-12 sticky-top shadow"> <tiles:insertAttribute name="header" /></div>
+			<div class="col-12">
+				<div class="row">
+					<div class="col-12 sticky-top shadow"> <tiles:insertAttribute name="header" /></div>
+				</div>
+			</div>
 		</div>
 				<tiles:insertAttribute name="body" />
 				<tiles:insertAttribute name="footer" />
