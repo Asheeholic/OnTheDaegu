@@ -13,7 +13,7 @@
 	<a href="faqUseInformation.do">이용안내</a> <br>
 	<a href="faqBicycleFacilityManagement.do">자전거 및 시설관리</a> <br>
 	<a href="faqRentalReturn.do">대여/반납</a> <br>
-	1:1 문의하기 <br>
+	<a href="http://www.daeguoracle.com/" target="_blank">1:1 문의하기</a> <br>
 
 </body>
 </html>

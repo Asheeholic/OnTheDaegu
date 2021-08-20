@@ -1,6 +1,7 @@
 package co.yedam.otd.review.command;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,15 +35,17 @@ public class ReviewInsertServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/json;charset=utf-8");
 
+		HttpSession session = request.getSession();
+		String sessionValue = String.valueOf(session.getAttribute("session"));
+		System.out.println(sessionValue);
+
 		ReviewService dao = new ReviewServiceImpl();
 		ReviewVO vo = new ReviewVO();
 		vo.setEmail(request.getParameter("email"));
 		vo.setReviewLike(Integer.valueOf(request.getParameter("reviewLike")));
 		vo.setReviewContent(request.getParameter("reviewContent"));
 		dao.reviewInsert(vo);
-		HttpSession session = request.getSession();
-		String sessionValue = (String)session.getAttribute("sessionEmail");
-		System.out.println(sessionValue);
+		
 		
 		Gson gson = new GsonBuilder().create();
 		response.getWriter().print(gson.toJson(vo));
