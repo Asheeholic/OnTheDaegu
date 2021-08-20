@@ -9,7 +9,7 @@
 <!-- bootstrap css -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
  <!-- Main Stylesheet -->
- <link rel="stylesheet" href="css/mainstyle.css">
+ <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="container-fluid">
