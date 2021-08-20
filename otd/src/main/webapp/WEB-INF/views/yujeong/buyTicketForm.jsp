@@ -5,6 +5,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<style>
+.bg-1 {
+  position: relative;
+}
+body {
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  color: #02080ed8;
+  font-weight: 400;
+}
+.overlay:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background: #71D5E4;
+}
+</style>
+
 <title>buy ticket</title>
 <script>
 function checkAll(){
@@ -18,6 +45,26 @@ function checkAll(){
 </script>
 </head>
 <body>
+<section class="page-title">
+<img src="/img/payForm.png" class="bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span class="text-white">지친 일상의 작은 환기</span>
+          <h1 class="text-capitalize mb-5 text-lg">Go to OTD World!!</h1>
+
+          <!-- <ul class="list-inline breadcumb-nav">
+            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="list-inline-item"><span class="text-white">/</span></li>
+            <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 	<div align="center">
 		<div>
 			<h1>이용권 구매</h1>
