@@ -42,7 +42,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3"> 	
-				<div class="dropdown">
+				<div class="dropdown ">
 			      <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
 			        <img src="https://github.com/mdo.png" alt="" width="40" height="40" class="rounded-circle me-2">
 			        <strong>${sessionName }님 (${sessionId })</strong>
