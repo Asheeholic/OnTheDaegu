@@ -15,16 +15,31 @@
 	<select id="memberLogin" resultType="MemberVO">
 		select * from member where email = #{email} and password= #{password} and state='Y'
 	</select>
+	
 	<!-- 아이디 중복체크  -->
 	<select id="memberIdCheck" resultType="Integer">
 		select count(*) from member where email = #{email}
 	</select>
+	
 	<!-- 로그인 체크 -> 회원로그인 -->
 	<select id="memberCheckIdAndPassword" resultType="Integer">
 		select count(*) from member where email = #{email} and password = #{password} and state='Y'
 	</select>
+	
 	<!-- 회원가입 -->
 	<insert id="memberInsert" parameterType="MemberVO" >
 		insert into member(email, password, name, phone) values(#{email}, #{password}, #{name}, #{phone})
 	</insert>
+	
+	<!-- 회원수정(휴대폰 번호만)  -->
+	<update id="memberUpdate" parameterType="MemberVO" >
+		update member set phone = #{phone}
+		where email = #{email}
+	</update>
+	
+	<!-- 회원수정(패스워드만 -->
+	<update id="memberPassUpdate" parameterType="MemberVO" >
+		update member set password = #{password}
+		where email = #{email}
+	</update> 
 </mapper>
