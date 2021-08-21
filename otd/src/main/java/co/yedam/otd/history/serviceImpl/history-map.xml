@@ -28,6 +28,6 @@
 
 	<!-- 결제내역 추가 -->
 	<insert id="historyInsert">
-		INSERT INTO history(num, email, history_date, ticket_code, ticket_no) VALUES(h_seq.nextval, #{email}, #{historyDate}, #{ticketCode}, #{ticketNo})
+		INSERT INTO history(num, email, ticket_code, ticket_no) VALUES(h_seq.nextval, #{email}, #{ticketCode}, #{ticketNo})
 	</insert>
 </mapper>

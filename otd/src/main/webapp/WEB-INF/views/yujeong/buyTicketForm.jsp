@@ -12,6 +12,7 @@
 	background-size: 100%;
 	height: 370px;
 	position: relative;
+	z-index: -50;
 }
 
 body {
@@ -21,19 +22,6 @@ body {
 	font-size: 16px;
 	color: #6F8BA4;
 	font-weight: 400;
-}
-
-.overlay:before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.9;
-	background: #223a66;
 }
 
 .btn {
@@ -60,6 +48,20 @@ body {
 	border-radius: 50px;
 }
 
+.overlay:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background: #00b6bc;
+  z-index: -1;
+}
+/* 
 table, th, td {
 	border: solid 1px #223a66;
 	border-collapse: collapse;
@@ -77,6 +79,10 @@ padding-left:10px;
 .check {
 margin-left:12%;
 }
+
+.text-white {
+	z-index: 10;
+} */
 </style>
 
 <title>buy ticket</title>
@@ -100,8 +106,8 @@ margin-left:12%;
 			<div class="row">
 				<div class="col-md-12">
 					<div class="block text-center">
-						<span class="text-white">Book your Seat</span>
-						<h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
+						<h1 class="text-capitalize mb-5 text-lg">OTD와 함께하는 건강한 일상</h1>
+						<span class="text-white">OTD는 대구도시지하철도공사와 함께 합니다.</span>
 
 						<!-- <ul class="list-inline breadcumb-nav">
             <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
@@ -173,18 +179,18 @@ margin-left:12%;
 						</div>
 						<div class="check">
 							<label><input type="checkbox" id="chAll" name="chAll" value="selectAll">전체동의</label><br>
-							<label><input type="checkbox" name="agreement" value="addPay" required>추가요금 자동 결제 동의</label><br>
+							<label><input type="checkbox" name="agreement" value="addPay" required="required">추가요금 자동 결제 동의</label><br>
 							<label><input type="checkbox" name="agreement" value="refund" required>환불 규정 동의</label><br>
 							<label><input type="checkbox" name="agreement" value="service" required>서비스 이용약관 동의</label><br>
 							<label><input type="checkbox" name="agreement" value="personal" required>개인정보 수집 및 이용 동의</label><br>
 							<label><input type="checkbox" name="agreement" value="personal2" required>수집한 개인정보의 제 3자 정보제공 동의</label><br>
 							<label><input type="checkbox" name="agreement" value="location" required>위치기반 서비스 이용 약관 동의</label><br>
 						</div>
-					</form>
 					<div class="text-center">
 						<input class="btn btn-main btn-round-full" type="submit"
 							value="결 제 하 기"> <i class="icofont-simple-right ml-2"></i>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>
