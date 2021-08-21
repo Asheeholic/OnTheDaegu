@@ -44,13 +44,17 @@
 	</style>
 </head>
 <body>
+	<div id="review" align="center">
+		리뷰 테스트 좀 하겠습니다 <br> <a href="reviewList.do?pageNum=1&amount=10">리뷰목록</a>
+	</div>
+	<div>
+		<a href="signUpForm.do">Test 회원가입영역폼</a><br /> <a href="loginForm.do">Test
+			로그인</a>
+	</div>
 
 	<%-- 여기가 홈이야
 	<div id="notice" align="center">
 		공지 테스트 좀 하겠습니다 <br> <a href="noticeList.do">공지목록</a>
-	</div>
-	<div id="review" align="center">
-		리뷰 테스트 좀 하겠습니다 <br> <a href="reviewList.do">리뷰목록</a>
 	</div>
 	<div id="event" align="center">
 		이벤트 테스트 좀 하겠습니다 <br> <a href="eventList.do">이벤트목록</a>
@@ -81,10 +85,6 @@
 		<a href="mapShowBikeList.do">자전거 현황과 맵 보여주기</a>
 	</div>
 
-	<div>
-		<a href="signUpForm.do">Test 회원가입영역폼</a><br /> <a href="loginForm.do">Test
-			로그인</a>
-	</div>
 
 	<!-- 이용권 구매 세션 넘기기 -->
 	<form id="frm" action="buyTicketForm.do" method="post">
