@@ -28,6 +28,55 @@
 		.pageInfo_btn.active{
       		text-decoration: underline;
   		}
+  		.bg-1 {
+			background: url("img/payForm.png") no-repeat 50% 50%;
+			background-size: 100%;
+			height: 320px;
+			position: relative;
+			z-index: -50;
+		}
+		body {
+			line-height: 1.6;
+			font-family: "Roboto", sans-serif;
+			-webkit-font-smoothing: antialiased;
+			font-size: 16px;
+			color: #6F8BA4;
+			font-weight: 400;
+		}
+		.btn {
+			display: inline-block;
+			font-size: 20px;
+			font-size: 0.8125rem;
+			font-weight: 1000;
+			letter-spacing: .5px;
+			padding: .75rem 2rem;
+			font-family: "Exo", sans-serif;
+			text-transform: uppercase;
+			border-radius: 5px;
+			border: 2px solid transparent;
+			transition: all .35s ease;
+		}
+		.btn-main {
+			background: #223a66;
+			color: #fff;
+			border-color: #223a66;
+		}
+		.btn-round-full {
+			border-radius: 50px;
+		}
+		.overlay:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.9;
+			background: #00b6bc;
+			z-index: -1;
+		}
 	</style>
 	
 	<script>
@@ -48,26 +97,18 @@
 	</script>
 </head>
 <body>
-<section class="page-title bg-1">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block text-center">
-          <span class="text-white">All Department</span> <!-- 엥 왜 색깔 안 먹히냐;;; -->
-          <h1 class="text-capitalize mb-5 text-lg">Care Department</h1>
-
-          <!-- <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-            <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="#" class="text-white-50">All Department</a></li>
-          </ul>  -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+	<section class="page-title bg-1">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block text-center">
+						<h1 class="text-capitalize mb-5 text-lg">Notice</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
     <!-- Page Wrapper -->
@@ -76,12 +117,11 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Begin Page Content -->
                 <div class="container" align="center">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Notice</h1>
+                    <h1 class="h3 mb-2 text-gray-800" style="margin: 40px">Notice</h1>
                     <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank"
                             href="https://datatables.net">official DataTables documentation</a>.</p>
@@ -119,7 +159,7 @@
 									        <ul id="pageInfo" class="pageInfo">
 									            <!-- 이전페이지 버튼 -->
 								                <c:if test="${pageMaker.prev}">
-								                    <li class="pageInfo_btn previous"><a href="${pageMaker.startPage-1}">Previous</a></li>
+								                    <li class="pageInfo_btn previous"><a href="noticeList.do?pageNum=${pageMaker.startPage-1}&amount=10">Previous</a></li>
 								                </c:if>
 									        
 								                <!-- 각 번호 페이지 버튼 누른 거 표시되도록 -->
@@ -129,7 +169,7 @@
 								                
 								                <!-- 다음페이지 버튼 -->
 								                <c:if test="${pageMaker.next}">
-								                    <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1}">Next</a></li>
+								                    <li class="pageInfo_btn next"><a href="noticeList.do?pageNum=${pageMaker.endPage + 1}&amount=10">Next</a></li>
 								                </c:if> 
 								                
 									        </ul>

@@ -27,7 +27,7 @@
 				</tr>
 			</table><br>
 			<div>
-				<button type="button" onclick="location.href='reviewList.do?pageNum=1&amount=10'">목록</button>
+				<button type="button" onclick="location.href='reviewList.do?pageNum=1&amount=5'">목록</button>
 				<c:if test="${review.email == sessionEmail}">
 					&nbsp;&nbsp;&nbsp;
 					<button type="button" onclick="location.href='reviewUpdateForm.do?reviewNo=' + ${review.reviewNo}">수정</button>

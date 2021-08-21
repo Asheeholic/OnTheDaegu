@@ -48,7 +48,7 @@
 		FAQ 테스트 좀 하겠습니다 <br> <a href="faqHome.do">FAQ목록</a>
 	</div>
 	<div id="review" align="center">
-		리뷰 테스트 좀 하겠습니다 <br> <a href="reviewList.do?pageNum=1&amount=10">리뷰목록</a>
+		리뷰 테스트 좀 하겠습니다 <br> <a href="reviewList.do?pageNum=1&amount=5">리뷰목록</a>
 	</div>
 	<div>
 		<a href="signUpForm.do">Test 회원가입영역폼</a><br /> <a href="loginForm.do">Test
