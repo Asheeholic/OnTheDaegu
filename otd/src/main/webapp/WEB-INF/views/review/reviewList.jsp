@@ -8,16 +8,21 @@
 <title>Insert title here</title>
 	<style>
 		.pageInfo{
+			width: 600px;
 			list-style : none;
 			display: inline-block;
-			margin: 50px 0 0 100px;
+			margin: 20px 0 0 15px;
 	   	}
 	 	.pageInfo li{
 	    	float: left;
-	   		font-size: 20px;
-	   		margin-left: 18px;
+	   		font-size: 17px;
+	   		margin-left: 9px;
 	   		padding: 7px;
 	   		font-weight: 500;
+	 	}
+	 	.pageInfo_btn{
+	 		font-color: black;
+	 		display: block;
 	 	}
 		a:link {color:black; text-decoration: none;}
 		a:visited {color:black; text-decoration: none;}
