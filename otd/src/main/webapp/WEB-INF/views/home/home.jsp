@@ -20,12 +20,26 @@
 	<style>
 		.banner {
 			background-image: url("img/bikeMain.jpg");
+			background-attachment: fixed;
 			z-index: -100;
 		}
 		
-		.banner .block span, .banner .block h1, .banner .block p {
+		.about {
+			background-image: url("img/mainBodyBack.jpg");
+			background-attachment: fixed;
+			background-size: cover;
+			z-index: -100;
+		}
+		
+		.banner .block span,
+		.banner .block h1,
+		.banner .block p, 
+		.feature-item h4, 
+		h2.title-color, 
+		.about p {
 			color: #00B6BC;
 		}
+		
 		
 		.btn-main {
 			background: #00B6BC;
@@ -33,13 +47,8 @@
 			border-color: #00B6BC;
 		}
 		
-		.feature-item h4 {
-			color: #00B6BC;
-		}
 		
-		h2.title-color {
-			color: #00B6BC;
-		}
+		
 	</style>
 </head>
 <body>
@@ -100,17 +109,17 @@
 				<div class="col-lg-6 col-md-12 col-xl-7">
 					<div class="block">
 						<div class="divider mb-3"></div>
-						<span class="text-uppercase text-sm letter-spacing ">Total Health care solution</span>
-						<h1 class="mb-3 mt-3">Your most trusted health partner</h1>
+						<span class="text-uppercase text-sm letter-spacing ">새로운 대여의 시작</span>
+						<h1 class="mb-3 mt-3">대구에서 시작하는 새로운 자전거</h1>
 						
-						<p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
+						<p class="mb-4 pr-5">공간을 차지하기만 하는 자전거는 이제 필요가 없습니다. 그렇다고 다른 수단을 이용하기에는 시간과 돈이 소요가 됩니다. 여기에 새로운 해답이 있습니다.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- 대여 버튼 만들기 -->
-	<section class="features">
+	<section class="features mb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">

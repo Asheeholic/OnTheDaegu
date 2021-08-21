@@ -10,6 +10,7 @@
 	.choice {
 		background-image: url("img/choiceCity.jpg");
 		background-size: cover;
+		background-attachment: fixed;
 		z-index: -100;
 	}
 	
