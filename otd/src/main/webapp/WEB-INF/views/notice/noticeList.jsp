@@ -152,9 +152,9 @@
                             <!-- Home 및 글쓰기 버튼 -->
 							<div align="center">
 								<div>
-									<button type="button" onclick="location.href='home.do'">HOME</button>
-									&nbsp;&nbsp;&nbsp;
-									<button type="button" onclick="location.href='noticeInsertForm.do'">글쓰기</button>
+									<c:if test="${sessionAuthor eq 'ADMIN'}">
+										<button type="button" onclick="location.href='noticeInsertForm.do'">글쓰기</button>
+									</c:if>
 								</div>
 								<form id="frm" name="frm" action="noticeSelect.do" method="post">
 									<input type="hidden" id="noticeNo" name="noticeNo">

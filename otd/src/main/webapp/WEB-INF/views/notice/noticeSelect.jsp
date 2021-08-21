@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,10 +35,12 @@
 		<div>
 			<!-- 글 조회 후 다시 목록으로 돌아갈 때 마지막으로 머물렀던 페이지로 넘어가는 기능 미구현 -->
 			<button type="button" onclick="location.href='noticeList.do?pageNum=1&amount=10'">목록</button>
-			&nbsp;&nbsp;&nbsp;
-			<button type="submit" onclick="location.href='noticeUpdateForm.do?noticeNo=${notice.noticeNo}'">수정</button>
-			&nbsp;&nbsp;&nbsp;
-			<button type="submit" onclick="location.href='noticeDelete.do?noticeNo=${notice.noticeNo}'">삭제</button>
+			<c:if test="${sessionAuthor eq 'ADMIN'}">
+				&nbsp;&nbsp;&nbsp;
+				<button type="submit" onclick="location.href='noticeUpdateForm.do?noticeNo=${notice.noticeNo}'">수정</button>
+				&nbsp;&nbsp;&nbsp;
+				<button type="submit" onclick="location.href='noticeDelete.do?noticeNo=${notice.noticeNo}'">삭제</button>
+			</c:if>
 		</div>		
 	</div>
 </body>
