@@ -12,9 +12,18 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wre5st6fx0"></script>
 </head>
 <body>
-	<div id="bikeTable"></div>
-	<div id="map" align="center" style="width:60%; height:800px;"></div>
-
+	<section class="section">
+		<div class="container">
+			<div id="bikeTable" class="row">
+				<table class="table table-striped">
+				</table>	
+			</div>
+			<div class="department-img">
+				<div class="border rounded" id="map" style="width:100%; height:800px;">
+				</div>
+			</div>
+		</div>	
+	</section>
 <script>
 // 변수 초기화
 let now;
@@ -80,19 +89,19 @@ function drawTableReady(result) {
 	console.log("테이블 그리기");
 	// 테이블 그려보자
 	// 일단 헤더
-	let table = $('<table />').addClass('table');
-	
+	let realThead = $('<thead />');
 	let thead = $('<tr />');
 	// 일련번호, 사용가능 여부, 위치, 주차된 곳
 	let th1 = $('<th />').text('일련번호');
 	let th2 = $('<th />').text('사용가능 여부');
 	let th3 = $('<th />').text('위치');
 	let th4 = $('<th />').text('주차된 곳');
+	
+	
 	$(thead).append(th1, th2, th3, th4);
-	
-	$(table).append(thead);
-	
-	$('#bikeTable').append(table);
+	$(realThead).append(thead);
+	let realTbody = $('<tbody />');
+	$('table').append(realThead, realTbody);
 	
 	for(let bike of result) {
 		$.ajax({
@@ -121,8 +130,7 @@ function drawTable(bike, result) {
 	//console.log(data.results[0].region.area2.name, data.results[0].region.area3.name)
 	
 	
-	let tbody = $('<tr>');
-	
+	let tbody = $('<tr />');
 	let td1 = $('<td />').text(bike.bicycleNo);
 	
 	let td2;
@@ -144,7 +152,7 @@ function drawTable(bike, result) {
 	}
 	
 	$(tbody).append(td1, td2, td3, td4);
-	$('table').append(tbody);
+	$('tbody').append(tbody);
 	
 	//$('#bikeTable').$('<table>').append(tbody);
 }

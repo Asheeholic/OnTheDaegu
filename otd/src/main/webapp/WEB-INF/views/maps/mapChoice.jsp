@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>mapChoice</title>
 <style>
-
 	.choice {
 		background-image: url("img/choiceCity.jpg");
 		background-size: cover;
