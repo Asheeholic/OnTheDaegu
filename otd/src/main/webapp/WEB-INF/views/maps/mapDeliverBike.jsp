@@ -11,13 +11,32 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wre5st6fx0"></script>
 </head>
 <body>
-<div id="map" align="center" style="width:60%; height:800px;">
+<!-- <div id="map" align="center" style="width:60%; height:800px;">
 	</div>
 	<div>
 		<span id="goalTimeSubtitle"></span>
 		<span id="goalTime"></span>
 		<span id="goalTimeTitle"></span>
-	</div>
+	</div> -->
+	<section class="section department-single">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-12">
+					<div class="department-img">
+						<div class="border rounded" id="map" style="width:100%; height:800px;">
+						</div>
+						<div class="row px-3">
+							<div class="col-12 px-3 py-4 bg-info text-white text-center h3 border rounded border-end-0 border-white">
+								<span id="goalTimeSubtitle"></span>
+								<span id="goalTime"></span>
+								<span id="goalTimeTitle"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 <script>
 // 변수 초기화
 let now;
@@ -115,7 +134,6 @@ function onSuccessGeolocation(position) {
     let i = 0;
 	let deliveryStart = setInterval(function() {
 		console.log(resultPath.length);
-		// 로케이션이 안감. 수정해야함
 		marker2.setPosition(resultPath[resultPath.length - i]);
 		i += 1;
 		if(resultPath.length == i) {

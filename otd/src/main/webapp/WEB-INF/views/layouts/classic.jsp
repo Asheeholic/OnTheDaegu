@@ -10,6 +10,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
  <!-- Main Stylesheet -->
  <link rel="stylesheet" href="css/style.css">
+ <!-- Icon Font Css -->
+ <link rel="stylesheet" href="css/icofont.min.css">
 </head>
 <body>
 	<tiles:insertAttribute name="header" />

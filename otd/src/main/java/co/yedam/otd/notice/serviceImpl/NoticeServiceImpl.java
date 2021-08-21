@@ -8,6 +8,7 @@ import co.yedam.otd.common.DataSource;
 import co.yedam.otd.notice.service.NoticeMapper;
 import co.yedam.otd.notice.service.NoticeService;
 import co.yedam.otd.notice.vo.NoticeVO;
+import co.yedam.otd.page.model.Criteria;
 
 public class NoticeServiceImpl implements NoticeService {
 	private SqlSession sqlSession = DataSource.getInstance().openSession();
@@ -54,6 +55,18 @@ public class NoticeServiceImpl implements NoticeService {
 		int n = map.noticeDelete(vo);
 		sqlSession.commit();
 		return n;
+	}
+
+	@Override
+	public List<NoticeVO> getListPaging(Criteria cri) {
+		// TODO 페이징처리
+		return map.getListPaging(cri);
+	}
+
+	@Override
+	public int getTotal() {
+		// TODO 게시물 갯수
+		return map.getTotal();
 	}
 
 }

@@ -375,7 +375,7 @@ a:focus {
 }
 
 #navbarmain {
-  padding: 20px 0px;
+  padding: 20px 20px;
 }
 
 #navbarmain .nav-link {
@@ -408,8 +408,8 @@ a:focus {
   padding: 0px;
   visibility: hidden;
   transition: all 0.3s ease-out 0s;
-  border: 0px;
-  border-top: 5px solid #e12454;
+  border: 10px;
+  border-top: 5px solid #a1dbf1ff;
   border-radius: 0px;
 }
 
@@ -428,7 +428,7 @@ a:focus {
 }
 
 .dropdown .dropdown-item:hover {
-  color: #e12454;
+  color: #a1dbf1ff;
 }
 
 .header-top-bar {

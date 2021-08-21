@@ -6,79 +6,92 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.header-top-bar {
+  background: #00B6BC;
+  font-size: 14px;
+  padding: 10px 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #fff;
+}
+</style>
 </head>
-<body>
-	<header>
+<body>		
 	<div class="header-top-bar">
 		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-8">
-					<!-- <ul class="top-bar-info list-inline-item pl-0 mb-0">
-						<li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>support@novena.com</a></li>
-						<li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address Ta-134/A, New York, USA </li>
-					</ul> -->
-				</div>
-				<div class="col-lg-4">
+			<div class="d-flex">
+				<div class="col-lg-6"></div>
+				<div class="col-lg-6 d-flex justify-content-end">
 					<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-						<a href="tel:+23-345-67890" >
-							<span>Call Now : </span>
-							<span class="h4">823-4565-13456</span>
-						</a>
+						<a href="http://www.daeguoracle.com/" >
+							<span>(주)급발진</span>
+							<span class="h4">On The Daegu</span>
+						</a>						
 					</div>
+					
 				</div>
 			</div>
 		</div>
 	</div>
+	
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
-		<div class="container">
-		 	<!-- 로고 사진  -->
-		 	 <div class="col-lg-3">
-		 	 	<a class="navbar-brand" href="home.do">
-			  		<img src="img/OTDLogo.png" alt="otd로고사진" class="img-fluid">
-			  	</a>
+		<div class="container d-flex">
+
+			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="icofont-navigation-menu"></span>
+		 	 </button>
+		 	 	
+			<div class="col-lg-3 d-flex justify-content-evenly">
+			 <!-- 로고 사진  -->
+				<a class="navbar-brand" href="home.do">
+					<img src="img/OTDLogo1.png" alt="otd로고사진" class="img-fluid">
+				</a>
+			</div>  	
+			<div class="col-lg-6">
+		  		<div class="col-ms-auto collapse navbar-collapse justify-content-evenly" id="navbarmain">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active h4 mx-2">
+							<a class="flex-sm-fill text-lg-center nav-link active" href="home.do">홈</a>
+						  </li>
+						  <li class="nav-item dropdown h4">
+							<a class="nav-link dropdown-toggle mx-2" href="buyTicketForm.do" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">이용권<i class="icofont-thin-down"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown02">
+								<li><a class="dropdown-item" href="buyTicketForm.do">이용권 구매</a></li>
+								<li><a class="dropdown-item" href="getPayHistory.do">이용권 환불</a></li>
+							</ul>
+			  			  </li>
+					    
+					    <li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do">공지사항</a></li>
+						<li class="nav-item h4 mx-2"><a class="nav-link" href="reviewList.do">리뷰게시판</a></li>
+						<li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do">문의/FAQ</a></li>
+					</ul>	
+				</div>
 			</div>
-		  	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="icofont-navigation-menu"></span>
-		  </button>
-	  
-		  <div class="collapse navbar-collapse" id="navbarmain">
-			<ul class="navbar-nav ml-auto">
-			  <li class="nav-item active">
-				<a class="nav-link" href="home.do">홈</a>
-			  </li>
-			   <li class="nav-item"><a class="nav-link" href="about.html">이용권구매</a></li>
-			    <li class="nav-item"><a class="nav-link" href="noticeList.do">공지사항</a></li>
-
-			    <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i class="icofont-thin-down"></i></a>
-					<ul class="dropdown-menu" aria-labelledby="dropdown02">
-						<li><a class="dropdown-item" href="department.html">Departments</a></li>
-						<li><a class="dropdown-item" href="department-single.html">Department Single</a></li>
-					</ul>
-			  	</li>
-
-			  	<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
-					<ul class="dropdown-menu" aria-labelledby="dropdown03">
-						<li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
-						<li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li>
-						<li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li>
-					</ul>
-			  	</li>
-
-			   <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="blog-sidebar.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i class="icofont-thin-down"></i></a>
-					<ul class="dropdown-menu" aria-labelledby="dropdown05">
-						<li><a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a></li>
-
-						<li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
-					</ul>
-			  	</li>
-			   <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-			</ul>
-		  </div>
+			<div class="col-lg-3">
+				<div class="col-ms-auto collapse navbar-collapse d-flex justify-content-center" id="navbarmain"> 	
+					<c:if test="${not empty sessionEmail }">
+						<div class="dropdown ">
+					      <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle d-flex justify-content-center" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+					        <img src="img/profile.png" alt="" width="40" height="40" class="rounded-circle me-2">
+					        <strong>${sessionName }님 (${sessionEmail })</strong>
+					      </a>
+					      <ul class="dropdown-menu" aria-labelledby="dropdown02">
+					        <li><a class="dropdown-item" href="memberSelect.do">마이페이지</a></li>
+					        <li><a class="dropdown-item" href="logout.do">Log out</a></li>
+					      </ul>
+			    		</div>
+			    	</c:if>	
+			    	<c:if test="${empty sessionEmail }">
+			    		<ul class="navbar-nav mr-auto">
+			    			<li class="nav-item active">
+			    				<a class="nav-link" href="loginForm.do">로그인</a>
+			    			</li>
+							<li class="nav-item active"><a class="nav-link" href="noticeList.do">회원가입</a></li>
+						</ul>	
+			    	</c:if>
+				</div>
+			</div>
 		</div>
 	</nav>
-</header>
 </body>
 </html>

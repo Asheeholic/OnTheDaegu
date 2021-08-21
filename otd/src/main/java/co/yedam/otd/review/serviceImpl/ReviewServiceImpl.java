@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.otd.common.DataSource;
+import co.yedam.otd.page.model.Criteria;
 import co.yedam.otd.review.service.ReviewMapper;
 import co.yedam.otd.review.service.ReviewService;
 import co.yedam.otd.review.vo.ReviewVO;
@@ -46,6 +47,18 @@ public class ReviewServiceImpl implements ReviewService {
 		int n = map.reviewDelete(vo);
 		sqlSession.commit();
 		return n;
+	}
+
+	@Override
+	public List<ReviewVO> getListPaging(Criteria cri) {
+		// TODO 페이징처리
+		return map.getListPaging(cri);
+	}
+
+	@Override
+	public int getTotal() {
+		// TODO 게시물 갯수
+		return map.getTotal();
 	}
 
 }

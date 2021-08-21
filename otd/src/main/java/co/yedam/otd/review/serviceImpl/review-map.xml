@@ -38,5 +38,15 @@
 	<delete id="reviewDelete" parameterType="ReviewVO">
 		delete from review where review_no = #{reviewNo}
 	</delete>
+	
+	<!-- 페이징처리 -->
+	<select id="getListPaging" resultType="ReviewVO">
+		select * from (select /*+INDEX_DESC(review REVIEW_PK) */ rownum as rn, review.* from review where <![CDATA[rownum <= #{pageNum} * #{amount}]]>) where rn > (#{pageNum} -1) * #{amount}
+	</select>
+	
+    <!-- 게시물 총 갯수 -->
+    <select id="getTotal" resultType="int">
+        select count(*) from review
+    </select>		
 
 </mapper>
