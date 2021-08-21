@@ -21,6 +21,7 @@
 		.banner {
 			background-image: url("img/bikeMain.jpg");
 			background-attachment: fixed;
+			background-size: cover;
 			z-index: -100;
 		}
 		
@@ -47,7 +48,9 @@
 			border-color: #00B6BC;
 		}
 		
-		
+		.feature-item {
+		  box-shadow: 0px 0px 30px 0px rgba(0, 42, 106, 0.3);
+		}
 		
 	</style>
 </head>
@@ -171,8 +174,8 @@
 				</div>
 				<div class="col-lg-4">
 					<div class="about-content pl-4 mt-4 mt-lg-0">
-						<h2 class="title-color">Personal care <br>& healthy living</h2>
-						<p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
+						<h2 class="title-color">익숙한 경험을 <br>다시 새롭게.</h2>
+						<p class="mt-4 mb-5">이미 알고 있는 경험은 또 다시 새롭게 느껴질겁니다. 또 다시 한번 여러분들도 경험해보세요!</p>
 	
 						<a href="mapChoiceForm.do" class="btn btn-main btn-round-full">자전거 대여하기</a>
 					</div>

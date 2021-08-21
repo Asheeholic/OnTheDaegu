@@ -9,16 +9,46 @@
     <title>간단한 지도 표시하기</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wre5st6fx0"></script>
+    <style>
+		.btn-main {
+			background: #00B6BC;
+			color: #fff;
+			border-color: #00B6BC;
+			transform: scale(1.5);
+		}
+	</style>
 </head>
 <body>
-	<div id="map" align="center" style="width:60%; height:800px;">
+	<!-- <div id="map" align="center" style="width:60%; height:800px;">
 	</div>
 	<div><span id="goalTimeTitle">사용 예정 시간 : </span><span id="goalTime"></span></div>
 	<div><span id="ticketTimeLeftTitle">남은 정기권 시간 : </span><span id="ticketTimeLeft"></span></div>
 	<div>
 		<button id="pickupStart" type="button">사용시작</button>
-	</div>
-
+	</div> -->
+	<section class="section department-single">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-12">
+					<div class="department-img">
+						<div class="row px-3 pt-3">
+							<div class="col-lg-2 col-6 px-3 py-1 bg-info text-white border rounded border-end-0 border-white"><span id="goalTimeTitle">사용 예정 시간</span></div>
+							<div class="col-lg-2 col-6 px-3 py-1 bg-info text-white border rounded border-end-0 border-white"><span id="goalTime"></span></div>
+							<div class="col-lg-2 col-6 px-3 py-1 bg-info text-white border rounded border-end-0 border-white"><span id="ticketTimeLeftTitle">남은 정기권 시간</span></div>
+							<div class="col-lg-6 col-6 px-3 py-1 bg-info text-white border rounded border-end border-white"><span id="ticketTimeLeft"></span></div>
+						</div>
+						<div class="border border-white rounded" id="map" style="width:100%; height:800px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="p-5 d-flex justify-content-center">
+				<button class="btn btn-main btn-round-full" id="pickupStart" type="button">사용시작</button>
+			</div>
+		</div>
+	</section>
 <script>
 // 변수 초기화
 let now;

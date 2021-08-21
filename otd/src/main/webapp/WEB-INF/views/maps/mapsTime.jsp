@@ -6,14 +6,70 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		.section {
+			background-image: url("img/bikeMain.jpg");
+			background-attachment: fixed;
+			background-size: cover;
+			z-index: -100;
+		}
+		
+		.btn-main {
+			background: #00B6BC;
+			color: #fff;
+			border-color: #00B6BC;
+			transform: scale(1.5);
+		}
+		
+		.feature-item {
+			flex-basis: 40%;
+			margin: 0px 10px;
+			padding: 40px 30px;
+			background-color: #00B6BC;
+			border-radius: 15px 15px 15px 15px;
+			box-shadow: 0px 0px 30px 0px rgba(0, 42, 106, 0.3);
+		}
+		
+		.feature-item .h2, .feature-item .h4 {
+			color: white;
+		}
+		
+		.text-center {
+			color: #00B6BC;
+		}
+	</style>
 </head>
 <body>
-	<div>
+	
+	<!-- <div>
 		<span id="title">남은 시간은</span>
 		<span id="time"></span>
-	</div>
-	<button id="homeBtn">메인으로</button>
+	</div> -->
+	
 	<!-- 여기 time에 자바에서 넘어온 시간을 가지고 써야함. -->
+	<section class="section py-5">
+		<div class="container">
+			<div class="row py-5">
+				<div class="col-lg-12 py-5">
+					<div>
+						<h3 class="display-5 text-center">즐거운 자전거 여행이 되시기 바랍니다!</h3>
+					</div>
+					<div class="feature-block d-lg-flex justify-content-center py-5">
+						<div class="feature-item mb-5 mb-lg-0">
+							<div class="p-5">
+								<span class="h4" id="title">남은 시간은</span><br>
+								<span class="h2" id="time"></span>
+							</div>
+						</div>
+					</div>
+					<div class="d-flex justify-content-center">
+						<button class="btn btn-main" id="homeBtn">메인으로</button>					
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
 	<script>
 		$(window).on('load', function() {
 			
