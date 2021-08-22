@@ -6,18 +6,22 @@
 		매핑된다. -->
 	<select id="historySelect" parameterType="HistoryVO"
 		resultType="HashMap">
-		select h.ticket_no, h.history_date, h.ticket_code, t.ticket_price
+		select h.ticket_no, h.history_date, h.ticket_code,
+		t.ticket_price
 		from history h inner join ticket t
-		on h.ticket_code = t.ticket_code
+		on h.ticket_code =
+		t.ticket_code
 		where email = #{email}
 	</select>
 
 	<select id="histroyList" parameterType="HistoryVO"
 		resultType="HashMap">
-		select h.ticket_no, h.history_date, h.ticket_code, t.ticket_price
+		select h.ticket_no, h.history_date, h.ticket_code,
+		t.ticket_price
 		from history h inner join ticket t
 		on h.ticket_code = t.ticket_code
 		where email = #{email}
+		order by h.history_date desc
 	</select>
 
 	<!-- 결제내역 수정 -->
@@ -28,6 +32,7 @@
 
 	<!-- 결제내역 추가 -->
 	<insert id="historyInsert">
-		INSERT INTO history(num, email, ticket_code, ticket_no) VALUES(h_seq.nextval, #{email}, #{ticketCode}, #{ticketNo})
+		INSERT INTO history(num, email, ticket_code,
+		ticket_no) VALUES(h_seq.nextval, #{email}, #{ticketCode}, #{ticketNo})
 	</insert>
 </mapper>

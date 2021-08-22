@@ -54,13 +54,14 @@
 							<a class="flex-sm-fill text-lg-center nav-link active" href="home.do">홈</a>
 						  </li>
 						  <li class="nav-item dropdown h4">
-							<a class="nav-link dropdown-toggle mx-2" href="buyTicketForm.do" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">이용권<i class="icofont-thin-down"></i></a>
+							<a class="nav-link dropdown-toggle mx-2" href="buyTicketForm.do" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">이용권
+							<!-- <i class="icofont-thin-down"></i> --></a>
 							<ul class="dropdown-menu" aria-labelledby="dropdown02">
 								<li><a class="dropdown-item" href="buyTicketForm.do">이용권 구매</a></li>
 								<li><a class="dropdown-item" href="getPayHistory.do">이용권 환불</a></li>
 							</ul>
 			  			  </li>
-					    
+					    <!-- 공지 및 리뷰 페이징처리로 인해 pageNum 및 amount값 넘겨줘야 합니다. /김주영 -->
 					    <li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do?pageNum=1&amount=10">공지사항</a></li>
 						<li class="nav-item h4 mx-2"><a class="nav-link" href="reviewList.do?pageNum=1&amount=5">리뷰게시판</a></li>
 						<li class="nav-item h4 mx-2"><a class="nav-link" href="faqHome.do">문의/FAQ</a></li>
