@@ -137,12 +137,6 @@ body {
 					<div class="block text-center">
 						<h1 class="text-capitalize mb-5 text-lg">OTD와 함께하는 건강한 일상</h1>
 						<span class="text-white">OTD는 대구도시지하철도공사와 함께 합니다.</span>
-
-						<!-- <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-            <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
-          </ul> -->
 					</div>
 				</div>
 			</div>
