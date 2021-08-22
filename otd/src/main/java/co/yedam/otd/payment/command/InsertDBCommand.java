@@ -1,6 +1,10 @@
 package co.yedam.otd.payment.command;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,7 +30,7 @@ public class InsertDBCommand implements Command {
 		MemberVO vo = (MemberVO) session.getAttribute("session");
 		PaymentVO pvo = new PaymentVO();
 		HistoryVO hvo = new HistoryVO();
-
+		
 		java.util.Date utilDate = new java.util.Date();
 		java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
 
@@ -54,11 +58,14 @@ public class InsertDBCommand implements Command {
 		} else if (request.getParameter("payment_price").equals("25000")) {
 			hvo.setTicketCode("G");
 		}
-
+		
 		dao.paymentInsert(pvo);
 		hdao.historyInsert(hvo);
 		
-		return "yujeong/history";
+		List<Map<String, String>> map = hdao.histroyList(hvo);
+		request.setAttribute("history", map);
+		
+		return "history/getPayHistory";
 	}
 
 }

@@ -19,11 +19,13 @@
 		</tr>
 			<c:forEach var="history" items="${history}">
 		<tr>
+			<%-- <c:forEach var="payment" items="${payment}"> --%>
 			<td align="center">${history.TICKET_CODE}</td>
 			<td align="center">${history.HISTORY_DATE}</td>
 			<td align="center">${history.TICKET_PRICE}원</td>
 		</tr>
 			</c:forEach>
+			<%-- </c:forEach> --%>
 		</table>
 	</div>
 </body>

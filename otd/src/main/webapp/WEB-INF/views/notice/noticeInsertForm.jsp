@@ -30,7 +30,7 @@
 			<div>
 				<button type="submit">등록</button>
 				&nbsp;&nbsp;&nbsp;
-				<button type="button" onclick="location.href='noticeList.do'">목록</button>
+				<button type="button" onclick="location.href='noticeList.do?pageNum=1&amount=10'">목록</button>
 			</div>
 		</form>
 	</div>
