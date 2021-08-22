@@ -28,21 +28,23 @@
 		.pageInfo_btn.active{
       		text-decoration: underline;
   		}
-  		.bg-1 {
+		.bg-1 {
 			background: url("img/payForm.png") no-repeat 50% 50%;
 			background-size: 100%;
-			height: 320px;
+			height: 370px;
 			position: relative;
 			z-index: -50;
 		}
+		
 		body {
 			line-height: 1.6;
 			font-family: "Roboto", sans-serif;
 			-webkit-font-smoothing: antialiased;
 			font-size: 16px;
-			color: #6F8BA4;
+			color: #000000;
 			font-weight: 400;
 		}
+		
 		.btn {
 			display: inline-block;
 			font-size: 20px;
@@ -56,26 +58,57 @@
 			border: 2px solid transparent;
 			transition: all .35s ease;
 		}
+		
 		.btn-main {
-			background: #223a66;
+			background: #00B6BC;
 			color: #fff;
-			border-color: #223a66;
+			border-color: #00B6BC;
 		}
+		
 		.btn-round-full {
 			border-radius: 50px;
 		}
+		
 		.overlay:before {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			opacity: 0.9;
-			background: #00b6bc;
-			z-index: -1;
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  bottom: 0;
+		  right: 0;
+		  width: 100%;
+		  height: 100%;
+		  opacity: 0.9;
+		  background: #00b6bc;
+		  z-index: -1;
+		}
+		
+		table, th, td {
+			border : solid 1px lightGray;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+		table {
+			margin : auto;
+		}
+		th {
+		
+			text-align: center;
+		}
+		td {
+		
+			padding-left:10px;
+		}
+		.text-white {
+			z-index: 10;
+		}
+		
+		.card-header {
+		 	background: #00b6bc;
+		}
+		
+		.section-title h2 { 
+		color : #000000;
 		}
 	</style>
 	
@@ -103,7 +136,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="block text-center">
-						<h1 class="text-capitalize mb-5 text-lg">Notice</h1>
+						<h1 class="text-capitalize mb-5 text-lg">OTD와 함께하는 건강한 일상</h1>
+						<span class="text-white">OTD는 대구도시지하철도공사와 함께 합니다.</span>
 					</div>
 				</div>
 			</div>
@@ -111,27 +145,25 @@
 	</section>
 
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <!-- Main Content -->
-            <div id="content">
-                <!-- Begin Page Content -->
-                <div class="container" align="center">
+	<section class="contact-form-wrap section">
+		<div class="container" align="center">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="section-title text-center">
+						<h2 class="mb-2">공지사항</h2>
+						<div class="divider mx-auto my-4"></div>
+						<p class="mb-5"></p>
+					</div>
+				</div>
+			</div>
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800" style="margin: 40px">Notice</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
-                    <div class="col-lg-9">
+                 <div class="col-lg-9">
 	                    <!-- DataTales Example -->
-	                    <div class="card shadow mb-4">
-	                        <div class="card-header py-3">
-	                            <h6 class="m-0 font-weight-bold">DataTables Example</h6>
-	                        </div>
+	                    <div class="card shadow mb-5 rounded">
 	                        <div class="card-body">
+	                        <div class="card-header py-3">
+	                            <h6 class="m-0 font-weight-bold text-white">공지사항</h6>
+	                        </div>
 	                            <div class="table-responsive">
 	                            <br>
 	                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -153,6 +185,7 @@
 										</c:forEach>	           
 	                                </table>
 	                                
+    
 	                                <!-- 페이지 인터페이스 작업을 위한 div -->
 	                                <div class="pageInfo_wrap">
 								        <div class="pageInfo_area">
@@ -183,12 +216,13 @@
 	                                </form>
 	                                
 	                            </div>
+	                            <br>
 	                            
 	                            <!-- Home 및 글쓰기 버튼 -->
 								<div align="center">
 									<div>
 										<c:if test="${sessionAuthor eq 'ADMIN'}">
-											<button type="button" onclick="location.href='noticeInsertForm.do'">글쓰기</button>
+											<button class="btn btn-main btn-round-full" type="button" onclick="location.href='noticeInsertForm.do'">글쓰기</button>
 										</c:if>
 									</div>
 									<form id="frm" name="frm" action="noticeSelect.do" method="post">
@@ -202,13 +236,9 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
-            </div>
-            <!-- End of Main Content -->
-        </div>    
-        <!-- End of Content Wrapper -->
-    </div>
-    <!-- End of Page Wrapper -->
-    <!-- Scroll to Top Button-->
+                	</section>
+
+                
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
