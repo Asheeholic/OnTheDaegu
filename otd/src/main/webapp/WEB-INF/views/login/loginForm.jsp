@@ -144,7 +144,7 @@ $(document).ready(function(){
 			<div class="row">
 				<div class="shadow p-3 rounded">
 					<div class="justify-content-center">
-						<p><img src="img/OTD.png" alt="OTD사진" class="rounded mx-auto d-block logoimg"/></p>
+						<img src="img/OTD.png" alt="OTD사진" class="rounded mx-auto d-block logoimg"/>
 					</div>
 					<div class="p-2 border-top d-flex align-items-center justify-content-center">
 	            		<h4>OTD 로그인</h4>

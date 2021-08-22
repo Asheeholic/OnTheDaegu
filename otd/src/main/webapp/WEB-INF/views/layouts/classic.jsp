@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>예담예술대학교 LMS</title>
+<title>On The Daegu</title>
 <!-- bootstrap css -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
  <!-- Main Stylesheet -->

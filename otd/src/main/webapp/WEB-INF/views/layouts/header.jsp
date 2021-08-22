@@ -77,7 +77,7 @@
 					      </a>
 					      <ul class="dropdown-menu" aria-labelledby="dropdown02">
 					        <li><a class="dropdown-item" href="memberSelect.do">마이페이지</a></li>
-					        <li><a class="dropdown-item" href="logout.do">Log out</a></li>
+					        <li><a class="dropdown-item" href="logout.do">로그아웃</a></li>
 					      </ul>
 			    		</div>
 			    	</c:if>	

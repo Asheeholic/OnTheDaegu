@@ -5,97 +5,197 @@
 <head>
 <meta charset="UTF-8">
 <title>개인정보수정</title>
-<!-- bootstrap css -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
- <!-- Main Stylesheet -->
- <link rel="stylesheet" href="css/style.css">
-<!-- icon -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 <style>
 	dl, dt { margin:0; }
 	dd { margin:0; display:inline; }
+	
+	.bg-1 {
+	background: url("img/payForm.png") no-repeat 50% 50%;
+	background-size: 100%;
+	height: 370px;
+	position: relative;
+	z-index: -50;
+}
+	
 
-.page-title {
-  padding: 1px;
-  position: relative;
-  color : #e4f4f3ff;
-}	
+
+
+.btn {
+	display: inline-block;
+	font-size: 20px;
+	font-size: 0.8125rem;
+	font-weight: 1000;
+	letter-spacing: .5px;
+	padding: .75rem 2rem;
+	font-family: "Exo", sans-serif;
+	text-transform: uppercase;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	transition: all .35s ease;
+}
+
+.btn-main {
+	background: #00B6BC;
+	color: #fff;
+	border-color: #00B6BC;
+}
+
+.btn-round-full {
+	border-radius: 50px;
+}
+
+.overlay:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background: #00b6bc;
+  z-index: -1;
+}
+
+
+table, th, td {
+	border : solid 1px lightGray;
+	border-collapse: collapse;
+	padding: 5px;
+}
+table {
+	margin : auto;
+	padding: 0;
+    width: 100%;
+    border: 0 solid #00478f !important;
+    border-radius: 40px !important;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+th {
+	
+	text-align: center;
+}
+td {
+
+	padding-left:10px;
+}
+.text-white {
+	z-index: 10;
+}
+
+.section-title h2 { 
+	color : #000000;
+}
+
+.tableHeader {
+	background: #00B6BC;
+	
+}
+.memberCard {
+	padding: 0;
+    width: 100%;
+    border: 0px solid #00478f !important;
+    border-radius: 40px !important;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
 </style>
 </head>
-<body>
-${otd} 
-<!-- 회원 한건 조회 and 수정폼 -->
-	<section class="page-title bg-1"> 
-	 <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block text-center">
-          <span class="text-white">Book your Seat</span>
-          <h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
+<body class="body" >
 
-          <!-- <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-            <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
-          </ul> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>	
-	
-	<div>
-		<h1>개인정보수정</h1>
-	</div>
-	<div align="center">
-		<dl>
-			<dd style="width:25%">
-				<a href="javascript:memberDelete();">회원탈퇴</a>
-			</dd>
-		</dl>
-		
-		
-	</div>
-	<div align="center">
-		<form name="updatefrm" action="memberUpdate.do" method="post" onsubmit="memberUpdate();">
-			<table border="1">
-				<tr>
-					<th width="150">아이디</th>
-					<td align="center" width="200">${otd.email }</td>
-				</tr>
-				<tr>
-					<th width="150">비밀번호</th>
-					<td align="center" width="200">
-						<input type="button" id="password" name="button" value="비밀번호 변경" onclick="memberPswdUpdateForm();">			
-					</td>
-				</tr>
-				<tr>
-					<th width="150">이름</th>
-					<td align="center" width="200">${otd.name }
-					</td>
-				</tr>
-				<tr>
-					<th width="150">전화번호</th>
-					<td align="center" width="200">
-						<input class="form-control" type="text" id="phone" name="phone" value='${otd.phone}'>
-					</td>
-				</tr>
-			</table>
-			<br/>
-			<div>
-				<input type="submit" value="회원 수정" >
-				<input type="hidden" id ="email" name ="email" value='${otd.email}'>
-				<input type="hidden" id ="password" name ="password" value='${otd.password}'>
+<!-- 회원 한건 조회 and 수정폼 -->
+	<section class="page-title bg-1">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block text-center">
+						<h1 class="text-capitalize mb-5 text-lg">OTD와 함께하는 건강한 일상</h1>
+						<span class="text-white">OTD는 대구도시지하철도공사와 함께 합니다.</span>
+					</div>
+				</div>
 			</div>
-		</form>
-	</div>
- 	<div><!--비밀번호 변경폼 가기 -->
- 		<form name="pswdfrm" action="memberPswdUpdateForm.do" method="post">
- 			<input type="hidden" id ="email" name ="email" value='${otd.email}'>
- 			<input type="hidden" id ="password" name ="password" value='${otd.password}'>
- 		</form>
- 	</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="section-title text-center">
+						<h2 class="mb-2">마이 페이지</h2>
+						<div class="divider mx-auto my-4"></div>
+						<p class="mb-5"></p>
+					</div>
+				</div>
+			</div>
+			<div class="d-flex justify-content-center mb-4">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active h4 mx-2">
+						<a href="memberSelect.do" class="btn btn-main btn-round-full">마이페이지</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active h4 mx-2">
+						<a href="javascript:memberDelete();" class="btn btn-main btn-round-full">회원탈퇴</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active h4 mx-2">
+						<a href="getPayHistory.do" class="btn btn-main btn-round-full">결제내역</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="card shadow mb-4 memberCard">
+				<form name="updatefrm" action="memberUpdate.do" method="post" onsubmit="memberUpdate();">
+				<div class="card-header py-3 tableHeader">
+	            	<h6 class="m-0 font-weight-bold"></h6>
+	            </div>
+	            <div class="card-body">
+					<table class="table table-hover">
+						<tr>
+							<th class="table-secondary">아이디</th>
+							<td>${otd.email }</td>
+						</tr>
+						<tr>
+							<th class="table-secondary">비밀번호</th>
+							<td>
+								<input class="btn btn-main" type="button" id="password" name="button" value="비밀번호 변경" onclick="memberPswdUpdateForm();">			
+							</td>
+						</tr>
+						<tr>
+							<th class="table-secondary">이름</th>
+							<td>${otd.name }
+							</td>
+						</tr>
+						<tr>
+							<th class="table-secondary">전화번호</th>
+							<td>
+								<input class="form-control" type="text" id="phone" name="phone" value='${otd.phone}'>
+							</td>
+						</tr>
+					</table>
+					<div class="d-flex justify-content-center">
+						<input class="btn btn-main" type="submit" value="회원 수정" >
+						<input type="hidden" id ="email" name ="email" value='${otd.email}'>
+						<input type="hidden" id ="password" name ="password" value='${otd.password}'>
+					</div>
+				</div>	
+				</form>
+			</div>
+			<!-- card end -->
+			
+		 	<div><!--비밀번호 변경폼 가기 -->
+		 		<form name="pswdfrm" action="memberPswdUpdateForm.do" method="post">
+		 			<input type="hidden" id ="email" name ="email" value='${otd.email}'>
+		 			<input type="hidden" id ="password" name ="password" value='${otd.password}'>
+		 		</form>
+		 	</div>
+	 	</div>
+ 	</section>
  	<!-- 삭제폼으로 가기 -->
  	<div>
  		<form name="deletefrm" action="deleteForm.do" method="post">
@@ -120,6 +220,5 @@ ${otd}
 			deletefrm.submit();
 		}
 	</script>
-	<script src="js/bootstrap.bundle.min.js"></script>	
 </body>
 </html>

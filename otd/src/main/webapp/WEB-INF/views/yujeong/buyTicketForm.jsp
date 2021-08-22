@@ -73,6 +73,7 @@ table, th, td {
 }
 table {
 	margin : auto;
+	border-radius: 5px;
 }
 th {
 
