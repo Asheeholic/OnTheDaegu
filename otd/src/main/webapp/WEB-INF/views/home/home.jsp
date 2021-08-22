@@ -45,7 +45,6 @@
 	</style>
 </head>
 <body>
-	<!-- 협의 사항 -->
 	<section class="banner">
 		<div class="container">
 			<div class="row">
