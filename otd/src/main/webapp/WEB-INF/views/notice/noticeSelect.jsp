@@ -16,6 +16,7 @@
 			font-size: 16px;
 			resize: both;
 		}
+		
 		.bg-1 {
 			background: url("img/payForm.png") no-repeat 50% 50%;
 			background-size: 100%;
@@ -58,46 +59,53 @@
 		}
 		
 		.overlay:before {
-		  content: "";
-		  position: absolute;
-		  left: 0;
-		  top: 0;
-		  bottom: 0;
-		  right: 0;
-		  width: 100%;
-		  height: 100%;
-		  opacity: 0.9;
-		  background: #00b6bc;
-		  z-index: -1;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.9;
+			background: #00b6bc;
+			z-index: -1;
 		}
 		
 		table, th, td {
-			border : solid 1px lightGray;
+			border: solid 1px lightGray;
 			border-collapse: collapse;
 			padding: 5px;
 		}
-		table {
-			margin : auto;
-		}
-		th {
 		
+		table {
+			margin: auto;
+		}
+		
+		th {
 			text-align: center;
 		}
-		td {
 		
-			padding-left:10px;
+		td {
+			padding-left: 10px;
 		}
+		
 		.text-white {
 			z-index: 10;
 		}
 		
 		.card-header {
-		 	background: #00b6bc;
+			background: #00b6bc;
 		}
 		
-		.section-title h2 { 
-		color : #000000;
-		}		
+		.section-title h2 {
+			color: #000000;
+		}
+		
+		td.td-content {
+			height: 268px;
+			padding: 20px;
+		}
 	</style>
 </head>
 <body>
@@ -127,42 +135,41 @@
 				</div>
 			</div>
 
-					<div class="col-lg-9">
-						<!-- DataTales Example -->
-						<div class="card shadow mb-5 rounded">
-							<div class="card-body">
-							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-white">공지사항</h6>
-							</div>
-								<div class="table-responsive">
-									<br>
-									<table class="table table-bordered" id="dataTable" width="100%"
-										cellspacing="0">
-										<tr>
-											<th width="90">No.</th>
-											<td width="90" align="center">${notice.noticeNo}</td>
-											<th width="90">작성자</th>
-											<td width="150" align="center">관리자</td>
-											<th width="90">작성일자</th>
-											<td width="150" align="center">${notice.noticeDate}</td>
-											<th width="90">조회수</th>
-											<td width="90" align="center">${notice.noticeHit}</td>
-										</tr>
-										<tr>
-											<th>제목</th>
-											<td colspan="7">${notice.noticeTitle}</td>
-										</tr>
-										<tr>
-											<th>내용</th>
-											<td colspan="7" align="center"><textarea rows="10" cols="87" style="vertical-align: middle;" readonly>${notice.noticeContent}</textarea></td>
-										</tr>
-									</table>
-								</div>
-								<br>
+			<div class="col-lg-9">
+				<div class="card shadow mb-5 rounded">
+					<div class="card-body">
+						<div class="card-header py-3">
+							<h6 class="m-0 font-weight-bold text-white">공지사항</h6>
+						</div>
+						<div class="table-responsive">
+							<br>
+							<table class="table table-bordered" id="dataTable" width="100%"
+								cellspacing="0">
+								<tr>
+									<th width="90">No.</th>
+									<td width="90" align="center">${notice.noticeNo}</td>
+									<th width="90">작성자</th>
+									<td width="150" align="center">관리자</td>
+									<th width="90">작성일자</th>
+									<td width="150" align="center">${notice.noticeDate}</td>
+									<th width="90">조회수</th>
+									<td width="90" align="center">${notice.noticeHit}</td>
+								</tr>
+								<tr>
+									<th>제목</th>
+									<td colspan="7">${notice.noticeTitle}</td>
+								</tr>
+								<tr>
+									<th>내용</th>
+									<td class="td-content" colspan="7">${notice.noticeContent}</td>
+								</tr>
+							</table>
+						</div>
+						<br>
 
 						<div>
 							<!-- 글 조회 후 다시 목록으로 돌아갈 때 마지막으로 머물렀던 페이지로 넘어가는 기능 미구현 -->
-							<button class="btn btn-main btn-round-full" type="button" 
+							<button class="btn btn-main btn-round-full" type="button"
 								onclick="location.href='noticeList.do?pageNum=1&amount=10'">목록</button>
 							<c:if test="${sessionAuthor eq 'ADMIN'}">
 				&nbsp;&nbsp;&nbsp;
@@ -173,13 +180,10 @@
 									onclick="location.href='noticeDelete.do?noticeNo=${notice.noticeNo}'">삭제</button>
 							</c:if>
 						</div>
-													</div>
-						</div>
 					</div>
-					<!-- /.container-fluid -->
 				</div>
-				<!-- End of Main Content -->
-
+			</div>
+		</div>
 	</section>
 </body>
 </html>

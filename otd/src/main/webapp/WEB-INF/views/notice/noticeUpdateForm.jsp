@@ -155,7 +155,7 @@ td {
 									<tr>
 										<th>내용</th>
 										<td colspan="7"><textarea rows="10"
-												id="noticeContent" name="noticeContent" required="required">${notice.noticeContent}</textarea></td>
+												id="noticeContent" name="noticeContent" required="required" style="vertical-align: middle;">${notice.noticeContent}</textarea></td>
 									</tr>
 								</table>
 

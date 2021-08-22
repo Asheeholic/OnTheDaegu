@@ -135,14 +135,8 @@
 								<!-- DataTales Example -->
 								<table class="table table-bordered" id="dataTable" width="100%"
 									cellspacing="0">
-
 									<tr>
-										<th width="100">작성자</th>
-										<td>관리자</td>
-									</tr>
-
-									<tr>
-										<th>글 제목</th>
+										<th width="100">글 제목</th>
 										<td><input class="input" type="text" id="noticeTitle"
 											name="noticeTitle" required="required" placeholder="제목을 입력하세요."></td>
 									</tr>
