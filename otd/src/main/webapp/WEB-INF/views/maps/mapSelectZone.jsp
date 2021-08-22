@@ -49,7 +49,14 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-6">
 					<div class="section-title text-center">
-						<h2 class="mb-2">선택한 위치의 자전거 현황</h2>
+						<h2 class="mb-2">
+						<c:if test="${list[0].parkNumber eq 1}">
+							중앙로역
+						</c:if>
+						<c:if test="${list[0].parkNumber eq 2}">
+							반월당역
+						</c:if>
+						의 자전거 현황</h2>
 						<div class="divider mx-auto my-4"></div>
 						<p class="mb-5"></p>
 					</div>

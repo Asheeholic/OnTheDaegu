@@ -18,7 +18,7 @@ public class FindLoadAPI {
 		try {
 			
 			String apiURL = "https://naveropenapi.apigw.ntruss.com/map-direction/v1/driving" +
-					"?start=" + nowLng + "," + nowLat + "&goal=" + goalLug + "," + goalLat + "&option=trafast";;
+					"?start=" + nowLng + "," + nowLat + "&goal=" + goalLug + "," + goalLat + "&option=trafast";
 			System.out.println(apiURL);
 			URL url = new URL(apiURL);
 			con = (HttpURLConnection)url.openConnection();

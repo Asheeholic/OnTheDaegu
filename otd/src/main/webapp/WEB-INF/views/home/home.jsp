@@ -70,7 +70,7 @@
 							<span>24시간 서비스</span>
 							<h4 class="mb-3">자전거 서비스</h4>
 							<p class="mb-4">아직도 자전거를 대여하는 방법을 모르겠다구요? 배달과 직접 픽업 모두 쉽고 빠릅니다!</p>
-							<a href="appoinment.html" class="btn btn-main btn-round-full">자전거 대여 방법</a>
+							<a href="faqUseInformation.do" class="btn btn-main btn-round-full">자전거 대여 방법</a>
 						</div>
 					
 						<div class="feature-item mb-5 mb-lg-0">

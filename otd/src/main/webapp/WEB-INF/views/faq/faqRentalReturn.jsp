@@ -105,7 +105,7 @@ body {
 			<div class="row justify-content-center">
 				<div class="col-lg-6">
 					<div class="section-title text-center">
-						<h2 class="mb-2">자전거 및 시설관리</h2>
+						<h2 class="mb-2">대여/반납</h2>
 						<div class="divider mx-auto my-4"></div>
 						<p class="mb-5"></p>
 					</div>
