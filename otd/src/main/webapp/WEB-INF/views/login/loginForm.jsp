@@ -9,6 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>OTD 로그인</title>
+<!-- bootstrap css -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+ <!-- Main Stylesheet -->
+ <link rel="stylesheet" href="css/style.css">
+ <!-- Icon Font Css -->
+ <link rel="stylesheet" href="css/icofont.min.css">
+ <script src="js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -46,8 +53,16 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-	<div align="center">
-		<p><img src="img/OTD.png" alt="OTD사진"/>
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="shadow-sm p-3 mb-5 rounded">
+				<div>
+					<a>dddd</a>
+				</div>
+			</div>
+		</div>
+	</div>
+		<p><img src="img/OTD.png" alt="OTD사진"/></p>
 		<div>
 			<h1>OTD 로그인</h1>
 			<form id="loginFrm" method="post" action="memberCheckIdAndPassword.do">
@@ -79,7 +94,6 @@ $(document).ready(function(){
 				<p>API 작업 할것들</p>
 			</div>
 		</div>
-	</div>
 	<!-- 네이버 로그인 -->
 <%
     String clientId = "XjyzBLVySugG2fqLKRlQ";//애플리케이션 클라이언트 아이디값";

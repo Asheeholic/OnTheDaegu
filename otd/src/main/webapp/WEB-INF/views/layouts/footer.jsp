@@ -45,7 +45,11 @@
 						<div class ="logo mb-4 d-flex justify-content-start">
 							<img src="img/OTDLogo1.png" alt="로고사진" class="rounded-circle">
 						</div>
-					<p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur veritatis eveniet distinctio possimus.</p>
+					<p>OTD란? OTD는 On The Daegu의 약자이며 대구광역시 <br/>
+						시민&여행객분들이 편리하게 자건거를 이용을 위해 
+						대구시 전체 자전거 배달 서비스를 해드리고 있습니다.<br/>
+						언제 어디서든 간편하게 OTD를 이용해보세요!
+					 </p>
 					</div>
 					<ul class="list-inline footer-socials mt-1"> <!-- inline 가로정렬 해서 보여줌 -->
 						<li class="list-inline-item"><a href="https://www.instagram.com"><i class="fab fa-instagram fa-2x my-1"></i></a></li>
