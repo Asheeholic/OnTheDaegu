@@ -1,8 +1,5 @@
 package co.yedam.otd.payment.command;
 
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -31,8 +28,8 @@ public class InsertDBCommand implements Command {
 		PaymentVO pvo = new PaymentVO();
 		HistoryVO hvo = new HistoryVO();
 		
-		java.util.Date utilDate = new java.util.Date();
-		java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+//		java.util.Date utilDate = new java.util.Date();
+//		java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
 
 		pvo.setEmail(request.getParameter("email"));
 		pvo.setPayment_price(request.getParameter("payment_price"));
@@ -40,7 +37,7 @@ public class InsertDBCommand implements Command {
 
 		hvo.setTicketNo(request.getParameter("ticket_no"));
 		hvo.setEmail(request.getParameter("email"));
-		hvo.setHistoryDate(Date.valueOf(sqlDate.toString()));
+//		hvo.setHistoryDate(Date.valueOf(sqlDate.toString()));
 //		hvo.setHistory_date(Date.valueOf("2021-06-08"));
 
 		if (request.getParameter("payment_price").equals("1000")) {

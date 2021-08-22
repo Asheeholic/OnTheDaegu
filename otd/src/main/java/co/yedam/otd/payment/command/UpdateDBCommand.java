@@ -10,7 +10,7 @@ import co.yedam.otd.history.serviceImpl.HistoryServiceImpl;
 import co.yedam.otd.history.vo.HistoryVO;
 import co.yedam.otd.member.vo.MemberVO;
 
-public class updateDBCommand implements Command {
+public class UpdateDBCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -24,7 +24,7 @@ public class updateDBCommand implements Command {
 		vo.setEmail(request.getParameter("email"));
 		
 		dao.historyUpdate(vo);
-		return "yujeong/history";
+		return "history/getPayHistory";
 	}
 
 }

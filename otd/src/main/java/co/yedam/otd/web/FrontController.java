@@ -13,15 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.otd.common.Command;
 import co.yedam.otd.common.HomeCommand;
-import co.yedam.otd.rental.command.MapChoiceFormCommand;
-import co.yedam.otd.rental.command.MapDaoTestCommand;
-import co.yedam.otd.rental.command.MapDeliverBikeCommand;
-import co.yedam.otd.rental.command.MapDeliverySystemCommand;
-import co.yedam.otd.rental.command.MapPickupSystemCommand;
-import co.yedam.otd.rental.command.MapSelectBicycleCommand;
-import co.yedam.otd.rental.command.MapSelectZoneCommand;
-import co.yedam.otd.rental.command.MapShowBikeListCommand;
-import co.yedam.otd.rental.command.MapTimeShowCommand;
 import co.yedam.otd.event.command.EventList;
 import co.yedam.otd.faq.command.FaqBicycleFacilityManagement;
 import co.yedam.otd.faq.command.FaqHome;
@@ -32,6 +23,9 @@ import co.yedam.otd.faq.command.FaqUseInformation;
 import co.yedam.otd.history.command.GetPayHistoryCommand;
 import co.yedam.otd.login.command.IdCheckCommand;
 import co.yedam.otd.login.command.LoginCommand;
+import co.yedam.otd.login.command.LoginFormCommand;
+import co.yedam.otd.login.command.LogoutCommand;
+import co.yedam.otd.login.command.MemberCheckIdAndPassword;
 import co.yedam.otd.login.command.MemberInsertCommand;
 import co.yedam.otd.login.command.SignUpformCommand;
 import co.yedam.otd.member.command.DeleteFormCommand;
@@ -39,11 +33,8 @@ import co.yedam.otd.member.command.MemberDeleteCommand;
 import co.yedam.otd.member.command.MemberListCommand;
 import co.yedam.otd.member.command.MemberPswdUpdateCommand;
 import co.yedam.otd.member.command.MemberPswdUpdateFormCommand;
-import co.yedam.otd.member.command.MemberUpdateCommand;
 import co.yedam.otd.member.command.MemberSelectCommand;
-import co.yedam.otd.login.command.LoginFormCommand;
-import co.yedam.otd.login.command.LogoutCommand;
-import co.yedam.otd.login.command.MemberCheckIdAndPassword;
+import co.yedam.otd.member.command.MemberUpdateCommand;
 import co.yedam.otd.notice.command.NoticeDelete;
 import co.yedam.otd.notice.command.NoticeInsert;
 import co.yedam.otd.notice.command.NoticeInsertForm;
@@ -51,16 +42,26 @@ import co.yedam.otd.notice.command.NoticeList;
 import co.yedam.otd.notice.command.NoticeSelect;
 import co.yedam.otd.notice.command.NoticeUpdate;
 import co.yedam.otd.notice.command.NoticeUpdateForm;
+import co.yedam.otd.payment.API.RefundList;
+import co.yedam.otd.payment.command.BuyTicketFormCommand;
+import co.yedam.otd.payment.command.InsertDBCommand;
+import co.yedam.otd.payment.command.PaymentCommand;
+import co.yedam.otd.payment.command.ReturnTicketCommand;
+import co.yedam.otd.payment.command.UpdateDBCommand;
+import co.yedam.otd.rental.command.MapChoiceFormCommand;
+import co.yedam.otd.rental.command.MapDaoTestCommand;
+import co.yedam.otd.rental.command.MapDeliverBikeCommand;
+import co.yedam.otd.rental.command.MapDeliverySystemCommand;
+import co.yedam.otd.rental.command.MapPickupSystemCommand;
+import co.yedam.otd.rental.command.MapSelectBicycleCommand;
+import co.yedam.otd.rental.command.MapSelectZoneCommand;
+import co.yedam.otd.rental.command.MapShowBikeListCommand;
+import co.yedam.otd.rental.command.MapTimeShowCommand;
 import co.yedam.otd.review.command.ReviewDelete;
 import co.yedam.otd.review.command.ReviewList;
 import co.yedam.otd.review.command.ReviewSelect;
 import co.yedam.otd.review.command.ReviewUpdate;
 import co.yedam.otd.review.command.ReviewUpdateForm;
-import co.yedam.otd.payment.command.BuyTicketFormCommand;
-import co.yedam.otd.payment.command.InsertDBCommand;
-import co.yedam.otd.payment.command.PaymentCommand;
-import co.yedam.otd.payment.command.ReturnTicketCommand;
-import co.yedam.otd.payment.command.updateDBCommand;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -142,7 +143,8 @@ public class FrontController extends HttpServlet {
 		map.put("/payment.do", new PaymentCommand()); // 결제창
 		map.put("/insertDB.do", new InsertDBCommand()); //결제내역
 		map.put("/returnTicket.do", new ReturnTicketCommand()); //환불 폼
-		map.put("/updateDB.do", new updateDBCommand()); // 환불창
+		map.put("/updateDB.do", new UpdateDBCommand()); // 환불창
+		//map.put("/refundList.do", new RefundList());
 	}
 
 
