@@ -237,7 +237,7 @@ $(document).ready(function(){
 						</div>
 						<div class="text-center">
 							<input class="btn btn-main btn-round-full" type="button" value="결 제 하 기">
-							<i class="icofont-simple-right ml-2"></i>
+							<!-- <i class="icofont-simple-right ml-2"></i> -->
 						</div>
 						</form>
 					</div>
