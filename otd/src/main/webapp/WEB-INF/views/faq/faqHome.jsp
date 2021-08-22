@@ -12,7 +12,7 @@
 			height: 130px;
 			margin: 3px;
 		}
-		.option {
+		.option {	
 			width: 180px;
 			display: inline-block;
 			margin: 0px 5px;

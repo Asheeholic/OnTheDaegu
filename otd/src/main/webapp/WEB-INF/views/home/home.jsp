@@ -46,7 +46,7 @@
 </head>
 <body>
 	<!-- 협의 사항 -->
-	<div id="faq" align="center">
+	<!-- <div id="faq" align="center">
 		FAQ 테스트 좀 하겠습니다 <br> <a href="faqHome.do">FAQ목록</a>
 	</div>
 	<div id="review" align="center">
@@ -55,7 +55,7 @@
 	<div>
 		<a href="signUpForm.do">Test 회원가입영역폼</a><br /> <a href="loginForm.do">Test
 			로그인</a>
-	</div>
+	</div> -->
 	
 	<section class="banner">
 		<div class="container">
@@ -72,6 +72,9 @@
 			</div>
 		</div>
 	</section>
+	<div class="form-group mb-2 mx-auto">
+        					<button class="btn-main btn-block w-100" id="btnLogin">로그인</button>
+        				</div>
 	<!-- 대여 버튼 만들기 -->
 	<section class="features mb-5">
 		<div class="container">

@@ -15,9 +15,95 @@
  <link rel="stylesheet" href="css/style.css">
  <!-- Icon Font Css -->
  <link rel="stylesheet" href="css/icofont.min.css">
- <script src="js/bootstrap.bundle.min.js"></script>
+ 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+
+.logoimg {
+	width: 300px;
+	height: 232px;
+ 		
+}
+ .signIn{
+   background: linear-gradient(rgba(246, 247, 249, 0.2), rgba(246, 247, 249, 0.2)), url("img/loginCheck.jpg")  center center fixed;
+   background-attachment: fixed;
+   background-size: cover;
+   z-index: -100;
+ }
+
+.container {
+    height: 100vh
+}
+
+.card {
+    width: 400px;
+    border: none
+}
+.form-control {
+    border: 2px solid #bdc1d2;
+    font-size: 13px;
+    height: 48px
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #f7bfd9;
+    outline: 0;
+    box-shadow: none
+}
+
+.form {
+    position: relative;
+    margin-bottom: 25px
+}
+
+.form a {
+    position: absolute;
+    right: 8px;
+    bottom: 10px;
+    color: #6ca0d6;
+    font-size: 13px;
+    text-decoration: none;
+    z-index: 10;
+    background-color: #fff;
+    padding: 5px
+}
+
+.btn-main {
+ 	background: #00B6BC;
+	color: #fff;
+	border-color: #00B6BC;
+}
+
+.btn {
+  font-size: 18px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  padding: .75rem ;
+  font-family: "Exo", sans-serif;
+  border-radius: 5px;
+  
+ 
+}
+.line-text {
+    color: #cecece
+}
+
+.line {
+    background-color: #eeeff6;
+    width: 166px;
+    height: 2px
+}
+
+
+
+
+</style>
+
 <script>
+
 $(document).ready(function(){
 	$('#btnLogin').click(function(){
 		//let Info = new Object();
@@ -52,63 +138,65 @@ $(document).ready(function(){
 
 </script>
 </head>
-<body>
-	<div class="container">
-		<div class="row d-flex justify-content-center">
-			<div class="shadow-sm p-3 mb-5 rounded">
-				<div>
-					<a>dddd</a>
-				</div>
-			</div>
-		</div>
-	</div>
-		<p><img src="img/OTD.png" alt="OTD사진"/></p>
-		<div>
-			<h1>OTD 로그인</h1>
-			<form id="loginFrm" method="post" action="memberCheckIdAndPassword.do">
-				<table border="1">
-					<tr>
-						<th  width="140">로그인</th>
-						<td>
-							<input type="text" id="email" name="email" required="required">
-						</td>
-					</tr>
+<body Class="signIn">
+	<div class="container d-flex justify-content-center align-items-center">
+		 <div class="card">
+			<div class="row">
+				<div class="shadow p-3 rounded">
+					<div class="justify-content-center">
+						<p><img src="img/OTD.png" alt="OTD사진" class="rounded mx-auto d-block logoimg"/></p>
+					</div>
+					<div class="p-2 border-top d-flex align-items-center justify-content-center">
+	            		<h4>OTD 로그인</h4>
+	        		</div>
 					
-					<tr>
-						<th  width="140">비밀번호</th>
-						<td>
-							<input type="password" id="password" name="password" required="required">
-						</td>
-					</tr>
-				</table>
-				<div>
-					<button id="btnLogin">로그인</button>
+	        		<div class="px-4 border-bottom">
+	        			<form id="loginFrm" method="post" action="memberCheckIdAndPassword.do" >
+	        				<div class="form-group">	
+	        					<label for="InputEmail">Email address</label>
+	        					<input class="form-control mb-2" type="text" id="email" name="email" required="required" placeholder="아이디">
+	        				</div>
+	        				<div class="form-group">
+	        					<label for="InputPassword">Password</label>
+	        					<input class="form-control mb-2" type="password" id="password" name="password" required="required" placeholder="비밀번호 입력">
+	        				</div>
+	        				
+	        				<div class="form-group mb-2 d-grid gap-2 py-2">
+	        					<button class="btn btn-main" type="button" id="btnLogin">로그인</button>
+	        				</div>
+	        				<div class="form-group mb-2 d-grid gap-2">
+	        						<button class="btn btn-main" type="button" onclick="location.href='signUpForm.do'">회원가입</button>
+	        				</div>
+	        			</form>
+	        			 <div class="d-flex justify-content-center align-items-center mt-3 mb-3"> 
+	        			 	<span class="line"></span> 
+	        			 		<small class="px-2 line-text">SNS</small> 
+	        			 	<span class="line"></span> 
+	        			 </div>
+	        				<%
+							    String clientId = "XjyzBLVySugG2fqLKRlQ";//애플리케이션 클라이언트 아이디값";
+							    String redirectURI = URLEncoder.encode("http://localhost/otd/naverLoginCallback.do", "UTF-8");
+							    SecureRandom random = new SecureRandom();
+							    String state = new BigInteger(130, random).toString();
+							    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code"; //네이버 아이디로 로그인 인증을 요청합니다.
+							    apiURL += "&client_id=" + clientId;
+							    apiURL += "&redirect_uri=" + redirectURI;
+							    apiURL += "&state=" + state;
+							    session.setAttribute("state", state);
+	 						%>
+	        			 	 <div class="form-group mb-2 d-grid gap-2">
+	 					 	<a href="<%=apiURL%>"><img class="rounded mx-auto d-block " height="50" src="img/btnGNaver.png"/></a>
+	 						</div>
+	        		</div>	
 				</div>
-			</form>
-			<br/>
-			 <div class="text-center">
-             	<button type="button" onclick="location.href='signUpForm.do'">회원가입</button>
-             </div>
-			<hr>
-			<div>
-				<p>API 작업 할것들</p>
 			</div>
 		</div>
+	</div>	
+	<!-- end Container -->
+		
 	<!-- 네이버 로그인 -->
-<%
-    String clientId = "XjyzBLVySugG2fqLKRlQ";//애플리케이션 클라이언트 아이디값";
-    String redirectURI = URLEncoder.encode("http://localhost/otd/naverLoginCallback.do", "UTF-8");
-    SecureRandom random = new SecureRandom();
-    String state = new BigInteger(130, random).toString();
-    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code"; //네이버 아이디로 로그인 인증을 요청합니다.
-    apiURL += "&client_id=" + clientId;
-    apiURL += "&redirect_uri=" + redirectURI;
-    apiURL += "&state=" + state;
-    session.setAttribute("state", state);
- %>
- <div align="center">
-  <a href="<%=apiURL%>"><img height="50" src="img/btnGNaver.png"/></a>
- </div>
-</body>
 
+ 
+ <script src="js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

@@ -10,8 +10,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
  <!-- Main Stylesheet -->
  <link rel="stylesheet" href="css/style.css">
- <!-- Icon Font Css -->
- <link rel="stylesheet" href="css/icofont.min.css">
+<!-- icon -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 </head>
 <body>
 	<tiles:insertAttribute name="header" />

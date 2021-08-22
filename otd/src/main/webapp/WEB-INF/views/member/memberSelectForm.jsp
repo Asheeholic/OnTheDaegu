@@ -5,14 +5,46 @@
 <head>
 <meta charset="UTF-8">
 <title>개인정보수정</title>
+<!-- bootstrap css -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+ <!-- Main Stylesheet -->
+ <link rel="stylesheet" href="css/style.css">
+<!-- icon -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 <style>
 	dl, dt { margin:0; }
 	dd { margin:0; display:inline; }
+
+.page-title {
+  padding: 1px;
+  position: relative;
+  color : #e4f4f3ff;
+}	
 </style>
 </head>
 <body>
 ${otd} 
 <!-- 회원 한건 조회 and 수정폼 -->
+	<section class="page-title bg-1"> 
+	 <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span class="text-white">Book your Seat</span>
+          <h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
+
+          <!-- <ul class="list-inline breadcumb-nav">
+            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="list-inline-item"><span class="text-white">/</span></li>
+            <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>	
+	
 	<div>
 		<h1>개인정보수정</h1>
 	</div>
@@ -87,6 +119,7 @@ ${otd}
 		function memberDelete(){
 			deletefrm.submit();
 		}
-	</script>	
+	</script>
+	<script src="js/bootstrap.bundle.min.js"></script>	
 </body>
 </html>

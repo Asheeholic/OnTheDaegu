@@ -61,14 +61,14 @@
 							</ul>
 			  			  </li>
 					    
-					    <li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do">공지사항</a></li>
-						<li class="nav-item h4 mx-2"><a class="nav-link" href="reviewList.do">리뷰게시판</a></li>
-						<li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do">문의/FAQ</a></li>
+					    <li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do?pageNum=1&amount=10">공지사항</a></li>
+						<li class="nav-item h4 mx-2"><a class="nav-link" href="reviewList.do?pageNum=1&amount=5">리뷰게시판</a></li>
+						<li class="nav-item h4 mx-2"><a class="nav-link" href="faqHome.do">문의/FAQ</a></li>
 					</ul>	
 				</div>
 			</div>
 			<div class="col-lg-3">
-				<div class="col-ms-auto collapse navbar-collapse d-flex justify-content-center" id="navbarmain"> 	
+				<div class="col-ms-auto mb-2 collapse navbar-collapse d-flex justify-content-center " id="navbarmain"> 	
 					<c:if test="${not empty sessionEmail }">
 						<div class="dropdown ">
 					      <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle d-flex justify-content-center" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,7 +86,7 @@
 			    			<li class="nav-item active">
 			    				<a class="nav-link" href="loginForm.do">로그인</a>
 			    			</li>
-							<li class="nav-item active"><a class="nav-link" href="noticeList.do">회원가입</a></li>
+							<li class="nav-item active"><a class="nav-link" href="signUpForm.do">회원가입</a></li>
 						</ul>	
 			    	</c:if>
 				</div>
