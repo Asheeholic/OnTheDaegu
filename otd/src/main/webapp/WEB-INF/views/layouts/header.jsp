@@ -60,10 +60,10 @@
 								<li><a class="dropdown-item" href="getPayHistory.do">이용권 환불</a></li>
 							</ul>
 			  			  </li>
-					    
-					    <li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do">공지사항</a></li>
-						<li class="nav-item h4 mx-2"><a class="nav-link" href="reviewList.do">리뷰게시판</a></li>
-						<li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do">문의/FAQ</a></li>
+					    <!-- 공지 및 리뷰 페이징처리로 인해 pageNum 및 amount값 넘겨줘야 합니다. /김주영 -->
+					    <li class="nav-item h4 mx-2"><a class="nav-link" href="noticeList.do?pageNum=1&amount=10">공지사항</a></li>
+						<li class="nav-item h4 mx-2"><a class="nav-link" href="reviewList.do?pageNum=1&amount=5">리뷰게시판</a></li>
+						<li class="nav-item h4 mx-2"><a class="nav-link" href="faqHome.do">문의/FAQ</a></li>
 					</ul>	
 				</div>
 			</div>
