@@ -136,11 +136,11 @@
 	                            <br>
 	                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 	                                    <tr>
-	                                        <th>No.</th>
-	                                        <th>제목</th>
-	                                        <th>작성자</th>
-	                                        <th>작성일자</th>
-	                                        <th>조회수</th>
+	                                        <th width="90">No.</th>
+	                                        <th width="350">제목</th>
+	                                        <th width="100">작성자</th>
+	                                        <th width="150">작성일자</th>
+	                                        <th width="100">조회수</th>
 	                                    </tr>
 	                                    <c:forEach var="notice" items="${list}">
 											<tr onclick="getRecord(${notice.noticeNo})">
