@@ -8,8 +8,12 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class ShowToken {
 	public String showToken() {
@@ -52,6 +56,18 @@ public class ShowToken {
 				}
 				br.close();
 				System.out.println("토큰 발급 : " + "" + sb.toString());
+				try {
+				
+					String tk = sb.toString();
+					JsonParser jsonParser = new JsonParser();
+					JsonElement element;
+					element = (JsonElement) jsonParser.parse(tk);
+					String code = element.getAsJsonObject().getAsJsonObject("response").get("access_token").getAsString();
+					System.out.println(code);
+					access_token = code;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				result = 1;
 			} else { // 에러 발생
 				System.out.println(conn.getResponseMessage());
@@ -59,9 +75,9 @@ public class ShowToken {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return access_token.toString();
+		return access_token;
 	}
-	
+
 //	public String useToken(String token) {
 //		HttpURLConnection conn = null;
 //		String access_token ="";
