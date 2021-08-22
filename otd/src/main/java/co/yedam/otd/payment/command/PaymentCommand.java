@@ -25,7 +25,7 @@ public class PaymentCommand implements Command {
 		request.setAttribute("payment", payment);
 		request.setAttribute("ticket", ticket);
 
-		return "yujeong/paymentForm";
+		return "yujeong/buyTicketForm";
 	}
 
 }
