@@ -9,6 +9,28 @@
     <title>자전거 배달!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wre5st6fx0"></script>
+    <style>
+		.bg-1 {
+			background: url("img/payForm.png") no-repeat 50% 50%;
+			background-size: 100%;
+			height: 370px;
+			position: relative;
+			z-index: -50;
+		}
+		.overlay:before {
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  bottom: 0;
+		  right: 0;
+		  width: 100%;
+		  height: 100%;
+		  opacity: 0.9;
+		  background: #00b6bc;
+		  z-index: -1;
+		}
+    </style>
 </head>
 <body>
 <!-- <div id="map" align="center" style="width:60%; height:800px;">
@@ -18,8 +40,30 @@
 		<span id="goalTime"></span>
 		<span id="goalTimeTitle"></span>
 	</div> -->
+	<section class="page-title bg-1">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block text-center">
+						<h1 class="text-capitalize mb-5 text-lg">OTD와 함께하는 건강한 일상</h1>
+						<span class="text-white">OTD는 대구도시지하철도공사와 함께 합니다.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section class="section department-single">
 		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="section-title text-center">
+						<h2 class="mb-2">자전거 배달 중!</h2>
+						<div class="divider mx-auto my-4"></div>
+						<p class="mb-5"></p>
+					</div>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-lg-12 col-12">
 					<div class="department-img">

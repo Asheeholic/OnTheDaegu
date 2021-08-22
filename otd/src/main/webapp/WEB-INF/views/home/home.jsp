@@ -45,18 +45,6 @@
 	</style>
 </head>
 <body>
-	<!-- 협의 사항 -->
-	<div id="faq" align="center">
-		FAQ 테스트 좀 하겠습니다 <br> <a href="faqHome.do">FAQ목록</a>
-	</div>
-	<div id="review" align="center">
-		리뷰 테스트 좀 하겠습니다 <br> <a href="reviewList.do?pageNum=1&amount=5">리뷰목록</a>
-	</div>
-	<div>
-		<a href="signUpForm.do">Test 회원가입영역폼</a><br /> <a href="loginForm.do">Test
-			로그인</a>
-	</div>
-	
 	<section class="banner">
 		<div class="container">
 			<div class="row">
