@@ -24,7 +24,7 @@ public class UpdateDBCommand implements Command {
 		vo.setEmail(request.getParameter("email"));
 		
 		dao.historyUpdate(vo);
-		return "history/getPayHistory";
+		return null;
 	}
 
 }

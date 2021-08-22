@@ -45,7 +45,7 @@ public class ShowToken {
 
 			int result = 0;
 			int responseCode = conn.getResponseCode();
-			System.out.println("응답코드 : " + responseCode);
+			//System.out.println("응답코드 : " + responseCode);
 
 			if (responseCode == 200) { // 정상 호출
 				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -55,7 +55,7 @@ public class ShowToken {
 					sb.append(line + "\n");
 				}
 				br.close();
-				System.out.println("토큰 발급 : " + "" + sb.toString());
+				//System.out.println("토큰 발급 : " + "" + sb.toString());
 				try {
 				
 					String tk = sb.toString();
@@ -63,7 +63,7 @@ public class ShowToken {
 					JsonElement element;
 					element = (JsonElement) jsonParser.parse(tk);
 					String code = element.getAsJsonObject().getAsJsonObject("response").get("access_token").getAsString();
-					System.out.println(code);
+					//System.out.println(code);
 					access_token = code;
 				} catch (Exception e) {
 					e.printStackTrace();
