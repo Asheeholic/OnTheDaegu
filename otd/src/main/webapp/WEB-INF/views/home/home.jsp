@@ -60,9 +60,6 @@
 			</div>
 		</div>
 	</section>
-	<div class="form-group mb-2 mx-auto">
-        					<button class="btn-main btn-block w-100" id="btnLogin">로그인</button>
-        				</div>
 	<!-- 대여 버튼 만들기 -->
 	<section class="features mb-5">
 		<div class="container">
