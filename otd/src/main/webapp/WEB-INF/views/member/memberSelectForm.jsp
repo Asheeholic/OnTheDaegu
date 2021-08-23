@@ -16,9 +16,15 @@
 	position: relative;
 	z-index: -50;
 }
-	
-
-
+	.card {
+	left: 20%;
+	width: 800px;
+	padding: 0;
+    border: 0px solid #00478f !important;
+    border-radius: 40px !important;
+    border-spacing: 0;
+    border-collapse: separate;
+}
 
 .btn {
 	display: inline-block;
@@ -93,14 +99,6 @@ td {
 	background: #00B6BC;
 	
 }
-.memberCard {
-	padding: 0;
-    width: 100%;
-    border: 0px solid #00478f !important;
-    border-radius: 40px !important;
-    border-spacing: 0;
-    border-collapse: separate;
-}
 
 </style>
 </head>
@@ -149,7 +147,7 @@ td {
 				</ul>
 			</div>
 			
-			<div class="card shadow mb-4 memberCard">
+			<div class="card shadow mb-4">
 				<form name="updatefrm" action="memberUpdate.do" method="post" onsubmit="memberUpdate();">
 				<div class="card-header py-3 tableHeader">
 	            	<h6 class="m-0 font-weight-bold"></h6>
