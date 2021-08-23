@@ -1,14 +1,13 @@
 package co.yedam.otd.login.command;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -44,13 +43,14 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(r);
 		
 		String result = "";
-		
+		PrintWriter out = response.getWriter();
 		if(r == 1) { //id가 일치하면
 			result = "true";
 			System.out.println("if구문이야"+result);
 		} else if( r == 0) {
 			result ="false";
 			System.out.println("else if 구문이야"+result);
+			out.print("alert('아이디 또는 비밀번호가 일치하지않습니다.');");
 		}
 		
 		Gson gson = new GsonBuilder().create();

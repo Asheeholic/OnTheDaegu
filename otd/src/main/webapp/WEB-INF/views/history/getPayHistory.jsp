@@ -72,6 +72,8 @@ text-align:center;
 
 table {
 	margin: auto;
+	width: 100%
+	
 }
 
 td {

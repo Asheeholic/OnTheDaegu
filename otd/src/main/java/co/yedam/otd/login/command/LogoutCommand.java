@@ -20,7 +20,7 @@ public class LogoutCommand implements Command {
 		session.invalidate();
 		//System.out.println("그래서 없어졌니?"+email);
 		
-		return "home/home";
+		return "login/loginForm.jsp";
 	}
 
 }

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>개인정보수정</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
 	dl, dt { margin:0; }
 	dd { margin:0; display:inline; }
@@ -66,7 +67,19 @@ table, th, td {
 	padding: 1px;
 	
 }
-
+.btn-gopass{
+	display: inline-block;
+	font-size: 20px;
+	font-size: 0.8125rem;
+	font-weight: 1000;
+	letter-spacing: .5px;
+	padding: .30rem rem;
+	font-family: "Exo", sans-serif;
+	text-transform: uppercase;
+	border: 0px solid transparent;
+	border-radius: 5px;
+	transition: all .35s ease;
+}
 table {
 	margin: auto;
 }
@@ -156,13 +169,16 @@ td {
 				<div class="col-2"></div>
 				<div class="col-8">
 					<div class="card shadow mb-4 memberCard">
-						<form name="updatefrm" action="memberUpdate.do" method="post" onsubmit="memberUpdate();">
+						<form name="updatefrm" action="memberUpdate.do" method="post">
 	            			<div class="card-body my-3">
 	            				<div class="card-header py-3 tableHeader">
 	            					<h6 class="m-0 font-weight-bold"></h6>
 	            				</div>
+	            				<div class="d-flex justify-content-end">
+	            					<span class="h3 text-warning" id="time">남은시간:</span>
+	            				</div>
 					            	
-									<table class="table table-bordered">
+									<table class="table table-bordered ">
 										<tr class="">
 											<th class="">아이디</th>
 											<td>${otd.email }</td>
@@ -170,7 +186,7 @@ td {
 										<tr>
 											<th class="">비밀번호</th>
 											<td>
-												<input class="btn btn-main" type="button" id="password" name="button" value="비밀번호 변경" onclick="memberPswdUpdateForm();">			
+												<input class="btn-gopass btn-main" type="button" id="password" name="button" value="비밀번호 변경" onclick="memberPswdUpdateForm();">			
 											</td>
 										</tr>
 										<tr>
@@ -186,7 +202,7 @@ td {
 										</tr>
 									</table>
 									<div class="d-flex justify-content-center">
-										<input class="btn btn-main" type="submit" value="회원 수정" >
+										<input class="btn btn-main" type="button" value="회원 수정" onclick='memberUpdate()'>
 										<input type="hidden" id ="email" name ="email" value='${otd.email}'>
 										<input type="hidden" id ="password" name ="password" value='${otd.password}'>
 									</div>
@@ -216,11 +232,15 @@ td {
  	</div>
   	<script type="text/javascript">
 		function memberUpdate(){
-			if(confirm("정말로 수정하시겠습니까?")){
+			let result = confirm("정말로 수정 하시겠습니까??");
+			if(result){
+				
 			alert("수정이 완료되었습니다.");
 			updatefrm.submit();
+			
 			} else {
-				location.reload();
+				//NO!
+				return;
 			}
 		}
 		function memberPswdUpdateForm(){
@@ -229,6 +249,64 @@ td {
 		function memberDelete(){
 			deletefrm.submit();
 		}
+		
+		$(window).on('load', function() {
+			
+			// 시간 보여주는 메소드 (제발 재사용 많이 해주세요)
+			$.ajax({
+				url:"LeftTimeShowServlet",
+				type:'get',
+				data:{
+					email: "${session.email}"
+				},
+				dataType: 'json',
+				success: function(result) {
+					console.log(result);
+					calculrateTime(result);
+				},
+				error: function(e) {
+					console.error(e);
+				}
+			})
+			
+			function calculrateTime(result) {
+				let now = new Date();
+				let boughtTime = new Date(result.dateBought);
+				
+				console.log(boughtTime);
+				if(result.ticketTime == "30분") {
+					boughtTime.setMinutes(boughtTime.getMinutes() + 30);
+				} else if (result.ticketTime == "1시간"){
+					boughtTime.setHours(boughtTime.getHours() + 1);
+				} else if (result.ticketTime == "2시간"){
+					boughtTime.setHours(boughtTime.getHours() + 2);
+				} else if (result.ticketTime == "4시간"){
+					boughtTime.setHours(boughtTime.getHours() + 4);
+				} else if (result.ticketTime == "8시간"){
+					boughtTime.setHours(boughtTime.getHours() + 8);
+				} else if (result.ticketTime == "12시간"){
+					boughtTime.setHours(boughtTime.getHours() + 12);
+				} else if (result.ticketTime == "24시간"){
+					boughtTime.setHours(boughtTime.getHours() + 24);
+				}
+				
+				console.log(boughtTime);
+				if(boughtTime - now > 0) {
+					let i = 0;
+					let start = setInterval(function() {
+						// 시간 대충 2시간이라 하면
+						let time = Math.floor((boughtTime.getTime()-now.getTime())/1000) - i;
+						// 1초 마다 까지고 초기화 하면됨.
+						time = Math.floor((time/60)/60) + "시간" 
+								+ Math.floor((time/60)%60) + "분"
+								+ Math.floor(time%60) + "초";
+						$("#time").text(time);
+						i += 1;
+					}, 1000)
+				} 
+			}
+		});
+		
 	</script>
 </body>
 </html>

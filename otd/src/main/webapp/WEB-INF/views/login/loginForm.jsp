@@ -26,7 +26,6 @@
 }
  .signIn{
    background: linear-gradient(rgba(246, 247, 249, 0.2), rgba(246, 247, 249, 0.2)), url("img/loginCheck.jpg")  center center fixed;
-   background-attachment: fixed;
    background-size: cover;
    z-index: -100;
  }
@@ -123,32 +122,70 @@ $(document).ready(function(){
 					 if(data.result = "true") {
 						console.log(data);
 						loginFrm.submit();
-					} else{
-						alert("회원정보 불일치")
+					} else {
+						console.log(data);
+						alert(data);
 					}
 				},
 				error: function(e){
-					alert("로그인 시도 중 오류 발생");
+					alert("아이디 또는 비밀번호가 일치하지 않습니다.");
 					console.log(e);
 				}
 			})
 		}	
 	});
 });
-function checkMail(email) {
-    //mail이 입력되었는지 확인하기
-    if (!checkExistData(email, "이메일을"))
-        return false;
-    	var emailRegExp = /^[A-Za-z0-9_]+[A-Za-z0-9] *[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
-    
-    if (!emailRegExp.test(email)) {
-        alert("이메일 형식이 올바르지 않습니다");
-        form.email.value = "";
-        form.email.focus();
-        return false;
-    }
-    return true; //확인이 완료되었을 때
-}
+//이메일이 잘못되었는지 확인하는 함수 
+
+function CheckEmail(str)
+
+{                                                 
+
+     var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+     if(!reg_email.test(str)) {                            
+
+          return false;         
+
+     }                            
+
+     else {                       
+
+          return true;         
+
+     }                            
+
+}                                
+
+//이메일이 잘못되었는지 확인하는 함수 
+
+function CheckEmail(str) {                                                 
+    var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+    if(!reg_email.test(str)) {                            
+         return false;         
+    } else {                       
+         return true;         
+    }                            
+}                                
+
+//로그인 버튼을 클릭했을 때 실행되는 함수                                 
+function EmailCheck() {  
+	
+	var obEmail = document.getElementById("email");
+	if (!obEmail.value) {             
+		alert("이메일을 입력하세요!");
+		obEmail.focus();	
+		return;
+	} else {          
+		if(!CheckEmail(obEmail.value))	{
+			alert("이메일 형식이 잘못되었습니다. 다시입력해주세요.");
+			obEmail.focus();
+			return;
+		}                
+
+	}                      
+
+}                           
 </script>
 </head>
 <body Class="signIn">
@@ -175,10 +212,13 @@ function checkMail(email) {
 	        				</div>
 	        				
 	        				<div class="form-group mb-2 d-grid gap-2 py-2">
-	        					<button class="btn btn-main" type="button" id="btnLogin">로그인</button>
+	        					<button class="btn btn-main" type="button" id="btnLogin" onclick="javascript:EmailCheck()">로그인</button>
+	        				</div>
+	        				<div class="form-group mb-2 d-grid gap-2 py-2">
+	        						<button class="btn btn-main" type="button" onclick="location.href='signUpForm.do'">회원가입</button>
 	        				</div>
 	        				<div class="form-group mb-2 d-grid gap-2">
-	        						<button class="btn btn-main" type="button" onclick="location.href='signUpForm.do'">회원가입</button>
+	        						<button class="btn btn-main" type="button" onclick="location.href='home.do'">홈</button>
 	        				</div>
 	        			</form>
 	        			 <div class="d-flex justify-content-center align-items-center mt-3 mb-3"> 
