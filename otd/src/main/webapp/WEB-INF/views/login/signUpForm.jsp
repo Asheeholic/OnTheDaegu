@@ -19,7 +19,6 @@
 }
 .signUp{
    background: linear-gradient(rgba(246, 247, 249, 0.2), rgba(246, 247, 249, 0.2)), url("img/loginCheck.jpg")  center center fixed;
-   background-attachment: fixed;
    background-size: cover;
    z-index: -100;
  }
@@ -135,62 +134,44 @@
 	});
 });
 
-function checkAll() {
-	if (!checkMail(frm.mail.value)) {
-		return false;
-       } else if  (!checkPassword(frm.password.value,
-    		  frm.passcheck.value)) {
-          	return false;
-       }
-       return true;
-   }
-function checkExistData(value, dataName) {
-	   if (value == "") {
-	       alert(dataName + " 입력해주세요");
-	       return false;
-	   }
-	   return true;
+	
+function check_pw(){
+		  
+	if(document.getElementById('password').value !='' && document.getElementById('passcheck').value!=''){
+	    if(document.getElementById('password').value == document.getElementById('passcheck').value){
+	       alert("비밀번호가 일치합니다.");
+	    }
+	    else{
+	       alert("비밀번호가 일치하지가 않습니다. 다시 확인해주세요.");
+	    }
 	}
-function checkMail(email) {
-    //mail이 입력되었는지 확인하기
-    if (!checkExistData(email, "이메일을"))
-        return false;
-    var emailRegExp = /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
-    if (!emailRegExp.test(email)) {
-        alert("이메일 형식이 올바르지 않습니다");
-        frm.email.value = "";
-        frm.email.focus();
-        return false;
-    }
-    return true; //확인이 완료되었을 때
 }
-function checkPassword(id, password, passcheck) {
-    //비밀번호가 입력되었는지 확인하기
-    if (!checkExistData(pass, "비밀번호를"))
-        return false;
-    //비밀번호 확인이 입력되었는지 확인하기
-    if (!checkExistData(pass2, "비밀번호 확인을"))
-        return false;
-    var password1RegExp = /^[a-zA-z0-9]{4,12}$/; 
-    //비밀번호 유효성 검사
-    if (!password1RegExp.test(pass)) {
-        alert("비밀번호는 영문 대소문자와 
-        숫자 4~12자리로 입력해야합니다");
-        frm.pass.value = "";
-        frm.pass.focus();
-        return false;
-    }
-    //비밀번호와 비밀번호 확인이 맞지 않다면..
-    if (pass != pass2) {
-        alert("두 비밀번호가 맞지 않습니다.");
-        form.pass.value = "";
-        form.pass2.value = "";
-        form.pass2.focus();
-        return false;
-    }
-    return true; //확인이 완료되었을 때
-}    
 
+function CheckEmail(str) {                                                 
+    var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+    if(!reg_email.test(str)) {                            
+         return false;         
+    } else {                       
+         return true;         
+    }                            
+}                                
+
+//로그인 버튼을 클릭했을 때 실행되는 함수                                 
+function EmailCheck() {  
+	
+	var obEmail = document.getElementById("email");
+	if (!obEmail.value) {             
+		alert("이메일을 입력하세요!");
+		obEmail.focus();	
+		return;
+	} else {          
+		if(!CheckEmail(obEmail.value))	{
+			alert("이메일 형식이 잘못되었습니다. 다시입력해주세요.");
+			obEmail.focus();
+			return;
+		}                
+	}                      
+}                           
 </script>
 </head>
 <body class="signUp">
@@ -212,8 +193,8 @@ function checkPassword(id, password, passcheck) {
 			        					<label for="InputEmail">Email address</label>
 	        					<div class="row">
 		        					<div class="col-9">
-			        					<input class="form-control mb-2" type="text" id="email" name="email"
-											placeholder="이메일 형식으로 입력해주세요" required="required" size="25">
+			        					<input class="form-control mb-2" onchange="EmailCheck()" type="email" id="email" name="email"
+											placeholder="이메일 형식으로 입력해주세요" required="required" size="25" >
 		        					</div>
 		        					<div class="col-3	 d-grid gap-2 d-md-block">
 										<input class="btn btn-idCheck" type="button" value="중복확인" id="loginCheck" name="loginCheck">	
@@ -232,7 +213,7 @@ function checkPassword(id, password, passcheck) {
 	        				<!-- 비밀번호확인 start -->
 	        				<div class="form-group">
 	        					<label for="InputPassword">비밀번호 확인</label>
-	        					<input class="form-control mb-2" type="password" id="passcheck" name="passcheck" placeholder="비밀번호확인 입력" required="required" size="25">
+	        					<input class="form-control mb-2" onchange="check_pw()"  type="password" id="passcheck" name="passcheck" placeholder="비밀번호확인 입력" required="required" size="25" >
 	        				</div>
 	        				<!-- 비밀번호확인 end -->
 	        				
@@ -261,7 +242,7 @@ function checkPassword(id, password, passcheck) {
 		        			 			<input class="btn btn-idCheck" type="submit" value="회원가입">
 		        			 		</div>
 		        			 		<div class="col-6 d-flex justify-content-center">
-		        			 			<input class="btn btn-danger" type="reset" value="취소">        			 		
+		        			 			<input class="btn btn-idCheck" type="button" value="로그인" onclick="location.href='loginForm.do'">        			 		
 		        			 		</div>
 		        			 	</div>
 		        			 </div>	

@@ -72,6 +72,8 @@ table, th, td {
 
 table {
 	margin: auto;
+	width: 100%
+	
 }
 
 td {
@@ -176,18 +178,22 @@ td {
 		<input type="hidden" id="email" name="email" value="${sessionEmail}">
 		<!-- history table -->
 		<input type="hidden" id="ticket_no" name="ticket_no" value="">
+		<input type="hidden" id="payment_price" name="payment_price" value="">
 	</form>
 <script>
 	$(document).ready(function() {
 		// 폼전송 버튼 누르면 실행할 이벤트, 기능 정의
 		$('.btn').on('click', function() {
+			event.preventDefault();
 			console.log('클릭');
 			if (confirm("정말 환불하시겠습니까?")) {		
 				historyFnc();
 			}
 		});
 		function historyFnc() {
-			frm.submit();
+			let ticketSelect = ${history[0].TICKET_PRICE};
+			data.payment_price.value = ticketSelect;
+			
 			data.submit();
 		}
 	});

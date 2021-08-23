@@ -27,7 +27,7 @@
 	<!-- 결제내역 수정 -->
 	<update id="historyUpdate" parameterType="HistoryVO">
 		UPDATE history SET
-		ticket_no = #{ticketNo} WHERE email = #{email}
+		ticket_no = #{ticketNo}, ticket_code = null WHERE email = #{email} and ticket_code = #{ticketCode}
 	</update>
 
 	<!-- 결제내역 추가 -->

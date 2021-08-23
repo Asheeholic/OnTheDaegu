@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<style>
-		.section {
+		.time {
 			background-image: url("img/bikeMain.jpg");
 			background-attachment: fixed;
 			background-size: cover;
@@ -92,7 +92,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="row py-5">
+		</div>
+	</section>
+	<section class="section time">
+		<div class="container">
+			<div class="row py-5 time">
 				<div class="col-lg-12 py-5">
 					<div>
 						<h3 class="display-5 text-center">즐거운 자전거 여행이 되시기 바랍니다!</h3>

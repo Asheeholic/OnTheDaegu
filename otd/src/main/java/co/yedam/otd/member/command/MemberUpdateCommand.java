@@ -37,7 +37,7 @@ public class MemberUpdateCommand implements Command {
 			System.out.println(result);
 		} else {
 			request.setAttribute("message","회원 수정 오류! 관리자에게 문의하세요." );
-			page = "memberSelect.do";
+			page = "home/home.do";
 		}
 	
 		return page;

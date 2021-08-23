@@ -3,12 +3,14 @@
 <mapper namespace="co.yedam.otd.rental.service.TimeMapper">
 	
 	<select id="timeSelectOne" parameterType="String" resultType="co.yedam.otd.rental.vo.TimeVO">
-		select TO_CHAR(h.history_date, 'YYYY-MM-DD HH24:MI:SS') "DATE_BOUGHT", 
+		select * from
+		(select TO_CHAR(h.history_date, 'YYYY-MM-DD HH24:MI:SS') "DATE_BOUGHT", 
 		t.ticket_time "TICKET_TIME"
 		from history h join ticket t
 		on (h.ticket_code = t.ticket_code)
-		where h.email = #{email} and ROWNUM = 1
-		ORDER BY h.num desc
+		where h.email = #{email}
+		ORDER BY h.num desc)
+		where rownum = 1
 	</select>
 	
 </mapper>
