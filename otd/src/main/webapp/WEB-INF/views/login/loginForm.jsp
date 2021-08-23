@@ -135,7 +135,20 @@ $(document).ready(function(){
 		}	
 	});
 });
-
+function checkMail(email) {
+    //mail이 입력되었는지 확인하기
+    if (!checkExistData(email, "이메일을"))
+        return false;
+    	var emailRegExp = /^[A-Za-z0-9_]+[A-Za-z0-9] *[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
+    
+    if (!emailRegExp.test(email)) {
+        alert("이메일 형식이 올바르지 않습니다");
+        form.email.value = "";
+        form.email.focus();
+        return false;
+    }
+    return true; //확인이 완료되었을 때
+}
 </script>
 </head>
 <body Class="signIn">
@@ -154,7 +167,7 @@ $(document).ready(function(){
 	        			<form id="loginFrm" method="post" action="memberCheckIdAndPassword.do" >
 	        				<div class="form-group">	
 	        					<label for="InputEmail">Email address</label>
-	        					<input class="form-control mb-2" type="text" id="email" name="email" required="required" placeholder="아이디">
+	        					<input class="form-control mb-2" type="email" id="email" name="email" required="required" placeholder="아이디">
 	        				</div>
 	        				<div class="form-group">
 	        					<label for="InputPassword">Password</label>

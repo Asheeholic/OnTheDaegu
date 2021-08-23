@@ -142,44 +142,57 @@ td {
 					</li>
 				</ul>
 			</div>
-		</div>
-	</section>
+		
+	
 			
-	
-	<div align="center">
-		<h1>회원 탈퇴를 신청합니다.</h1><br/>
-			<p>그동안 On the Daegu를 이용해 주셔서 감사합니다.</p>
-	
-		<div align="center">
-			<table border="1">
-				<tr>
-				<td>
-					<ul>
-						<li>
-							탈퇴 신청 즉시 회원탈퇴 처리되며, 해당 아이디의 및 회원정보는 삭제처리되며, 
-							복원할 수 없습니다
-						</li>
-						<li>
-							회원탈퇴 이후 같은 아이디로는 재가입이 불가능 합니다.
-						</li>
-						<li>
-							이용권 기간이 남아있는 경우 즉시 탈퇴가 불가능 하오니 고객센터에 문의 바랍니다.
-						</li>
-					</ul>
-				</td>
-				</tr>
-			</table>
-			<br/><br/><br/>
-			<hr>
-			<div>
-				<button class="btn btn-outline-danger" onclick="memberDeleteSend()">회원탈퇴</button>
+			<div class="d-flex justify-content-center py-3">
+				<div class="row">
+					<div class="h1"> 
+						<a class="text-danger">회원 탈퇴</a>를 신청합니다.
+					</div>
+				</div>
 			</div>
+			
+			<div class="d-flex justify-content-center">
+				<div class="row">
+					<div class="h4">
+						<p>그동안 On the Daegu를 이용해 주셔서 감사합니다.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="d-flex justify-content-center">
+				<div class="card shadow mb-4">
+	 				 <div class="card-body">
+	   					 <ul class="list-group">
+							<li class="list-group-item">
+								탈퇴 신청 즉시 회원탈퇴 처리되며, 해당 아이디의 및 회원정보는 삭제처리되며, 
+								복원할 수 없습니다
+							</li>
+							<li class="list-group-item">
+								회원탈퇴 이후 같은 아이디로는 재가입이 불가능 합니다.
+							</li>
+							<li class="list-group-item">
+								이용권 기간이 남아있는 경우 즉시 탈퇴가 불가능 하오니 고객센터에 문의 바랍니다.
+							</li>
+						</ul>
+	  				</div>
+				</div>
+			</div>
+			<div class="d-flex justify-content-center">
+				<div class="d-grid gap-2 col-2	 mx-auto">
+					<button class="btn btn-danger" onclick="memberDeleteSend()">회원탈퇴</button>
+				</div>
+			</div>
+			<form name="deletefrm" action="memberDelete.do" method="post">
+				<input type="hidden" id="email" name="email" value="${email}">
+				<input type="hidden" id="state" name="state" value="${state}">
+			</form>	
 		</div>
-	</div>
-	<form name="deletefrm" action="memberDelete.do" method="post">
-		<input type="hidden" id="email" name="email" value="${email}">
-		<input type="hidden" id="state" name="state" value="${state}">
-	</form>
+	</section>	
+		<!-- 컨테이너 종료 -->
+		
+
 <script type="text/javascript">
 function memberDeleteSend(){
 	

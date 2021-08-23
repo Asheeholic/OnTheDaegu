@@ -16,9 +16,6 @@
 	position: relative;
 	z-index: -50;
 }
-	
-
-
 
 .btn {
 	display: inline-block;
@@ -30,9 +27,10 @@
 	font-family: "Exo", sans-serif;
 	text-transform: uppercase;
 	border-radius: 5px;
-	border: 2px solid transparent;
+	border: 1px solid transparent;
 	transition: all .35s ease;
 }
+
 
 .btn-main {
 	background: #00B6BC;
@@ -57,29 +55,29 @@
   background: #00b6bc;
   z-index: -1;
 }
-
+ #btnpass {
+ 	 width: 100%;
+  	 height: 100%;
+ }
 
 table, th, td {
-	border : solid 1px lightGray;
+	border: solid 1px lightGray;
 	border-collapse: collapse;
-	padding: 5px;
-}
-table {
-	margin : auto;
-	padding: 0;
-    width: 100%;
-    border: 0 solid #00478f !important;
-    border-radius: 40px !important;
-    border-spacing: 0;
-    border-collapse: separate;
-}
-th {
+	padding: 1px;
 	
-	text-align: center;
 }
-td {
 
-	padding-left:10px;
+table {
+	margin: auto;
+}
+
+th {
+	text-align: center;
+	
+}
+
+td {
+	padding-left: 10px;
 }
 .text-white {
 	z-index: 10;
@@ -147,45 +145,57 @@ td {
 						<a href="getPayHistory.do" class="btn btn-main btn-round-full">결제내역</a>
 					</li>
 				</ul>
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active h4 mx-2">
+						<a href="reviewList.do?pageNum=1&amount=5" class="btn btn-main btn-round-full">리뷰게시판</a>
+					</li>
+				</ul>
 			</div>
 			
-			<div class="card shadow mb-4 memberCard">
-				<form name="updatefrm" action="memberUpdate.do" method="post" onsubmit="memberUpdate();">
-				<div class="card-header py-3 tableHeader">
-	            	<h6 class="m-0 font-weight-bold"></h6>
-	            </div>
-	            <div class="card-body">
-					<table class="table table-hover">
-						<tr>
-							<th class="table-secondary">아이디</th>
-							<td>${otd.email }</td>
-						</tr>
-						<tr>
-							<th class="table-secondary">비밀번호</th>
-							<td>
-								<input class="btn btn-main" type="button" id="password" name="button" value="비밀번호 변경" onclick="memberPswdUpdateForm();">			
-							</td>
-						</tr>
-						<tr>
-							<th class="table-secondary">이름</th>
-							<td>${otd.name }
-							</td>
-						</tr>
-						<tr>
-							<th class="table-secondary">전화번호</th>
-							<td>
-								<input class="form-control" type="text" id="phone" name="phone" value='${otd.phone}'>
-							</td>
-						</tr>
-					</table>
-					<div class="d-flex justify-content-center">
-						<input class="btn btn-main" type="submit" value="회원 수정" >
-						<input type="hidden" id ="email" name ="email" value='${otd.email}'>
-						<input type="hidden" id ="password" name ="password" value='${otd.password}'>
-					</div>
-				</div>	
-				</form>
-			</div>
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-8">
+					<div class="card shadow mb-4 memberCard">
+						<form name="updatefrm" action="memberUpdate.do" method="post" onsubmit="memberUpdate();">
+	            			<div class="card-body my-3">
+	            				<div class="card-header py-3 tableHeader">
+	            					<h6 class="m-0 font-weight-bold"></h6>
+	            				</div>
+					            	
+									<table class="table table-bordered">
+										<tr class="">
+											<th class="">아이디</th>
+											<td>${otd.email }</td>
+										</tr>
+										<tr>
+											<th class="">비밀번호</th>
+											<td>
+												<input class="btn btn-main" type="button" id="password" name="button" value="비밀번호 변경" onclick="memberPswdUpdateForm();">			
+											</td>
+										</tr>
+										<tr>
+											<th class="">이름</th>
+											<td>${otd.name }
+											</td>
+										</tr>
+										<tr>
+											<th class="">전화번호</th>
+											<td>
+												<input class="form-control" type="text" id="phone" name="phone" value='${otd.phone}'>
+											</td>
+										</tr>
+									</table>
+									<div class="d-flex justify-content-center">
+										<input class="btn btn-main" type="submit" value="회원 수정" >
+										<input type="hidden" id ="email" name ="email" value='${otd.email}'>
+										<input type="hidden" id ="password" name ="password" value='${otd.password}'>
+									</div>
+								</div>	
+								</form>
+								</div>
+							</div>
+								<div class="col-2"></div>
+						</div>
 			<!-- card end -->
 			
 		 	<div><!--비밀번호 변경폼 가기 -->

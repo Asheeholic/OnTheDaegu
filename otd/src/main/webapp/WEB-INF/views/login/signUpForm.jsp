@@ -135,8 +135,62 @@
 	});
 });
 
+function checkAll() {
+	if (!checkMail(frm.mail.value)) {
+		return false;
+       } else if  (!checkPassword(frm.password.value,
+    		  frm.passcheck.value)) {
+          	return false;
+       }
+       return true;
+   }
+function checkExistData(value, dataName) {
+	   if (value == "") {
+	       alert(dataName + " 입력해주세요");
+	       return false;
+	   }
+	   return true;
+	}
+function checkMail(email) {
+    //mail이 입력되었는지 확인하기
+    if (!checkExistData(email, "이메일을"))
+        return false;
+    var emailRegExp = /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
+    if (!emailRegExp.test(email)) {
+        alert("이메일 형식이 올바르지 않습니다");
+        frm.email.value = "";
+        frm.email.focus();
+        return false;
+    }
+    return true; //확인이 완료되었을 때
+}
+function checkPassword(id, password, passcheck) {
+    //비밀번호가 입력되었는지 확인하기
+    if (!checkExistData(pass, "비밀번호를"))
+        return false;
+    //비밀번호 확인이 입력되었는지 확인하기
+    if (!checkExistData(pass2, "비밀번호 확인을"))
+        return false;
+    var password1RegExp = /^[a-zA-z0-9]{4,12}$/; 
+    //비밀번호 유효성 검사
+    if (!password1RegExp.test(pass)) {
+        alert("비밀번호는 영문 대소문자와 
+        숫자 4~12자리로 입력해야합니다");
+        frm.pass.value = "";
+        frm.pass.focus();
+        return false;
+    }
+    //비밀번호와 비밀번호 확인이 맞지 않다면..
+    if (pass != pass2) {
+        alert("두 비밀번호가 맞지 않습니다.");
+        form.pass.value = "";
+        form.pass2.value = "";
+        form.pass2.focus();
+        return false;
+    }
+    return true; //확인이 완료되었을 때
+}    
 
-	
 </script>
 </head>
 <body class="signUp">
