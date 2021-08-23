@@ -16,19 +16,6 @@
 	position: relative;
 	z-index: -50;
 }
-<<<<<<< HEAD
-=======
-	.card {
-	left: 20%;
-	width: 800px;
-	padding: 0;
-    border: 0px solid #00478f !important;
-    border-radius: 40px !important;
-    border-spacing: 0;
-    border-collapse: separate;
-}
->>>>>>> refs/heads/main
-
 .btn {
 	display: inline-block;
 	font-size: 20px;
@@ -156,8 +143,7 @@ td {
 				</ul>
 			</div>
 			
-<<<<<<< HEAD
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-2"></div>
 				<div class="col-8">
 					<div class="card shadow mb-4 memberCard">
@@ -201,45 +187,6 @@ td {
 							</div>
 								<div class="col-2"></div>
 						</div>
-=======
-			<div class="card shadow mb-4">
-				<form name="updatefrm" action="memberUpdate.do" method="post" onsubmit="memberUpdate();">
-				<div class="card-header py-3 tableHeader">
-	            	<h6 class="m-0 font-weight-bold"></h6>
-	            </div>
-	            <div class="card-body">
-					<table class="table table-hover">
-						<tr>
-							<th class="table-secondary">아이디</th>
-							<td>${otd.email }</td>
-						</tr>
-						<tr>
-							<th class="table-secondary">비밀번호</th>
-							<td>
-								<input class="btn btn-main" type="button" id="password" name="button" value="비밀번호 변경" onclick="memberPswdUpdateForm();">			
-							</td>
-						</tr>
-						<tr>
-							<th class="table-secondary">이름</th>
-							<td>${otd.name }
-							</td>
-						</tr>
-						<tr>
-							<th class="table-secondary">전화번호</th>
-							<td>
-								<input class="form-control" type="text" id="phone" name="phone" value='${otd.phone}'>
-							</td>
-						</tr>
-					</table>
-					<div class="d-flex justify-content-center">
-						<input class="btn btn-main" type="submit" value="회원 수정" >
-						<input type="hidden" id ="email" name ="email" value='${otd.email}'>
-						<input type="hidden" id ="password" name ="password" value='${otd.password}'>
-					</div>
-				</div>	
-				</form>
-			</div>
->>>>>>> refs/heads/main
 			<!-- card end -->
 			
 		 	<div><!--비밀번호 변경폼 가기 -->
