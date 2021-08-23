@@ -304,9 +304,10 @@
 													type="hidden" id="email" name="email"
 													value="${session.email}"></td>
 												<th width="100">별점</th>
-												<td width="180" align="center"><input class="input"
-													type="text" id="reviewLike" name="reviewLike"
-													required="required"></td>
+												<td width="180" align="center">
+													<input class="input" type="text" id="reviewLike" name="reviewLike" required="required">
+													<input type="hidden" id="reviewNo" name="reviewNo" value="">
+												</td>
 											</tr>
 											<tr>
 												<td colspan="6"><textarea rows="5" id="reviewContent"
