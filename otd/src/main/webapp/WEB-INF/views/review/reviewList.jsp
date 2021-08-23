@@ -183,9 +183,9 @@
 				data: $('#frm').serialize(),
 				dataType: 'json',
 				success: reviewInsertFnc,
-				error: function(reject){
-					console.error(reject);
-				}
+			    error: function(){
+			         alert("리뷰 작성이 실패하였습니다. 관리자에게 문의해주세요."); // 실패 시 팝업창
+			    }
 			});
 		})
 	});	
