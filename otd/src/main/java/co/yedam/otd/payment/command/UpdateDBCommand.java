@@ -22,9 +22,10 @@ public class UpdateDBCommand implements Command {
 		
 		vo.setTicketNo(request.getParameter("ticket_no"));
 		vo.setEmail(request.getParameter("email"));
+
 		
 		dao.historyUpdate(vo);
-		return null;
+		return "history/getPayHistory";
 	}
 
 }

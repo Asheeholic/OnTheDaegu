@@ -17,7 +17,6 @@
 	position: relative;
 	z-index: -50;
 }
-
 .btn {
 	display: inline-block;
 	font-size: 20px;
@@ -104,14 +103,6 @@ td {
 	background: #00B6BC;
 	
 }
-.memberCard {
-	padding: 0;
-    width: 100%;
-    border: 0px solid #00478f !important;
-    border-radius: 40px !important;
-    border-spacing: 0;
-    border-collapse: separate;
-}
 
 </style>
 </head>
@@ -165,7 +156,7 @@ td {
 				</ul>
 			</div>
 			
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-2"></div>
 				<div class="col-8">
 					<div class="card shadow mb-4 memberCard">

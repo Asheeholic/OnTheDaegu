@@ -20,7 +20,7 @@
 		t.ticket_price
 		from history h inner join ticket t
 		on h.ticket_code = t.ticket_code
-		where email = #{email}
+		where email = #{email} and ticket_no is not null
 		order by h.history_date desc
 	</select>
 

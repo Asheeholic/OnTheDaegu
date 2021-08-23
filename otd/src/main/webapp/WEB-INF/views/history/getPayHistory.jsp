@@ -64,7 +64,7 @@ body {
 }
 
 table, th, td {
-text-align:center;
+	text-align: center;
 	border: solid 1px lightGray;
 	border-collapse: collapse;
 	padding: 5px;
@@ -98,19 +98,8 @@ td {
 }
 /* 공통상단바 */
 </style>
-<script>
-	/* $(document).ready(
-			function() {
-				// 폼전송 버튼 누르면 실행할 이벤트, 기능 정의
-				$('.btn').on('click', function(event) {
-					event.preventDefault();
-					historyFnc();
-				})
-				function historyFnc() {
-					console.log("hi");
-				}
-			}); */
-</script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 	<section class="page-title bg-1">
@@ -171,7 +160,7 @@ td {
 												<td>${history.HISTORY_DATE}</td>
 												<td>${history.TICKET_PRICE}원</td>
 												<td><input class="btn btn-main btn-round-full"
-													type="button" value="환불"></td>
+													type="button" id="refund" name="refund" value="환불"></td>
 											</tr>
 										</c:forEach>
 										<%-- </c:forEach> --%>
@@ -184,5 +173,27 @@ td {
 			</div>
 		</div>
 	</section>
+	<form name="data" action="updateDB.do" method="post">
+		<!-- payment table -->
+		<input type="hidden" id="email" name="email" value="${sessionEmail}">
+		<!-- history table -->
+		<input type="hidden" id="ticket_no" name="ticket_no" value="">
+	</form>
+<script>
+	$(document).ready(function() {
+		// 폼전송 버튼 누르면 실행할 이벤트, 기능 정의
+		$('.btn').on('click', function() {
+			console.log('클릭');
+			if (confirm("정말 환불하시겠습니까?")) {		
+				historyFnc();
+			}
+		});
+		function historyFnc() {
+			frm.submit();
+			data.submit();
+		}
+	});
+</script>
 </body>
+
 </html>

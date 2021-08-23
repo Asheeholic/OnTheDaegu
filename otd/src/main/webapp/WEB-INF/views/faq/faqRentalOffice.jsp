@@ -6,61 +6,85 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.hide {
-	display: none
-} /*숨기기*/
-
-/* 공통 상단 바 */
-.bg-1 {
-	background: url("img/payForm.png") no-repeat 50% 50%;
-	background-size: 100%;
-	height: 370px;
-	position: relative;
-	z-index: -50;
-}
-
-body {
-	line-height: 1.6;
-	font-family: "Roboto", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	font-size: 16px;
-	color: #000000;
-	font-weight: 400;
-}
-
-.overlay:before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.9;
-	background: #00b6bc;
-	z-index: -1;
-}
-
-.text-white {
-	z-index: 10;
-}
-
-.card-header {
-	background: #00b6bc;
-}
-
-.section-title h2 {
-	color: #000000;
-}
-
-.card {
-	left: 20%;
-	width: 800px;
-}
-/* 공통상단바 */
-</style>
+	<style>
+		.hide {
+			display: none
+		} /*숨기기*/
+		
+		/* 공통 상단 바 */
+		.bg-1 {
+			background: url("img/payForm.png") no-repeat 50% 50%;
+			background-size: 100%;
+			height: 370px;
+			position: relative;
+			z-index: -50;
+		}
+		
+		body {
+			line-height: 1.6;
+			font-family: "Roboto", sans-serif;
+			-webkit-font-smoothing: antialiased;
+			font-size: 16px;
+			color: #000000;
+			font-weight: 400;
+		}
+		
+		.overlay:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.9;
+			background: #00b6bc;
+			z-index: -1;
+		}
+		
+		.text-white {
+			z-index: 10;
+		}
+		
+		.card-header {
+			background: #00b6bc;
+		}
+		
+		.section-title h2 {
+			color: #000000;
+		}
+		
+		.card {
+			left: 20%;
+			width: 800px;
+		}
+		/* 공통상단바 */
+		
+		.btn {
+			display: inline-block;
+			font-size: 20px;
+			font-size: 0.8125rem;
+			font-weight: 1000;
+			letter-spacing: .5px;
+			padding: .75rem 2rem;
+			font-family: "Exo", sans-serif;
+			text-transform: uppercase;
+			border-radius: 5px;
+			border: 2px solid transparent;
+			transition: all .35s ease;
+		}
+		
+		.btn-main {
+			background: #00B6BC;
+			color: #fff;
+			border-color: #00B6BC;
+		}
+		
+		.btn-round-full {
+			border-radius: 50px;
+		}		
+	</style>
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -138,6 +162,12 @@ body {
 				</div>
 			</div>
 		</div>
+		
+		<div align="center">
+			<button class="btn btn-main btn-round-full" type="button"
+								onclick="location.href='faqHome.do'">홈으로</button>
+		</div>				
+		
 		<script>
 			$('.faq_list li').each(function(index, item) {
 				console.log(item);
