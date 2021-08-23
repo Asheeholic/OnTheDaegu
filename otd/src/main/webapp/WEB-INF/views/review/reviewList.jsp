@@ -277,7 +277,7 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-6">
 					<div class="section-title text-center">
-						<h2 class="mb-2">사용후기</h2>
+						<h2 class="mb-2">이용후기</h2>
 						<div class="divider mx-auto my-4"></div>
 						<p class="mb-5"></p>
 					</div>
@@ -342,7 +342,7 @@
 						<div class="card shadow mb-5 rounded">
 							<div class="card-body">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-white">사용후기</h6>
+									<h6 class="m-0 font-weight-bold text-white">이용후기</h6>
 								</div>
 								<div class="table-responsive">
 									<br>
