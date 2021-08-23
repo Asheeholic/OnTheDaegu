@@ -165,7 +165,7 @@
 		
 		<div align="center">
 			<button class="btn btn-main btn-round-full" type="button"
-								onclick="location.href='faqHome.do'">홈으로</button>
+								onclick="location.href='faqHome.do'">FAQ로</button>
 		</div>				
 		
 		<script>

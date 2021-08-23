@@ -2,6 +2,7 @@ package co.yedam.otd.member.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.yedam.otd.common.Command;
 import co.yedam.otd.member.service.MemberService;
@@ -13,6 +14,8 @@ public class MemberDeleteCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO 회원 삭제('Y' -> 'D')
+		
+		HttpSession session = request.getSession();
 		MemberService dao = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
 		
@@ -27,6 +30,7 @@ public class MemberDeleteCommand implements Command {
 		
 		String page = "";
 		if(result == 1) {
+			session.invalidate();
 			page ="home.do";
 		} else {
 			page ="deleteForm.do";

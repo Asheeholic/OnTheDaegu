@@ -198,7 +198,7 @@
 		let div1 = $('<div />').attr('class', 'card shadow mb-5 rounded');
 		let div2 = $('<div />').attr('class', 'card-body');
 		let div3 = $('<div />').attr('class', 'card-header py-3');
-		let h6_h = $('<h6 />').attr('class', 'm-0 font-weight-bold text-white').text('사용후기');
+		let h6_h = $('<h6 />').attr('class', 'm-0 font-weight-bold text-white').text('이용후기');
 		$(div3).append(h6_h);
 
 		let div4 = $('<div />').attr('class', 'table-responsive');

@@ -41,13 +41,13 @@
 				<span class="icofont-navigation-menu"></span>
 		 	 </button>
 		 	 	
-			<div class="col-lg-3 d-flex justify-content-evenly">
+			<div class="col-lg-2 d-flex justify-content-evenly">
 			 <!-- 로고 사진  -->
 				<a class="navbar-brand" href="home.do">
 					<img src="img/OTDLogo1.png" alt="otd로고사진" class="img-fluid">
 				</a>
 			</div>  	
-			<div class="col-lg-6">
+			<div class="col-lg-7">
 		  		<div class="col-ms-auto collapse navbar-collapse justify-content-evenly" id="navbarmain">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active h4 mx-1">

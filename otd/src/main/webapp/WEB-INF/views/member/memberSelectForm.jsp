@@ -166,7 +166,7 @@ td {
 	            					<h6 class="m-0 font-weight-bold"></h6>
 	            				</div>
 	            				<div class="d-flex justify-content-end">
-	            					<span class="h3 text-warning" id="time">남은시간:</span>
+	            					<span class="h3 text-warning" id="timeTitle">남은시간 :</span><span class="h3 text-warning" id="time"></span>
 	            				</div>
 					            	
 									<table class="table table-bordered ">
@@ -262,6 +262,12 @@ td {
 			
 			function calculrateTime(result) {
 				let now = new Date();
+				
+				if(result == null) {
+					$("#time").text("처음이시군요! 정기권을 사셔서 이용해 주세요!");
+					return;
+				}
+				
 				let boughtTime = new Date(result.dateBought);
 				
 				console.log(boughtTime);
@@ -291,10 +297,17 @@ td {
 						time = Math.floor((time/60)/60) + "시간" 
 								+ Math.floor((time/60)%60) + "분"
 								+ Math.floor(time%60) + "초";
-						$("#time").text(time);
+						$("#time").text(" " + time);
 						i += 1;
+						
+						if(time == 0) {
+							$("#time").text(" 종료되었습니다.");
+							clearInterval(start);
+						}
 					}, 1000)
-				} 
+				} else {
+					$("#time").text(" 남은 시간이 없습니다. 정기권을 구매해주세요!");
+				}
 			}
 		});
 		
