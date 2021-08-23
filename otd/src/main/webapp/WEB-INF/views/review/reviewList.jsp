@@ -183,9 +183,9 @@
 				data: $('#frm').serialize(),
 				dataType: 'json',
 				success: reviewInsertFnc,
-				error: function(reject){
-					console.error(reject);
-				}
+			    error: function(){
+			         alert("리뷰 작성이 실패하였습니다. 관리자에게 문의해주세요."); // 실패 시 팝업창
+			    }
 			});
 		})
 	});	
@@ -277,7 +277,7 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-6">
 					<div class="section-title text-center">
-						<h2 class="mb-2">사용후기</h2>
+						<h2 class="mb-2">이용후기</h2>
 						<div class="divider mx-auto my-4"></div>
 						<p class="mb-5"></p>
 					</div>
@@ -304,9 +304,10 @@
 													type="hidden" id="email" name="email"
 													value="${session.email}"></td>
 												<th width="100">별점</th>
-												<td width="180" align="center"><input class="input"
-													type="text" id="reviewLike" name="reviewLike"
-													required="required"></td>
+												<td width="180" align="center">
+													<input class="input" type="text" id="reviewLike" name="reviewLike" required="required">
+													<input type="hidden" id="reviewNo" name="reviewNo" value="">
+												</td>
 											</tr>
 											<tr>
 												<td colspan="6"><textarea rows="5" id="reviewContent"
@@ -342,7 +343,7 @@
 						<div class="card shadow mb-5 rounded">
 							<div class="card-body">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-white">사용후기</h6>
+									<h6 class="m-0 font-weight-bold text-white">이용후기</h6>
 								</div>
 								<div class="table-responsive">
 									<br>

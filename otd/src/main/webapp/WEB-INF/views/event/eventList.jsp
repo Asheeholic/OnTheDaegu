@@ -112,6 +112,39 @@
 			background: #00b6bc;
 			z-index: -1;
 		}
+		
+		/* 공통 상단 바 */
+		.bg-1 {
+			background: url("img/payForm.png") no-repeat 50% 50%;
+			background-size: 100%;
+			height: 370px;
+			position: relative;
+			z-index: -50;
+		}
+		
+
+		.overlay:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.9;
+			background: #00b6bc;
+			z-index: -1;
+		}
+		
+		.text-white {
+			z-index: 10;
+		}
+		
+		.section-title h2 {
+			color: #000000;
+		}
+		/* 공통상단바 */		
 	</style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -178,7 +211,21 @@
 			</div>
 		</div>
 	</section>
-	<div id="list" align="center">
-	</div>
+	
+	<section class="contact-form-wrap section">
+		<div class="container" align="center">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="section-title text-center">
+						<h2 class="mb-2">이벤트</h2>
+						<div class="divider mx-auto my-4"></div>
+						<p class="mb-5"></p>
+					</div>
+				</div>
+			</div>
+			<div id="list" align="center">
+			</div>
+		</div>
+	</section>
 </body>
 </html>
