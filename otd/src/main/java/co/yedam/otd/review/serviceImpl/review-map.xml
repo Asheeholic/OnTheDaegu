@@ -20,6 +20,9 @@
 		</selectKey>
 		insert into review(review_no, review_content, review_like, email, review_date) 
 	   		values(r_seq.nextval, #{reviewContent}, #{reviewLike}, #{email}, sysdate)
+      <selectKey keyProperty="reviewNo" resultType="int" order="AFTER">
+         select r_seq.currval as reviewNo from dual
+      </selectKey>	
 	</insert>
 	
 	<!-- 

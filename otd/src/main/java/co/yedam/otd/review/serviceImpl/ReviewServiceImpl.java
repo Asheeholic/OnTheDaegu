@@ -28,9 +28,9 @@ public class ReviewServiceImpl implements ReviewService {
 	@Override
 	public int reviewInsert(ReviewVO vo) {
 		// TODO 리뷰작성(서비스를 이용한 사람만)
-		int n = map.reviewInsert(vo);
+		map.reviewInsert(vo);
 		sqlSession.commit();
-		return n;
+		return vo.getReviewNo();
 	}
 
 	@Override

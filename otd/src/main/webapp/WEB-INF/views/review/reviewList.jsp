@@ -306,7 +306,7 @@
 												<th width="100">별점</th>
 												<td width="180" align="center">
 													<input class="input" type="text" id="reviewLike" name="reviewLike" required="required">
-													<input type="hidden" id="reviewNo" name="reviewNo" value="">
+													<input type="hidden" id="reviewNo" name="reviewNo" value="reviewNo">
 												</td>
 											</tr>
 											<tr>
