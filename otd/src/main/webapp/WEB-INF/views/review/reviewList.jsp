@@ -241,17 +241,18 @@
 		
 		// 새로 작성된 리뷰를 form의 가장 처음에 붙여주기 위해 insertBefore을 사용. Node만 파라미터로 사용할 수 있어서 newTable을 createElement로 생성해줬다.
 		form.insertBefore(div0, form.firstChild); //맨 앞에 삽입
-		
+		clearInput();
 		
 		// (XXX) insert 후 입력폼 비우기 시도(해결못함)
-		function clearInput(){
-			let like = document.getElementsById('#reviewLike');
-			like.value = '';
-			let content = document.getElementsById('#reviewContent')
-			content.value = '';
+		
 		}
 	}
-	
+	function clearInput(){
+		let like = document.getElementsById('#reviewLike');
+		like.value = '';
+		let content = document.getElementsById('#reviewContent')
+		content.value = '';
+	}
 	</script>
 </head>
 

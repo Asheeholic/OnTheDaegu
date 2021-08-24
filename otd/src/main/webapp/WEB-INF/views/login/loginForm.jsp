@@ -190,7 +190,7 @@ function EmailCheck() {
 </head>
 <body Class="signIn">
 	<div class="container d-flex justify-content-center align-items-center">
-		 <div class="card">
+		 <div class="card shadow">
 			<div class="row">
 				<div class="shadow p-3 rounded">
 					<div class="justify-content-center">
@@ -217,8 +217,8 @@ function EmailCheck() {
 	        				<div class="form-group mb-2 d-grid gap-2 py-2">
 	        						<button class="btn btn-main" type="button" onclick="location.href='signUpForm.do'">회원가입</button>
 	        				</div>
-	        				<div class="form-group mb-2 d-grid gap-2">
-	        						<button class="btn btn-main" type="button" onclick="location.href='home.do'">홈</button>
+	        				<div class="form-group mb-2 d-grid gap-2 py-2">
+	        						<button class="btn btn-main" type="button" onclick="location.href='home.do'">홈으로</button>
 	        				</div>
 	        			</form>
 	        			 <div class="d-flex justify-content-center align-items-center mt-3 mb-3"> 
