@@ -8,7 +8,7 @@
 <style>
 
 	.realFooter {
-		background-image: url("img/footerImg.jpg"); 
+		background-image: url("img/footerImg.jpg");
 		background-size: cover;
 		background-attachment: fixed;
 	}

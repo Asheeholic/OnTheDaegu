@@ -22,11 +22,9 @@
 			<div class="d-flex">
 				<div class="col-lg-6"></div>
 				<div class="col-lg-6 d-flex justify-content-end">
-					<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-						<a href="http://www.daeguoracle.com/" >
-							<span>(주)급발진</span>
-							<span class="h4">On The Daegu</span>
-						</a>						
+					<div class="text-lg-right top-right-bar mt-2 mt-lg-0 ">
+						<span class="text-white">(주)급발진</span>
+						<span class="h4 text-white">On The Daegu</span>					
 					</div>
 					
 				</div>
