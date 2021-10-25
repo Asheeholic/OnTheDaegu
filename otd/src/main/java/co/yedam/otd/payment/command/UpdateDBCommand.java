@@ -20,27 +20,11 @@ public class UpdateDBCommand implements Command {
 		MemberVO mvo = (MemberVO) session.getAttribute("session");
 		HistoryVO vo = new HistoryVO();
 		
-		vo.setTicketNo(request.getParameter("ticket_no"));
-		vo.setEmail(request.getParameter("email"));
+		vo.setTicketNo(request.getParameter("ticketNo"));
 
-		if (request.getParameter("payment_price").equals("1000")) {
-			vo.setTicketCode("A");
-		} else if (request.getParameter("payment_price").equals("2000")) {
-			vo.setTicketCode("B");
-		} else if (request.getParameter("payment_price").equals("3500")) {
-			vo.setTicketCode("C");
-		} else if (request.getParameter("payment_price").equals("7000")) {
-			vo.setTicketCode("D");
-		} else if (request.getParameter("payment_price").equals("10000")) {
-			vo.setTicketCode("E");
-		} else if (request.getParameter("payment_price").equals("15000")) {
-			vo.setTicketCode("F");
-		} else if (request.getParameter("payment_price").equals("25000")) {
-			vo.setTicketCode("G");
-		}
-		
 		dao.historyUpdate(vo);
-		return "history/getPayHistory";
+		
+		return "returnTicket.do";
 	}
 
 }

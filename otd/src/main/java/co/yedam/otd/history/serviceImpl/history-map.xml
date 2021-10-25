@@ -20,14 +20,14 @@
 		t.ticket_price
 		from history h inner join ticket t
 		on h.ticket_code = t.ticket_code
-		where email = #{email} and ticket_no is not null
+		where h.email = #{email} and h.ticket_code is not null
 		order by h.history_date desc
 	</select>
 
 	<!-- 결제내역 수정 -->
 	<update id="historyUpdate" parameterType="HistoryVO">
 		UPDATE history SET
-		ticket_no = #{ticketNo}, ticket_code = null WHERE email = #{email} and ticket_code = #{ticketCode}
+		ticket_code = null WHERE ticket_no = #{ticketNo}
 	</update>
 
 	<!-- 결제내역 추가 -->

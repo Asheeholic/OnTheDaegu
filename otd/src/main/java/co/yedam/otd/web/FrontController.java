@@ -42,7 +42,6 @@ import co.yedam.otd.notice.command.NoticeList;
 import co.yedam.otd.notice.command.NoticeSelect;
 import co.yedam.otd.notice.command.NoticeUpdate;
 import co.yedam.otd.notice.command.NoticeUpdateForm;
-import co.yedam.otd.payment.API.RefundList;
 import co.yedam.otd.payment.command.BuyTicketFormCommand;
 import co.yedam.otd.payment.command.InsertDBCommand;
 import co.yedam.otd.payment.command.PaymentCommand;

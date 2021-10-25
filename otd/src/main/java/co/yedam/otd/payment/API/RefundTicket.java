@@ -7,25 +7,22 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import co.yedam.otd.history.vo.HistoryVO;
+
 public class RefundTicket {
-	public String refundTicket() {
+	public String refundTicket(String ticketNo) {
 		HttpURLConnection conn = null;
 		ShowToken showToken = new ShowToken();
-		RefundList refundList = new RefundList();
 		String token = showToken.showToken();
-		List<String[]> list = refundList.refundList();
+		System.out.println(token);
+		HistoryVO vo;
 		//System.out.println(token);
 		String refund = "";
 		
-		//추가
-//		ShowToken showToken = new ShowToken();
-//		String token = showToken.showToken();
 		try {
 			URL url = new URL("https://api.iamport.kr/payments/cancel");
 			conn = (HttpURLConnection) url.openConnection();
@@ -36,12 +33,10 @@ public class RefundTicket {
 			conn.setDoOutput(true);
 
 			JsonObject obj = new JsonObject();
-
-			double amount = Double.parseDouble(list.get(0)[0]);
-			String merchant_uid = list.get(0)[1];
+			String merchant_uid = ticketNo;
+			System.out.println(ticketNo);
 			
 			obj.add("merchant_uid", new Gson().toJsonTree(merchant_uid));
-			obj.add("amount", new Gson().toJsonTree(amount));
 			obj.add("access_token", new Gson().toJsonTree(token));
 			
 			BufferedWriter bw;
@@ -52,7 +47,7 @@ public class RefundTicket {
 
 			int result = 0;
 			int responseCode = conn.getResponseCode();
-			//System.out.println("응답코드 : " + responseCode);
+			System.out.println("응답코드 : " + responseCode);
 
 			if (responseCode == 200) { // 정상 호출
 				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -62,7 +57,7 @@ public class RefundTicket {
 					sb.append(line + "\n");
 				}
 				br.close();
-				//System.out.println("환불 요청 : " + "" + sb.toString());
+				System.out.println("환불 요청 : " + "" + sb.toString());
 				result = 1;
 			} else { // 에러 발생
 				System.out.println(conn.getResponseMessage());

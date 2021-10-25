@@ -19,12 +19,10 @@ public class ReturnTicketCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// 환불 선택 창
-//		ShowToken showToken = new ShowToken();
+		//ShowToken showToken = new ShowToken();
+		//String token = showToken.showToken();
 		RefundTicket refundTicket = new RefundTicket();
-//		RefundList refundList = new RefundList();
-//		String token = showToken.showToken();
-		String refund = refundTicket.refundTicket();
-//		List<String[]> payInfo = refundList.refundList();
+		String refund = refundTicket.refundTicket(request.getParameter("ticketNo"));
 		//System.out.println(payInfo);
 		
 		HistoryService dao = new HistoryServiceImpl();
@@ -35,7 +33,6 @@ public class ReturnTicketCommand implements Command {
 		vo.setEmail(memberVo.getEmail());
 		
 		List<Map<String,String>> list = dao.histroyList(vo);
-		//System.out.println("vo야 넌 무엇을 담고 있니?" + list);
 		request.setAttribute("history", list);
 		return "history/getPayHistory";
 	}
