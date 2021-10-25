@@ -95,59 +95,7 @@ td {
 color : #000000;
 }
 </style>
-
 <title>buy ticket</title>
-<script>
-$(document).ready(function(){
-	
-	// 폼전송 버튼 누르면 실행할 이벤트, 기능 정의
-	$('.btn').on('click', function(event){
-		event.preventDefault();
-		paymentFnc();
-	})
-	function paymentFnc() {
-
-	let ticketSelect = $('#ticket').val();
-	let payment = document.querySelector('input[name="pay"]:checked').value;
-	data.payment_price.value = ticketSelect;
-	data.payment_method.value = payment;
-	
-	IMP.init('imp24006420');
-	
-	IMP.request_pay({
-		pg : 'inicis', // version 1.1.0부터 지원.
-		pay_method : payment,
-		merchant_uid : 'merchant_' + new Date().getTime(),
-		name : '${sessionName}',
-		amount : ticketSelect, //판매 가격
-		buyer_email : '${sessionEmail}',
-		buyer_name : '${sessionName}',
-		buyer_tel : '${sessionPhone}',
-	}, function(rsp) {
-		if (rsp.success) {
-			var msg = '결제가 완료되었습니다.';
-			alert(msg);
-			// 그 다음 실행
-			data.submit();
-		} else {
-			var msg = '결제에 실패하였습니다.';
-			msg += '에러내용 : ' + rsp.error_msg;
-			alert(msg);
-		}
-
-	});
-	}
-	});
-	
-/* function selectAll(selectAll)  {
-	  const checkboxes = document.getElementsByName('agreement');
-	  	checkboxes.forEach((checkbox) => {
-	    	checkbox.checked = selectAll.checked;
-	  })
-	} */
-//체크박스 전체 선택
-
-</script>
 </head>
 <body>
 	<section class="page-title bg-1">
@@ -158,12 +106,6 @@ $(document).ready(function(){
 					<div class="block text-center">
 						<h1 class="text-capitalize mb-5 text-lg">OTD와 함께하는 건강한 일상</h1>
 						<span class="text-white">OTD는 대구도시지하철도공사와 함께 합니다.</span>
-
-						<!-- <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-            <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
-          </ul> -->
 					</div>
 				</div>
 			</div>
@@ -238,7 +180,6 @@ $(document).ready(function(){
 						</div>
 						<div class="text-center">
 							<input class="btn btn-main btn-round-full" type="button" value="결 제 하 기">
-							<!-- <i class="icofont-simple-right ml-2"></i> -->
 						</div>
 						</form>
 					</div>
@@ -256,8 +197,46 @@ $(document).ready(function(){
 		<input type="hidden" id="history_date" name="history_date" value="">
 	</form>
 	<script>
-	let merchant_uid = 'merchant_' + new Date().getTime();
-	data.ticket_no.value = merchant_uid; //21/08/18
+	// 폼전송 버튼 누르면 실행할 이벤트, 기능 정의
+	$('.btn').on('click', function(event){
+		event.preventDefault();
+		paymentFnc();
+	});
+	
+	var merchant = 'merchant_' + new Date().getTime();
+	console.log(merchant);
+	function paymentFnc() {
+	let ticketSelect = $('#ticket').val();
+	let payment = document.querySelector('input[name="pay"]:checked').value;
+	data.payment_price.value = ticketSelect;
+	data.payment_method.value = payment;
+	
+	IMP.init('imp24006420');
+	IMP.request_pay({
+		pg : 'inicis', // version 1.1.0부터 지원.
+		pay_method : payment,
+		merchant_uid : merchant,
+		name : '${sessionName}',
+		amount : ticketSelect, //판매 가격
+		buyer_email : '${sessionEmail}',
+		buyer_name : '${sessionName}',
+		buyer_tel : '${sessionPhone}',
+	}, function(rsp) {
+		if (rsp.success) {
+			var msg = '결제가 완료되었습니다.';
+			alert(msg);
+			// 그 다음 실행
+			data.submit();
+		} else {
+			var msg = '결제에 실패하였습니다.';
+			msg += '에러내용 : ' + rsp.error_msg;
+			alert(msg);
+		}
+
+	});
+	}
+	
+	data.ticket_no.value = merchant; //21/08/18
 	
 	</script>
 	

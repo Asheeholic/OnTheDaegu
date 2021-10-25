@@ -110,12 +110,6 @@ td {
 					<div class="block text-center">
 						<h1 class="text-capitalize mb-5 text-lg">OTD와 함께하는 건강한 일상</h1>
 						<span class="text-white">OTD는 대구도시지하철도공사와 함께 합니다.</span>
-
-						<!-- <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-            <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
-          </ul> -->
 					</div>
 				</div>
 			</div>
@@ -142,31 +136,25 @@ td {
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<form class="history" id="frm" name="frm"
-								action="returnTicket.do" method="post">
-								<input type="hidden" id="history" name="history">
-								<div align="center">
-									<table width="100%" cellspacing="0">
+							<div align="center">
+								<table width="100%" cellspacing="0">
+									<tr>
+										<th width="150">결제상품</th>
+										<th width="200">이용권개시일</th>
+										<th width="150">결제금액</th>
+										<th width="150">환불/취소</th>
+									</tr>
+									<c:forEach var="history" items="${history}">
 										<tr>
-											<th width="150">결제상품</th>
-											<th width="200">이용권개시일</th>
-											<th width="150">결제금액</th>
-											<th width="150">환불/취소</th>
+											<td>${history.TICKET_CODE}</td>
+											<td>${history.HISTORY_DATE}</td>
+											<td>${history.TICKET_PRICE}원</td>
+											<td><button class="btn btn-main btn-round-full"
+												type="button" id="refund" name="refund" onclick="historyFnc('${history.TICKET_NO}')">환불</button></td>
 										</tr>
-										<c:forEach var="history" items="${history}">
-											<tr>
-												<%-- <c:forEach var="payment" items="${payment}"> --%>
-												<td>${history.TICKET_CODE}</td>
-												<td>${history.HISTORY_DATE}</td>
-												<td>${history.TICKET_PRICE}원</td>
-												<td><input class="btn btn-main btn-round-full"
-													type="button" id="refund" name="refund" value="환불"></td>
-											</tr>
-										</c:forEach>
-										<%-- </c:forEach> --%>
-									</table>
-								</div>
-							</form>
+									</c:forEach>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -174,29 +162,19 @@ td {
 		</div>
 	</section>
 	<form name="data" action="updateDB.do" method="post">
-		<!-- payment table -->
-		<input type="hidden" id="email" name="email" value="${sessionEmail}">
 		<!-- history table -->
-		<input type="hidden" id="ticket_no" name="ticket_no" value="">
-		<input type="hidden" id="payment_price" name="payment_price" value="">
+		<input type="hidden" id="ticketNo" name="ticketNo" value="">
 	</form>
 <script>
-	$(document).ready(function() {
-		// 폼전송 버튼 누르면 실행할 이벤트, 기능 정의
-		$('.btn').on('click', function() {
-			event.preventDefault();
-			console.log('클릭');
-			if (confirm("정말 환불하시겠습니까?")) {		
-				historyFnc();
-			}
-		});
-		function historyFnc() {
-			let ticketSelect = ${history[0].TICKET_PRICE};
-			data.payment_price.value = ticketSelect;
-			
-			data.submit();
+	// 폼전송 버튼 누르면 실행할 이벤트, 기능 정의
+	function historyFnc(num) {
+		event.preventDefault();
+		console.log(num);
+		if (confirm("정말 환불하시겠습니까?")) {		
+		data.ticketNo.value = num;
+		data.submit();
 		}
-	});
+	}
 </script>
 </body>
 
